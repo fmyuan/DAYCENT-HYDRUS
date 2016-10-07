@@ -1,0 +1,2435 @@
+DayCent 4.5 is built from the monthly version of Century and for the most part
+the *.100 parameter files used by DayCent 4.5 are identical to the ones used
+by Century 4.5.  There are a few input parameters that need to be scaled to
+work with the smaller time step used in DayCent as compared to monthly
+Century.
+    CROP.100
+    CULT.100
+    FERT.100
+    FIRE.100
+    FIX.100    - some changes to this file, see notes below
+    GRAZ.100
+    HARV.100
+    IRRI.100
+    OMAD.100
+    TREE.100
+    TREM.100
+    <site>.100 - some changes to this file, see notes below
+    *.sch (schedule files)
+
+Additional input files used by DayCent are:
+    SOILS.IN    - a description of the soil layer structure
+    SITEPAR.IN  - additional site information needed by DayCent
+    OUTFILES.IN - allows the user to select which weekly and/or daily ASCII
+                  output files will be created by DayCent
+
+DayCent must be run using a daily weather data file.
+
+------------------------------------------------------------------------------
+FIX.100 modifications for DayCent:
+
+When modifying the FIX.100 file for use with DayCent the following settings
+are recommended:
+    ADEP(1)   = 10.0
+    ADEP(2)   = 20.0
+    ADEP(3)   = 15.0
+    ADEP(4)   = 15.0
+    ADEP(5)   = 30.0
+    ADEP(6)   = 30.0
+    ADEP(7)   = 30.0
+    ADEP(8)   = 30.0
+    ADEP(9)   = 30.0
+    ADEP(10)  = 30.0
+    FWLOSS(1) = 1.0
+    FWLOSS(2) = 1.0
+    FWLOSS(3) = 1.0
+    FWLOSS(4) Is not used when extra drivers are used.  The extra drivers are
+              the solar radiation, relative humidity, and wind speed input
+              parameters in the daily weather file.  If not using the extra
+              drivers set this value to 0.8.
+    ANEREF(3) = 1.0
+    OMLECH(3) < 2.0
+    MINLCH    to approximately 2.5
+    VLOSSE    = 0.0
+    VLOSSG    = 0.0
+    IDEF      = 1.0
+
+------------------------------------------------------------------------------
+<site>.100 modifications for DayCent:
+ 
+When modifying the <site>.100 file for use with DayCent set the SWFLAG and
+STORMF parameters to 0.0.
+     SWFLAG = 0.0
+     STORMF = 0.0
+
+Also, if you are modifying a <site>.100 file that was used for running monthly
+Century version 4.0 you will need to remove the following parameters from the
+<site>.100 file:
+     W1LIG
+     W2LIG
+     W3LIG
+as they are not used by DayCent.
+
+The values of SAND, SILT, CLAY, BULKD, PH, AWILT, and AFIEL in the <site>.100
+file are overridden by their companion values in the SOILS.IN input file.
+
+NOTE:
+DayCent does use the weather statistics from the <site>.100 file.  The monthly
+average precipitation values are used in the atmospheric nitrogen deposition
+function.  The average minimum and maximum temperature values are used to
+replace missing temperature values in a daily weather data file.  Prior to
+running a DayCent simulation be sure to use the DayCent_file100 utility to
+create weather statisitics for your <site>.100 file based on your daily
+historical weather data file.
+
+------------------------------------------------------------------------------
+Schedule file notes for running DayCent:
+
+When creating your schedule file for DayCent keep in mind that it operates
+using daily weather data and must be able to find and read your daily weather
+data file.  The "F" weather option choice is the only valid weather option for
+the initial block in a DayCent schedule file.  The weather filename of the
+daily weather data file must also appear in your schedule file following the
+"F".  If you use a weather option value other than "F" for the initial weather
+option in your schedule file the simulation will not run.  Subsequent blocks
+may use either the "F", to start reading from the start of a daily weather
+file, or "C", to continue reading the current weather file, weather options.
+
+==============================================================================
+SOILS.IN example:
+
+  0.0   2.0  1.44  0.31092  0.13578  0.80  0.01  0.39  0.28  0.01  0.11  0.00027  5.00
+  2.0   5.0  1.44  0.31092  0.13578  0.20  0.04  0.39  0.28  0.01  0.08  0.00027  5.00
+  5.0  10.0  1.44  0.31092  0.13578  0.00  0.25  0.39  0.28  0.01  0.05  0.00027  5.00
+ 10.0  20.0  1.44  0.31092  0.13578  0.00  0.30  0.39  0.28  0.01  0.01  0.00027  5.00
+ 20.0  30.0  1.44  0.31092  0.13578  0.00  0.10  0.39  0.28  0.01  0.00  0.00027  5.00
+ 30.0  45.0  1.44  0.31092  0.13578  0.00  0.05  0.39  0.28  0.01  0.00  0.00027  5.00
+ 45.0  60.0  1.44  0.31092  0.13578  0.00  0.04  0.39  0.28  0.01  0.00  0.00027  5.00
+ 60.0  75.0  1.44  0.31092  0.13578  0.00  0.03  0.39  0.28  0.01  0.00  0.00027  5.00
+ 75.0  90.0  1.44  0.31092  0.13578  0.00  0.02  0.39  0.28  0.01  0.00  0.00027  5.00
+ 90.0 105.0  1.44  0.31092  0.13578  0.00  0.01  0.39  0.28  0.01  0.00  0.00027  5.00
+105.0 120.0  1.44  0.31092  0.13578  0.00  0.00  0.39  0.28  0.01  0.00  0.00027  5.00
+120.0 150.0  1.44  0.31092  0.13578  0.00  0.00  0.39  0.28  0.01  0.00  0.00027  5.00
+
+Column  1 - Minimum depth of soil layer (cm)
+Column  2 - Maximum depth of soil layer (cm)
+Column  3 - Bulk density of soil layer (g/cm^3)
+Column  4 - Field capacity of soil layer, volumetric
+Column  5 - Wilting point of soil layer, volumetric
+Column  6 - Evaporation coefficient for soil layer (currently not being used)
+Column  7 - Percentage of roots in soil layer, these values must sum to 1.0
+Column  8 - Fraction of sand in soil layer, 0.0 - 1.0
+Column  9 - Fraction of clay in soil layer, 0.0 - 1.0
+Column 10 - Organic matter in soil layer, fraction 0.0 - 1.0
+Column 11 - Minimum volumetric soil water content below wilting point for soil
+            layer, soil water content will not be allowed to drop below this
+            value
+Column 12 - Saturated hydraulic conductivity of soil layer in centimeters per
+            second
+Column 13 - pH of soil layer
+
+NOTES:
+Percentage of silt for soil layer is computed as follows:
+     percent silt = (1.0 - (percent sand + percent clay))
+
+For the trace gas subroutines it is currently recommended to use the following
+layering structure for the top 3 soil layers in your soils.in file:
+     layer 1 - 0.0 cm to  2.0 cm
+     layer 2 - 2.0 cm to  5.0 cm
+     layer 3 - 5.0 cm to 10.0 cm
+
+The depth structure in this file should match the ADEP values in the FIX.100
+file in such a way that the boundaries for the soil layer depths can be
+matched with the ADEP values.  For example, using the file above and ADEP
+values of 10, 20, 15, 15, 30, 30, 30, 30, 30, and 30:
+     layers 1, 2 and 3 match the first 10 centimeter ADEP value
+     layers 4 and 5 match the second 20 centimeter ADEP value
+     layer 6 matches the third 15 centimeter ADEP value
+     layer 7 matches the fourth 15 centimeter ADEP value
+     layers 8 and 9 match the first 30 centimeter ADEP value
+     layers 10 and 11 match the second 30 centimeter ADEP value
+     layer 12 matches the third 30 centimeter ADEP value
+
+The value for NLAYER in the <site>.100 file should be set to match the number
+of ADEP values that you are using when you match the layering to the soils.in
+file.  For the example above NLAYER should be set to 7.
+
+==============================================================================
+SITEPAR.IN example:
+
+2        / timstep: 1=monthly production, 2=weekly production
+0        / 1 = Use extra weather drivers (solrad, rhumid, windsp), 0 = don't use (for PET)
+1.0      / sublimscale
+0.18     / reflec - vegetation reflectivity/albedo (frac)
+0.65     / albedo - snow albedo (frac)
+0.90     / fswcinit - initial swc, fraction of field capacity
+0.000001 / dmpflux - in h2oflux routine (0.000001 = original value)
+4        / hours_rain - duration of each rain event
+0        / # of days between rainfall event and drainage of soil (-1=computed)
+1  0     / watertable[month] - 0 = no water table, 1 = water table
+2  0
+3  0
+4  0
+5  0
+6  0
+7  0
+8  0
+9  0
+10 0
+11 0
+12 0
+-200     / hpotdeep - hydraulic water potential of deep storage layer (units?)
+0.0002   / ksatdeep - saturated hydraulic conductivity of deep storage layer (cm/sec)
+1  58    / cldcov[month] - cloud cover (%)
+2  58
+3  58
+4  58
+5  58
+6  58
+7  58
+8  58
+9  58
+10 58
+11 58
+12 58
+5.0 16.4 / min and max temperature for bottom soil layer (degrees C)
+0.003    / damping factor for calculating soil temperature by layer
+30.0     / timlag, days from Jan 1 to coolest temp at bottom of soil (days)
+0.03     / min water/temperature limitation coefficient for nitrify
+0    2   / layers composing shallow depths (region 0)
+3    5   / layers composing intermediate depths (region 1)
+6    8   / layers composing deep depths (region 2)
+9   11   / layers composing very deep (region 3)
+50 90    / turn off respiration restraint on denit between these days
+0.8      / nitrification N2O adjustment factor (0.0-1.0)
+
+NOTES:
+Values in this file that should normally not be changed:
+     timstep     - 1 = monthly production, 2 = weekly production
+     sublimscale - scaling multiplier for sublimation
+     dmpflux     - damping factor for soil water flux, in h2oflux routine
+     hours_rain  - duration of each rain event
+
+If modifying the hours_rain parameter value be aware that the smallest valid
+value for the hours_rain parameter is 2.0.  Valid values for hours_rain must
+be a multiple of 2 and may not exceed 24.
+
+It should not be necessary to change the layers composing the shallow,
+intermediate, deep, and very deep soil regions.
+
+==============================================================================
+OUTFILES.IN example:
+
+Output (0/1)  file_name         description
+0             bio.out           # weekly above and below ground live carbon
+0             soiln.out         # daily soil ammonium and nitrate by layer
+0             soiltavg.out      # daily average soil temperature by layer
+0             soiltmax.out      # daily maximum soil temperature by layer
+0             soiltmin.out      # daily minimum soil temperature by layer
+0             stemp_dx.out      # daily soil temperature every few cm (HUGE)!
+0             vswc.out          # daily volumetric soilwater content by layer
+0             watrbal.out       # daily water balance
+0             wfps.out          # daily water filled pore space by layer
+0             co2.out           # daily CO2 concentrations by layer
+1             wflux.out         # daily water flux through the bottom of soil layers
+0             mresp.out         # weekly maintenance respiration
+0             year_summary.out  # yearly sums of N2Oflux, NOflux and CH4
+1             livec.out         # weekly live carbon
+1             deadc.out         # weekly dead carbon
+1             soilc.out         # weekly soil carbon
+0             sysc.out          # weekly system carbon
+1             tgmonth.out       # monthly trace gas fluxes
+
+NOTES:
+0 = do not produce the output file
+1 = do produce the output file
+
+The DAILY.OUT, NFLUX.OUT and SUMMARY.OUT files are always produced when
+running DayCent therefore they are not included in the outfiles.in file.
+
+==============================================================================
+Daily Weather Data File:
+
+ 1   1  1990    1    7.040  -10.300    0.000  186.425   55.42   10.939
+ 2   1  1990    2    9.200  -10.530    0.000  158.115   57.42    5.552
+ 3   1  1990    3   11.840   -7.330    0.000  222.946   42.13    9.165
+ 4   1  1990    4    1.297  -10.310    0.000  182.844   40.97   12.543
+ 5   1  1990    5    1.239  -16.010    0.000  213.159   52.25    5.214
+ 6   1  1990    6    3.745   -9.380    0.000  230.346   41.89   10.603
+...
+27  12  1992  362   11.320  -12.880    0.000  217.456   35.13    4.429
+28  12  1992  363    7.050  -10.180    0.000  216.501   28.25    5.132
+29  12  1992  364   -1.095   -8.370    0.000   93.833   53.59    5.264
+30  12  1992  365    7.330  -11.490    0.000  152.243   35.88    3.098
+31  12  1992  366    7.330  -11.490    0.000  152.243   35.88    3.098
+
+NOTES:
+Column  1 - Day of month, 1-31
+Column  2 - Month of year, 1-12
+Column  3 - Year
+Column  4 - Day of the year, 1-366
+Column  5 - Maximum temperature for day, degrees C
+Column  6 - Minimum temperature for day, degrees C
+Column  7 - Precipitation for day, centimeters
+Column  8 - Solar radiation, in langleys/day
+Column  9 - Relative humidity, percentage, 1-100
+Column 10 - Wind speed, miles per hour
+
+Missing weather data values for precipitation, minimum temperature and maximum
+temperature are represented by the value -99.9.
+
+The last three columns in the weather data file, solar radiation, relative
+humidity, and wind speed, are optional.  When these values are not included in
+a weather file PET is computed using the FWLOSS(4) input variable from the
+FIX.100 file and the flag for the extra weather drivers in the SITEPAR.IN file
+must be set to 0.
+
+==============================================================================
+Time representation in output files:
+
+DayCent ASCII output files are produced in addition to the monthly output in
+the *.bin file.  Simulation time in the DayCent output file is represented as
+a decimal value with the value preceding the decimal point representing the
+year of the simulation and the value after the decimal porint representing the
+month in the simulation using the following values:
+     Jan - .00
+     Feb - .08
+     Mar - .17
+     Apr - .25
+     May - .33
+     Jun - .42
+     Jul - .50
+     Aug - .58
+     Sep - .67
+     Oct - .75
+     Nov - .83
+     Dec - .92
+
+The *.bin file that is produced when using DayCent contains monthly output
+values.  Simulation times for the monthly output from the *.bin file are
+represented as a decimal value with the value preceding the decimal point
+representing the year of the simulation and the value after the decimal point
+representing the month in the simulation using the following values:
+     Jan - .08
+     Feb - .17
+     Mar - .25
+     Apr - .33
+     May - .42
+     Jun - .50
+     Jul - .58
+     Aug - .67
+     Sep - .75
+     Oct - .83
+     Nov - .92
+     Dec - 1.00
+These month fractions are added to the year value so that, for example January
+of year 1998 will output as time 1998.08 (1998 + .08) and December of year
+1998 will output as time 1999.00 (1999 + 1.00).
+
+Note that the monthly time values in the *.bin files are shifted by 1/12 from
+the DayCent ASCII *.out output files such that:
+
+          *.out file                *.bin file
+          ----------                ----------
+           Jan - .00                Jan -  .08
+           Feb - .08                Feb -  .17
+           Mar - .17                Mar -  .25
+           Apr - .25                Apr -  .33
+           May - .33                May -  .42
+           Jun - .42                Jun -  .50
+           Jul - .50                Jul -  .58
+           Aug - .58                Aug -  .67
+           Sep - .67                Sep -  .75
+           Oct - .70                Oct -  .83
+           Nov - .83                Nov -  .92
+           Dec - .92                Dec - 1.00
+
+==============================================================================
+BIOWK.OUT (weekly above and below ground live carbon):
+
+  time  wk      aglivc      bglivc      aglivn      bglivn      rleavc      frootc      fbrchc      rlwodc      crootc
+1895.00   1     20.0516    127.4018      0.7884      1.9148      0.9462      0.5855      0.0000      0.0000      0.0000
+
+Column 1  - Simulation time (see above)
+Column 2  - Week of the month, 1 - 5
+Column 3  - Carbon in aboveground live for grass/crop (gC/m^2)
+Column 4  - Carbon in belowground live for grass/crop (gC/m^2)
+Column 5  - Nitrogen in aboveground live for grass/crop (gN/m^2)
+Column 6  - Nitrogen in belowground live for grass/crop (gN/m^2)
+Column 7  - Carbon in forest system leaf compenent (gC/m^2)
+Column 8  - Carbon in forest system fine root component (gC/m^2)
+Column 9  - Carbon in forest system fine branch component (gC/m^2)
+Column 10 - Carbon in forest system large wood component (gC/m^2)
+Column 11 - Carbon in forest system coarse root component (gC/m^2)
+
+==============================================================================
+CO2.OUT (daily CO2 concentrations by layer):
+
+    time  jday    CO2_ppm[0]    CO2_ppm[1]    CO2_ppm[2]    CO2_ppm[3]    CO2_ppm[4]    CO2_ppm[5]    CO2_ppm[6]    CO2_ppm[7]    CO2_ppm[8]    CO2_ppm[9]        etc...
+ 1895.00     1      1.461087      1.200228      0.624179      0.345650      0.104632      0.000000      0.000000      0.000000      0.000000      0.000000      0.000000  
+
+Column 1   - Simulation time (see above)
+Column 2   - Day of the year
+Column 3   - CO2 concentration in first layer of soil profile (index 0), as
+             defined in the soils.in file (ppm)
+Column 4   - CO2 concentration in second layer of soil profile (index 1), as
+             defined in the soils.in file (ppm)
+...
+Column n+2 - CO2 concentration in layer n of the soil profile (index n-1), as
+             defined in the soils.in file (ppm)
+
+NOTE:
+n = number of soil layers
+
+==============================================================================
+DAILY.OUT:
+
+      time jday      PET(cm)      agdefac      bgdefac     stemp(C)    snow    snlq
+ 1971.0000    1        .0103        .0770        .0600      -1.6280   .0000  .0000
+
+Column 1 - Simulation time (see above)
+Column 2 - Day of the year
+Column 3 - Potential evapotranspiration rate for the day (cm H2O)
+Column 4 - Surface decomposition factor based on temperature and moisture
+Column 5 - Soil decomposition factor based on temperature and moisture
+Column 6 - Average soil temperature near the soil surface (degrees C)
+Column 7 - Snowpack water content (cm H2O)
+Column 8 - Liquid snow water content (cm H2O)
+
+==============================================================================
+DEADCWK.OUT (weekly carbon in dead plant material):
+
+  time  wk      stdedc   metabc(1)   strucc(1)      wood1c      wood2c      wood3c
+1895.00   1     17.7980      9.8971     38.7231      0.0000      0.0000      0.0000
+
+Column 1 - Simulation time (see above)
+Column 2 - Week of the month, 1 - 5
+Column 3 - C in standing dead material for grass/crop (gC/m^2)
+Column 4 - metabolic C in surface litter (gC/m^2)
+Column 5 - surface litter structrual C (gC/m^2)
+Column 6 - C in wood1 (dead fine branch) component of forest system (gC/m^2)
+Column 7 - C in wood2 (dead large wood) component of forest system (gC/m^2)
+Column 8 - C in wood3 (dead coarse roots) component of forest system (gC/m^2)
+
+==============================================================================
+LIVECWK.OUT (weekly carbon in live plant material):
+
+  time  wk      aglivc      bglivc      rleavc      frootc      fbrchc      rlwodc      crootc
+1895.00   1     20.0516    127.4018      0.9462      0.5855      0.0000      0.0000      0.0000
+
+Column 1 - Simulation time (see above)
+Column 2 - Week of the month, 1 - 5
+Column 3 - C in aboveground live for grass/crop (gC/m^2)
+Column 4 - C in belowground live for grass/crop (gC/m^2)
+Column 5 - C in forest system leaf component (gC/m^2)
+Column 6 - C in forest system fine root component (gC/m^2)
+Column 7 - C in forest system fine branch component (gC/m^2)
+Column 8 - C in forest system large wood component (gC/m^2)
+Column 9 - C in forest system coarse root component (gC/m^2)
+
+==============================================================================
+MRESP.OUT (maintenance respiration):
+
+  time   wk   mrspflow(1)   mrspflow(2)  cmrspflux(1)  crmspflux(2)  fmrspflux(1)  fmrspflux(2)  fmrspflux(3)  fmrspflux(4)  fmrspflux(5)      mcprd(1)      mcprd(2)      mfprd(1)      mfprd(2)      mfprd(3)      mfprd(4)      mfprd(5)  mrspstg(1,1)  mrspstg(1,2)  mrspstg(2,1)  mrspstg(2,2)    mrspann(1)    mrspann(2)
+1895.00   1        0.0621        0.0000        0.0147        0.0936        0.0030        0.0012        0.0000        0.0000        0.0000        0.0982        0.2121        0.0000        0.0000        0.0000        0.0000        0.0000       17.6574        0.0000        4.9443        0.0000        0.1083        0.0000
+
+Column 1  - Simulation time (see above)
+Column 2  - Week of the month, 1 - 5
+Column 3  - weekly maintenance respiration flow to storage pool (mrspstg(1,*)
+            from C source/sink for grass/crop system (gC/m^2)
+Column 4  - weekly maintenance respiration flow to storage pool (mrspstg(2,*)
+            from C source/sink for tree system (gC/m^2)
+Column 5  - amount of weekly maintenance respiration flux from aboveground
+            grass/crop material that flows from the grass/crop maintenance
+            respiration storage pool (mrspstg(1,*)) to the C source/sink pool
+            (csrsnk) (gC/m^2)
+Column 6  - amount of weekly maintenance respiration flux from belowground
+            grass/crop material that flows from the grass/crop maintenance
+            respiration storage pool (mrspstg(1,*)) to the C source/sink pool
+            (csrsnk) (gC/m^2)
+Column 7  - amount of weekly maintenance respiration flux from live leaf
+            material that flows from the tree maintenance respiration storage
+            pool (mrspstg(2,*)) to the C source/sink pool (csrsnk) (gC/m^2)
+Column 8  - amount of weekly maintenance respiration flux from live fine root
+            material that flows from the tree maintenance respiration storage
+            pool (mrspstg(2,*)) to the C source/sink pool (csrsnk) (gC/m^2)
+Column 9  - amount of weekly maintenance respiration flux from live fine
+            branch material that flows from the tree maintenance respiration
+            storage pool (mrspstg(2,*)) to the C source/sink pool (csrsnk)
+            (gC/m^2)
+Column 10 - amount of weekly maintenance respiration flux from live large wood
+            material that flows from the tree maintenance respiration storage
+            pool (mrspstg(2,*)) to the C source/sink pool (csrsnk) (gC/m^2)
+Column 11 - amount of weekly maintenance respiration flux from live coarse
+            material that flows from the tree maintenance respiration storage
+            pool (mrspstg(2,*)) to the C source/sink pool (csrsnk) (gC/m^2)
+Column 12 - weekly NPP for shoots for grass/crop system (gC/m^2)
+Column 13 - weekly NPP for roots for grass/crop system (gC/m^2)
+Column 14 - weekly NPP for live leaves for tree system (gC/m^2)
+Column 15 - weekly NPP for live fine roots for tree system (gC/m^2)
+Column 16 - weekly NPP for live fine branches for tree system (gC/m^2)
+Column 17 - weekly NPP for live large wood for tree system (gC/m^2)
+Column 18 - weekly NPP for live coarse roots for tree system (gC/m^2)
+Column 19 - unlabeled C in maintenance respiration storage for grass/crop
+            system (gC/m^2)
+Column 20 - labeled C in maintenance respiration storage for grass/crop system
+            (gC/m^2)
+Column 21 - unlabeled C in maintenance respiration storage for forest system
+            (gC/m^2)
+Column 22 - labeled C in maintenance respiration storage for forest system
+            (gC/m^2)
+Column 23 - accumulator for annual maintenance respiration for grass/crop
+            (gC/m^2)
+Column 24 - accumulator for annual maintenance respiration for tree (gC/m^2)
+
+==============================================================================
+NFLUX.OUT (trace gases):
+
+      time jday    nit_N2O-N   dnit_N2O-N    dnit_N2-N         NO-N   CUM-N2O(gN/ha) CUM-NO(gN/ha
+ 1895.0000    1        .0037        .2862        .3268       2.6953            .2899       2.6953
+
+Column 1 - Simulation time (see above)
+Column 2 - Day of the year
+Column 3 - Nitrous oxide nitrification (gN/ha)
+Column 4 - Nitrous oxide denitrification (gN/ha)
+Column 5 - Elemental inert nitrogen gas denitrification (gN/ha)
+Column 6 - Nitric oxide (gN/ha)
+Column 7 - Annual accumulator for nitrous oxide (gN/ha)
+Column 8 - Annual accumulator for nitric oxide (gN/ha)
+
+==============================================================================
+SOILCWK.OUT (weekly carbon in soil organic matter pools):
+
+  time  wk   metabc(2)   strucc(2)    som1c(1)    som1c(2)       som2c       som3c
+1895.00   1     19.1677    161.0758      9.2931     65.3974   1296.3390   1015.3623
+
+Column 1 - Simulation time (see above)
+Column 2 - Week of the month, 1 - 5
+Column 3 - metabolic C in soil litter (gC/m^2)
+Column 4 - soil litter structural C (gC/m^2)
+Column 5 - C in surface active pool soil organic matter (gC/m^2)
+Column 6 - C in soil active soil pool organic matter (gC/m^2)
+Column 7 - C in slow pool soil organic matter (gC/m^2)
+Column 8 - C in passive pool soil organic matter (gC/m^2)
+
+==============================================================================
+SOILN.OUT (daily soil ammonium and nitrate by layer):
+
+    time  jday      ammonium    NO3_ppm[0]    NO3_ppm[1]    NO3_ppm[2]    NO3_ppm[3]    NO3_ppm[4]    NO3_ppm[5]    NO3_ppm[6]    NO3_ppm[7]    NO3_ppm[8]    NO3_ppm[9]        etc...
+ 1895.00     1      0.882302      0.127008      0.142134      0.167252      0.010356      0.000954      0.000188      0.000042      0.000009      0.000002      0.000000      0.000000  
+
+Column   1 - Simulation time (see above)
+Column   2 - Day of the year
+Column   3 - Soil ammonium in top 15 centimeters of soil (ppm)
+Column   4 - Nitrate in soil layer 1 (index 0) of the soil profile, as defined
+             in the soils.in file (ppm)
+Column   5 - Nitrate in soil layer 2 (index 1) of the soil profile, as defined
+             in the soils.in file (ppm)
+...
+Column n+3 - Nitrate in soil layer n (index n-1) of the soil profile, as
+             defined in the soils.in file (ppm)
+
+NOTE:
+n = number of soil layers defined in soils.in file
+
+==============================================================================
+SOILTAVG.OUT (daily average soil temperature by layer):
+
+1895.0000     1   -1.94   -2.51    1.01    7.61   11.41   12.75   12.89   12.67   12.46   12.15   10.17  
+1895.0000     2    1.36   -0.92    1.23    7.51   11.35   12.71   12.88   12.67   12.46   12.14   10.12  
+
+Column   1 - Simulation time (see above)
+Column   2 - Day of the year
+Column   3 - Average soil temperature for soil layer 1, as defined in soils.in
+             file (degrees C)
+Column   4 - Average soil temperature for soil layer 2, as defined in soils.in
+             file (degrees C)
+...
+Column n+2 - Average soil temperature for soil layer n, as defined in soils.in
+             file (degrees C)
+
+NOTE:
+n = number of soil layers defined in soils.in file
+
+==============================================================================
+SOILTMAX.OUT (daily maximum soil temperature by layer):
+
+1895.0000     1    5.25    2.80    2.83    7.86   11.44   12.75   12.89   12.67   12.46   12.15   10.17  
+1895.0000     2    7.06    3.28    2.68    7.71   11.37   12.72   12.88   12.67   12.46   12.14   10.12  
+
+Column   1 - Simulation time (see above)
+Column   2 - Day of the year
+Column   3 - Maximum soil temperature for soil layer 1, as defined in soils.in
+             file (degrees C)
+Column   4 - Maximum soil temperature for soil layer 2, as defined in soils.in
+             file (degrees C)
+...
+Column n+2 - Maximum soil temperature for soil layer n, as defined in soils.in
+             file (degrees C)
+
+NOTE:
+n = number of soil layers defined in soils.in file
+
+==============================================================================
+SOILTMIN.OUT (daily minimum soil temperature by layer):
+
+1895.0000     1   -9.14   -7.81   -0.82    7.36   11.39   12.75   12.89   12.67   12.46   12.15   10.17  
+1895.0000     2   -4.34   -5.13   -0.21    7.31   11.33   12.71   12.88   12.67   12.46   12.14   10.12  
+
+Column   1 - Simulation time (see above)
+Column   2 - Day of the year
+Column   3 - Minimum soil temperature for soil layer 1, as defined in soils.in
+             file (degrees C)
+Column   4 - Minimum soil temperature for soil layer 2, as defined in soils.in
+             file (degrees C)
+...
+Column n+2 - Minimum soil temperature for soil layer n, as defined in soils.in
+             file (degrees C)
+
+NOTE:
+n = number of soil layers defined in soils.in file
+
+==============================================================================
+STEMP_DX.OUT (daily soil temperature every few cm):
+
+1895.0000     1   -1.94   -2.69   -1.71   -0.54    0.70    1.94    3.12    4.23    5.25    6.19    7.04    7.81    8.50    9.12    9.67   10.17   10.61   11.00   11.34   11.64   11.89   12.12   12.30   12.46   12.59   12.69   12.77   12.83   12.87   12.90   12.91   12.91   12.91   12.89   12.87   12.85   12.82   12.79   12.75   12.72   12.69   12.66   12.63   12.60   12.57   12.54   12.52   12.49   12.46   12.44   12.41   12.38   12.34   12.30   12.26   12.20   12.14   12.06   11.97   11.86   11.74   11.59   11.42  
+1895.0000     2    1.36   -1.69   -1.01   -0.09    0.96    2.06    3.15    4.20    5.18    6.10    6.94    7.70    8.40    9.02    9.58   10.08   10.53   10.92   11.27   11.57   11.84   12.06   12.25   12.41   12.54   12.65   12.73   12.80   12.84   12.87   12.89   12.90   12.89   12.88   12.86   12.84   12.81   12.78   12.75   12.72   12.69   12.66   12.63   12.60   12.57   12.54   12.52   12.49   12.46   12.44   12.41   12.38   12.34   12.30   12.25   12.19   12.12   12.04   11.95   11.84   11.71   11.56   11.39  
+
+Column   1 - Simulation time (see above)
+Column   2 - Day of the year
+Column   3 - Soil temperature for first soil layer division (degrees C)
+Column   4 - Soil temperature for second soil layer division (degrees C)
+...
+Column n+2 - Soil temperature for soil layer division n (degrees C)
+
+WARNING:
+This file can become very large.
+
+==============================================================================
+SUMMARY.OUT:
+
+      time jday     tmax     tmin      ppt      N2Oflux       NOflux          CH4          NIT      CO2resp
+ 1971.0000    1     -.15     -.89      .08        .1034       1.7173       9.2292       5.1688    1822.6162
+
+Column 1  - Simulation time (see above)
+Column 2  - Day of the year
+Column 3  - Maximum temperature for day (degrees C)
+Column 4  - Minimum temperature for day (degrees C)
+Column 5  - Precipitation for day (cm)
+Column 6  - Nitrous oxide flux (gN/ha)
+Column 7  - Nitric oxide flux (gN/ha)
+Column 8  - Methane oxidation (gCH4/ha)
+Column 9  - Gross nitrification (gN/ha)
+Column 10 - Heterotrophic CO2 respiration for the day (gCO2/ha)
+
+==============================================================================
+SYSCWK.OUT (weekly system carbon):
+
+  time  wk       livec       deadc       soilc        sysc    CO2resp
+1971.00   1    150.0000    149.0466   3379.6123   3678.6589     1.3414
+
+Column 1 - Simulation time (see above)
+Column 2 - Week of the month, 1 - 5
+Column 3 - C live material (gC/m^2)
+           (aglivc + bglivc + rleavc + frootc + fbrchc + rlwodc + crootc)
+Column 4 - C in dead material (gC/m^2)
+           (stdedc + metabc(1) + strucc(1) + wood1c + wood2c + wood3c)
+Column 5 - C in soil organic matter pools (gC/m^2)
+           (metabc(2) + strucc(2) + som1c(1) + som1c(2) + som2c + som3c)
+Column 6 - System C (gC/m^2) (livec + deadc + soilc)
+Column 7 - Summation of heterotrophic CO2 respiration for the week (g/m^2)
+
+==============================================================================
+TGMONTH.OUT (monthly summation of trace gas fluxes):
+
+  time       N2Oflux        NOflux        N2flux           CH4           NIT         PPT
+ 1759.00      0.001785      0.006034      0.000015      0.011689      0.088705    21.199900
+
+Column 1 - Simulation time (see above)
+Column 2 - Monthly accumulator for nitrous oxide (gN/m^2)
+Column 3 - Monthly accumulator for nitric oxide (gN/m^2)
+Column 4 - Monthly accumulator for nitrogen gas (gN/m^2)
+Column 5 - Monthly accumulator for methane oxidation (gCH4/m^2)
+Column 6 - Monthly accumulator for gross nitrification (gN/m^2)
+Column 7 - Monthly accumulator for precipitation, includes irrigation (cm)
+
+==============================================================================
+VSWC.OUT (daily volumetric soilwater content by layer):
+
+ 1895.00    1    0.3493    0.1939    0.1516    0.1352    0.1249    0.1211    0.1211    0.1211    0.1211    0.1214    0.1283  
+ 1895.00    2    0.2410    0.1914    0.1520    0.1356    0.1260    0.1211    0.1211    0.1211    0.1211    0.1214    0.1283  
+
+Column   1 - Simulation time (see above)
+Column   2 - Day of the year
+Column   3 - Volumetric soil water content for soil layer 1, as defined in
+             soils.in file
+Column   4 - Volumetric soil water content for soil layer 2, as defined in
+             soils.in file
+...
+Column n+2 - Volumetric soil water content for soil layer n, as defined in
+             soils.in file
+
+NOTE:
+n = number of soil layers defined in soils.in file
+
+==============================================================================
+WATRBAL.OUT (daily water balance):
+
+0=(swc1-swc2)+ppt+melt-accum-intrcpt-evap-transp-outflow
+   time jday     ppt   accum   dsnlq    melt intrcpt    evap  transp  sublim      dswc outflow   balance    snow    snlq  runoff 
+1895.00    1   0.000   0.000   0.000   0.000   0.000  -0.460  -0.121   0.000  0.16281   0.000  -0.41821   0.000   0.000   0.000 
+
+Column  1 - Simulation time (see above)
+Column  2 - Day of the year
+Column  3 - Precipitation for day (cm H2O)
+Column  4 - The amount of snow added to the snowpack (cm H2O)
+Column  5 - The difference in liquid water in the snowpack from the beginning
+            of the day to the end of the day (cm H2O)
+Column  6 - The amount of snow melted from the snow pack (cm H2O)
+Column  7 - Interception of precipitation by standing crop and litter (cm H2O)
+Column  8 - Evaporation (cm H2O)
+Column  9 - Transpiration (cm H2O)
+Column 10 - Amount of snow sublimated (equivalent to cm H2O)
+Column 11 - The difference in the soil water content from the beginning of the
+            day to the end of the day (cm H2O)
+Column 12 - Water that runs off or drains out of the soil profile (cm H2O)
+Column 13 - Daily water balance, computed as:
+              balance = (soil water content at beginning of day -
+                         soil water content at end of day) + precipitation +
+                         snow melt - accumulation - interception -
+                         evaporation - transpiration - outflow
+            (should be equal to zero)
+Column 14 - snow pack for the day (cm H2O)
+Column 15 - liquid in snow for the day (cm H2O)
+Column 16 - runoff amount for the day (cm H2O)
+
+NOTE:
+The model does not attempt to maintain a water balance when simulating a water
+table.  (See water table notes below.)
+
+==============================================================================
+WFLUX.OUT (daily water flux through the bottom of soil layers):
+
+    time  jday      wflux[0]      wflux[1]      wflux[2]      wflux[3]      wflux[4]      wflux[5]      wflux[6]      wflux[7]      wflux[8]      wflux[9]        etc...
+ 1895.00     1      0.018261      0.028582      0.020435      0.012795      0.000008      0.000008      0.000008      0.000008      0.000008      0.000007      0.000008      0.000008  
+
+Column   1 - Simulation time (see above)
+Column   2 - Day of the year
+Column   3 - Water flux from soil layer 1 (index 0) to soil layer 2 (index 1), 
+             as defined in soils.in file (cm H2O/day) 
+Column   4 - Water flux from soil layer 2 (index 1) to soil layer 3 (index 2),
+             as defined in soils.in file (cm H2O/day)
+...
+Column n+2 - Water flux from soil layer n (index n-1) to deep storage layer
+             n+1 (index n) (cm H2O/day)
+
+NOTES:
+Negative values represent upward flow (evaporation), positive values represent
+downward flow (drainage).
+
+n = number of soil layers defined in soils.in file
+
+==============================================================================
+WFPS.OUT (daily water filled pore space by layer):
+
+ 1895.00    1   0.7587   0.4211   0.3292   0.2936   0.2714   0.2630   0.2630   0.2630   0.2630   0.2637   0.2787  
+ 1895.00    2   0.5236   0.4158   0.3302   0.2946   0.2737   0.2630   0.2630   0.2630   0.2630   0.2637   0.2787  
+
+Column   1 - Simulation time (see above)
+Column   2 - Day of the year
+Column   3 - Water filled pore space for soil layer 1, as defined in soils.in
+             file, value from 0 to 1 where 1 = saturation
+Column   4 - Water filled pore space for soil layer 2, as defined in soils.in
+             file, value from 0 to 1 where 1 = saturation
+...
+Column n+2 - Water filled pore space for soil layer n, as defined in soils.in
+             file, value from 0 to 1 where 1 = saturation
+
+NOTE:
+n = number of soil layers defined in soils.in file
+
+==============================================================================
+YEAR_SUMMARY.OUT (yearly summation of trace gas fluxes):
+
+  time       N2Oflux        NOflux        N2flux           CH4           NIT      ANNPPT
+ 1971.92      0.165579      0.609097      0.015456      0.281627      8.175213    58.685108
+
+Column 1 - Simulation time (see above)
+Column 2 - Annual accumulator for nitrous oxide (gN/m^2)
+Column 3 - Annual accumulator for nitric oxide (gN/m^2)
+Column 4 - Annual accumulator for nitrogen gas (gN/m^2)
+Column 5 - Annual accumulator for methane oxidation (gCH4/m^2)
+Column 6 - Annual accumulator for gross nitrification (gN/m^2)
+Column 7 - Annual accumulator for precipitation, includes irrigation (cm)
+
+==============================================================================
+==============================================================================
+Optional input files for DayCent 4.5.
+
+------------------------------------------------------------------------------
+nscale.dat:
+
+The optional multipliers on N inputs contained in this file can be used to
+scale the amount of fertilizer added through FERT events, the amount of
+atmospheric N deposition, or both.  This file is organized in 13 columns.
+Column 1 is the year.  Columns 2 - 13 contain the N input scalars.  A value of
+1.0 used for a scalar will have no effect on the amount of N input.  A value
+of less that 1.0 used for a scalar will reduce the N input amount.  A value of
+greater than 1.0 used for the scalar will increase the N input amount.  A
+value of less than 0.0 in the nscale.dat file is invalid and the model will
+use the value of 0.0 for the scalar in this case, in effect eliminating the N
+inputs.
+
+------------------------------------------------------------------------------
+omadscale.dat:
+
+The optional multiplier on OMAD inputs contained in this file can be used to
+scale the amount of organic matter added through OMAD events.  This file is
+organized in 13 columns.  Column 1 is the year.  Columns 2 - 13 contain the
+OMAD scalars.  A value of 1.0 used for a scalar will have no effect on the
+amount of organic matter input.  A value of less that 1.0 used for a scalar
+will reduce the organic matter input amount.  A value of greater than 1.0 used
+for the scalar will increase the organic matter input amount.  A value of less
+than 0.0 in the omadscale.dat file is invalid and the model will use a value
+of 0.0 for the scalar in this case, in effect eliminating the OMAD inputs.
+
+------------------------------------------------------------------------------
+phscale.dat:
+
+The optional multiplier on pH can be used to scale the amount of pH in the
+soil, for example to simulate liming experiments.  This file is organized in
+13 columns.  Column 1 is the year.  Columns 2 - 13 contain the pH scalars.  A
+value of 1.0 used for a scalar will have no effect on the soil pH.  A value of
+less that 1.0 used for a scalar will reduce the soil pH.  A value of greater
+than 1.0 used for the scalar will increase the soil pH.  All of the scalars
+are applied against the pH value as read from the site file.  A value of less
+than 0.0 in the phscale.dat file is invalid and the model will use the value
+of 1.0 for the scalar in this case, in effect eliminating any shift in pH.
+
+------------------------------------------------------------------------------
+tmaxscale,dat, tminscale.dat, and precscale.dat:
+
+We have added options to allow the user to use scalars on the weather file
+inputs to simulate climate change scenarios.  The scalars are stored in the
+tmaxscale.dat, tminscale.dat, and precscale.dat for modifying maximum
+temperature, minimum temperature, and/or precipitation respectively.  The
+temperature scalars are addends and the precipitation scalars are multipliers.
+These files are organized in 13 columns.  Column 1 is the year.  Columns
+2 - 13 contain the scalars. Temperature scalars of 0.0 will have no effect on
+the simulated temperature.  Precipitation scalars of 1.0 will have no effect
+on the simulated precipitation amount.  These three files are optional and if
+the scalars are not used you do not need to have these files in your working
+directory.
+
+==============================================================================
+==============================================================================
+Code changes for DayCent 4.5.
+
+==============================================================================
+Temperature curve change:
+
+The temperature effect is now being computed using an arctangent curve,
+previous versions of the model used an exponential curve.  The teff(4)
+parameter values read from the FIX.100 file are used in the temperature
+equation.
+     TEFF(1) = "x" location of inflection point
+     TEFF(2) = "y" location of inflection point
+     TEFF(3) = step size (distance from the maximum point to the minimum
+               point)
+     TEFF(4) = slope of line at inflection point
+
+The conversion utility assigns the following default values to these
+parameters.
+     15.4000          'TEFF(1)'
+     11.7500          'TEFF(2)'
+     29.7000          'TEFF(3)'
+     0.03100          'TEFF(4)'
+
+==============================================================================
+Options for computing the water effect on decomposition included:
+
+DayCent users have the option of using three different water curves to
+calculate the water effect on decompostion depending on the parameter value
+entered for the IDEF parameter in the FIX.100 file.
+
+     IDEF = 1, use relative water content
+     IDEF = 2, use ratio of precipitation to potential evapotranspiration
+     IDEF = 3, use water filled pore space
+
+==============================================================================
+Non-symbiotic soil N fixation change:
+
+Non-symbiotic soil N fixation is now being computed using annual 
+evapotranspiration in place of precipitation.
+     Old equation:
+          non-symbiotic N fixation = epnfs(1) + 
+                                     epnfs(2)*MIN(annual precipitation,100.0)
+     New equation:
+          non-symbiotic N fixation = epnfs(2) *
+                                    (annual evapotranspiration - epnfs(1))
+
+The conversion utility assigns the following default values for the parameters
+used in this equation.
+     EPNFS(1) - 30.0000
+     EPNFS(2) - 0.01000
+
+==============================================================================
+Phosphorus changes:
+
+When running a simulation with phosphorus (NELEM >= 2) a back flow calculation
+for flowing phosphorus from occluded P to secondary P has been added.  An
+additional input parameter, PSECOC2, was added to the FIX.100 file to
+parameterize the calculation for this flow.  The original PSECOC variable in
+the FIX.100 file retains its original definition but has been renamed PSECOC1.
+The conversion utility changes the PSECOC variable name to PSECOC1, adds the
+new PSECOC2 parameter to the FIX.100 file, and sets a default value of 0.0000
+for the new PSECOC2 parameter.
+
+We have also implemented a check in the code to adjust the C/N ratio of leaves
+when simulating phosphorus so that the N/P ratio of the leaves does not exceed
+an observed critical value.  The new MAXNP parameter in the TREE.100 file
+represents this critical value.
+
+==============================================================================
+Dynamic C allocation:
+
+Grassland/crop system -
+
+In the grassland/crop system the root to shoot carbon allocation is done as a
+function of soil water and soil nutrient functions.  The new input parameters
+in the CROP.100 file for controlling dynamic carbon allocation are:
+     FRTCINDX    - plant growth type
+                     0 - use Great Plains equation to compute root to shoot
+                         ratio (fixed carbon allocation based on rainfall)
+                     1 - perennial plant (i.e., grass, dynamic carbon
+                         allocation)
+                     2 - annual plant (i.e., crop, dynamic carbon allocation)
+                     3 - perennial plant, growing degree day implementation,
+                         dynamic carbon allocation
+                     4 - non-grain filling annual plant, growing degree day
+                         implementation, dynamic carbon allocation
+                     5 - grain filling annual plant, growing degree day
+                         implementation, dynamic carbon allocation
+                     6 - grain filling annual plant that requires a
+                         vernalization period (i.e. winter wheat), growing
+                         degree day implementation, dynamic carbon allocation
+     FRTC(1)     - fraction of C allocated to roots at planting, with no water
+                   or nutrient stress, used when FRTCINDX = 2, 4, 5, or 6
+     FRTC(2)     - fraction of C allocated to roots at time FRTC(3), with no
+                   water or nutrient stress, used when FRTCINDX = 2, 4, 5 or 6
+     FRTC(3)     - time after planting (months with soil temperature greater
+                   than RTDTMP) at which the FRTC(2) value is reached, used
+                   when FRTCINDX = 2, 4, 5, or 6
+     FRTC(4)     - maximum increase in the fraction of C going to the roots
+                   due to water stress, used when FRTCINDX = 2, 4, 5, or 6
+     FRTC(5)     - maximum increase in the fraction of C going to the roots
+                   due to nutrient stress, used when FRTCINDX = 2, 4, 5 or 6
+     CFRTCN(1)   - maximum fraction of C allocated to roots under maximum
+                   nutrient stress, used when FRTCINDX = 1 or 3
+     CFRTCN(2)   - minimum fraction of C allocated to roots with no nutrient
+                   stress, used when FRTCINDX = 1 or 3
+     CFRTCW(1)   - maximum fraction of C allocated to roots under maximum
+                   water stress, used when FRTCINDX = 1 or 3
+     CFRTCW(2)   - minimum fraction of C allocated to roots with no water
+                   stress, used when FRTCINDX = 1 or 3
+
+Tree system -
+
+In the tree system carbon is allocated to fine roots and leaves first.  The
+allocation to leaves is based on forest type and growing season.  For
+deciduous trees growth occurs only between the months of leaf out and leaf
+drop.  For deciduous and drought deciduous forests all of the C is allocated
+to leaves during the leaf out period.  In tree growth periods that are not
+identified as leaf out periods carbon is allocated to fine roots first then to
+leaves, up to a optimum LAI based on large wood biomass.  Any leftover C to be
+allocated after partitioning to fine roots and leaves is then distributed to
+the woody components, fine branches, coarse roots, and large wood, based on a
+normalizing of the carbon allocation fractions defined for the tree in the
+TREE.100 file, FCFRAC(3,*), FCFRAC(4,*), and FCFRAC(5,*).  Potential tree
+production is now controlled by the PRDX(2) (formerly PRDX(3)), maximum net
+forest production, input parameter only, the original PRDX(2) parameter is no
+longer being used and has been removed from the file.  The new input
+parameters in the TREE.100 file for controlling dynamic carbon allocation are:
+     TFRTCN(1)   - maximum fraction of C allocated to fine roots under maximum
+                   nutrient stress
+     TFRTCN(2)   - minimum fraction of C allocated to fine roots with no
+                   nutrient stress
+     TFRTCW(1)   - maximum fraction of C allocated to fine roots under maximum
+                   water stress
+     TFRTCW(2)   - minimum fraction of C allocated to fine roots with no water
+                   stress
+
+==============================================================================
+Maintenance respiration:
+
+In addition to heterotrophic respiration from decomposition, RESP(1), DayCent
+4.5 includes submodels to simulate maintenance respiration.  A user defined
+portion of net primary production, NPP, is allocated to the maintenance
+respiration pool.  This pool supplies C for maintenance respiration for above
+and belowground plant compartments.  Respiration for each plant compartment is
+a function of the mass of the compartment, soil or air temperature, and a user
+defined maximum respiration parameter. 
+
+The new input parameters for controlling maintenance respiration in the
+CROP.100 file are:
+     KMRSP(1)    = the fraction of net primary production that goes to the
+                   maintenance respiration storage pool for crops
+     CKMRSPMX(1) = maximum fraction of aboveground live C that goes to
+                   maintenance respiration for crops
+     CKMRSPMX(2) = maximum fraction of belowground live C that goes to
+                   maintenance respiration for crops
+
+The new input parameters for controlling maintenance respiration in the
+TREE.100 file are:
+     KMRSP(2)    = the fraction of net primary production that goes to the
+                   maintenance respiration storage pool for trees
+     FKMRSPMX(1) = maximum fraction of live leaf C that goes to maintenance
+                   respiration for trees
+     FKMRSPMX(2) = maximum fraction of live fine root C that goes to
+                   maintenance respiration for trees
+     FKMRSPMX(3) = maximum fraction of live fine branch C that goes to
+                   maintenance respiration for trees
+     FKMRSPMX(4) = maximum fraction of live large wood C that goes to
+                   maintenance respiration for trees
+     FKMRSPMX(5) = maximum fraction of live coarse root C that goes to
+                   maintenance respiration for trees
+
+NOTE:  The maintenance respiration code has not been fully tested and
+validated at this point.  There are some inconsistencies in the carbon balance
+when running the model with the maintenance respiration turned on.  Until the
+maintenance respiration code has been fully tested and validated we recommend
+that you run your simulations with the maintenance respiration turned off.  To
+do this set the parameter values for KMRSP(*), CKMRSPMX(*), and FKMRSPMX(*) to
+0.0.
+
+==============================================================================
+Changes to the savanna submodel:
+
+The SITPOT variable value will be dynamic and will be computed as a function
+of average annual precipitation.  Average annual precipitation is calculated
+by summing the PRECIP(*) values from the <site>.100 files.  For tuning
+purposes the SITPOT parameter value read from the TREE.100 file for the
+current tree will be used as a multiplier.
+     if (arain .lt. 30.0) then
+       sitpot = 1000.0
+     else if (arain .gt. 80.0) then
+       sitpot = 3500.0
+     else
+       sitpot = line(arain, 30.0, 1000.0, 80.0, 3500.0)
+     endif
+     sitpot = sitpot * sitpot_m
+Where:
+     arain    = average annual rainfall
+     sitpot_m = sitpot value for current tree as read from TREE.100 file
+And:
+     The line function returns the following value:
+          line = (y2 - y1) / (x2 - x1) * (x - x2) + y2
+          Where:
+               x  = arain
+               x1 = 30.0 
+               y1 = 1000.0
+               x2 = 80.0
+               y1 = 3500.0
+The conversion utility sets all of the SITPOT parameters in a converted
+TREE.100 file to 1.0 for no multiplicative effect.
+
+We have also modified the way that the tree basal area is being calculated.
+Old code:
+        wdbmas = (fbrchc + rlwodc) * 2.0
+        trbasl = wdbmas / basfct
+New code:
+        wdbmas = (fbrchc + rlwodc) * 2.0
+        basf = (wdbmas/(0.88 * ((wdbmas * 0.01)**0.635)))
+        if (basf .lt. 250.0) then
+          basf = basf * basfct
+        endif
+        trbasl = wdbmas / basf
+Where:
+     wdbmas = wood biomass
+     fbrchc = fine branch carbon
+     rlwodc = large wood carbon
+     trbasl = tree basal area
+     basfct = input parameter from TREE.100 file, the value for this input
+              parameter will be given a default value of 1.0 by the conversion
+              utility
+
+==============================================================================
+Fire code changes for charcoal:
+
+There have been changes to fire code so that removal, by burning, of dead fine
+branches and dead large wood will occur as the result of a FIRE event rather
+than of a TREM event.  A TREM fire event will burn only live leaves, live fine
+branches, and live large wood.  A TREM cutting, windstorm or other non-fire
+event will allow the removal of dead fine branches and dead large wood in the
+same manner as Century 4.0.  When burning dead fine branches and dead large
+through a FIRE event the burned carbon in the dead wood can be returned to the
+system as charcoal in the passive SOM pool.  (See the changes in the FIRE.100
+input parameters for more information on how the charcoal return is 
+parameterized.)
+
+==============================================================================
+Grazing change:
+
+The GRET(1) parameter from the GRAZ.100 file is no longer being used.  The
+value for GRET(1) now being used in the model equations is calculated based on
+soil texture so that the fraction of consumed N that is returned is now a
+function of clay content.
+     if (clay .lt. 0.0) then
+       gret(iel) = 0.7
+     else if (clay .gt. 0.30) then
+       gret(iel) = 0.85
+     else
+       gret(iel) = line(clay, 0.0, 0.7, 0.30, 0.85)
+     endif
+
+The line function returns the following value:
+     line = (y2 - y1) / (x2 - x1) * (x - x2) + y2
+     Where:
+       x  = clay
+       x1 = 0.0
+       y1 = 0.7
+       x2 = 0.30
+       y2 = 0.85
+
+==============================================================================
+pH effect on decomposition:
+
+A pH effect multiplier has been added to the decomposition equations.  There
+are three equations used to simulate bacterial, fungi, and combination pH
+effects on decomposition flows as follows:
+     SOM1C(1)  - combination
+     SOM1C(2)  - bacterial
+     SOM2C     - fungi
+     SOM3C     - fungi
+     METABC(1) - bacterial
+     METABC(2) - bacterial
+     STRUCC(1) - combination
+     STRUCC(2) - combination
+     WOOD1C    - combination
+     WOOD2C    - combination
+     WOOD3C    - combination
+
+The user also has the ability to simulate a shift in soil pH content if
+desired.  This is implemented with a change in the schedule file.  If the
+value for PHSYS as read from the schedule file is greater than 0 then the next
+line in the schedule file contains the start year for the pH shift to begin.
+The optional multiplier on pH can be used to scale the amount of pH in the
+soil, for example to simulate liming experiments.  The phscale.dat file
+contains the pH scalars.  The file is organized in 13 columns.  Column 1 is
+the year.  Columns 2 - 13 contain the pH scalars.  A value of 1.0 used for a
+scalar will have no effect on the amount of pH.  A value of less that 1.0 used
+for a scalar will reduce the pH.  A value of greater than 1.0 used for the
+scalar will increase the pH.  All of the scalars are applied against the pH
+value as read from the site file.  A value of less than 0.0 in the phscale.dat
+file is invalid and the model will use the value of 1.0 for the scalar in this
+case, in effect eliminating any shift in pH.  If the pH shift is not being
+modeled a value of 0 should be read in for the PHSYS variable.
+
+==============================================================================
+Potential production calculation change:
+
+Potential production is now taking into account the photo period effect on
+growth.  In the fall, when the day length is decreasing, growth will slow
+down.  The definitions for PRDX(1), CROP.100, and PRDX(2), TREE.100, have been
+changed.  These parameters now represent the coefficient used when calculating
+the potential production as a function of solar radiation outside of the
+atmosphere.
+
+Potential grass/crop production is now being computed in the same manner as
+potential forest production using an estimate for total production rather than
+estimating potential aboveground production only.  The allocation of
+aboveground to belowground production for the grass/crop is now based on the
+fraction of root carbon rather than the root to shoot ratio.
+
+We recommend using a value of 0.5 for PRDX(1) and PRDX(2).
+
+==============================================================================
+Automatic fertilization:
+
+Automatic fertilization was not working correctly in earlier versions of
+Century.  Alister Metherell's modifications for the implementing the automatic
+fertilization option were added to DayCent 4.5.
+
+==============================================================================
+Irrigation change:
+
+Irrigation will be allowed to occur even on days when the temperature is
+below freezing.  This change was made to allow an irrigated system to reach
+anerobic conditions even if the temperature is low.
+
+==============================================================================
+Implementation of a water table:
+
+DayCent can be parameterized to simulate a water table.  When simulating a
+water table soil water in the deep storage will not drain out of the profile.
+This soil water will be permitted have an upward flow (evaporation) in the
+soil profile.  To parameterize for a water table set the watertable variable
+in the sitepar.in file to 1 for months in which a water table should be
+maintained by the model.  It will also be necessary to set parameter
+values for hpotdeep, hydraulic water potential of deep storage layer (for
+maximum upward flow potential set this variable to 0.0), and ksatdeep,
+saturated hydraulic conductivity of deep storage layer, in the sitepar.in
+file.  DayCent will not attempt to maintain a water balance when simulating a
+water table.
+
+==============================================================================
+Changes in snow routines:
+
+Previous versions of DayCent used hard coded parameter values for the snow
+melt equation.  This has been changed so that the TMELT(*) parameters from the
+fix.100 file are now being used in the snow melt equation.
+
+The snow submodel has been modified so that order of events for snow has been
+changed from accumulate, melt, sublimate to accumulate, sublimate, melt.
+
+We have also added a solar radiation effect to the snow melt equation.  This
+will require you to modify the value of TMELT(2) in your FIX.100 file from the
+value used by earlier versions of the model.  We recommend using a default
+value of 0.002 for this parameter.
+
+==============================================================================
+Runoff:
+
+Since runoff calculations have been added to the model the storm flow is no
+longer being calculated.  Runoff occurs when the water available for input
+into the soil, from precipitation and/or snow melt, can not be infilitrated
+into the soil due to impedence (from frozen soil layers) or the volume of
+water is large enought that it cannot drain into the soil in the amount of
+time alloted (hours_rain parameter in the sitepar.in file).  Due to this
+change the STORMF variable in the <site>.100 file in no longer being used and
+should be set to a value of 0.0.  The STREAM(1) output variable represents
+baseflow + runoff.
+
+==============================================================================
+Dynamic value for NLAYPG:
+
+The amount of soil water and mineral N, P, and S that is available for plant
+growth is now based on a dynamic NLAYPG value.  Each crop and tree option will
+have a specific NLAYPG value assigned to them in the CROP.100 (CLAYPG) and
+TREE.100 (TLAYPG) files.  Any time a crop and/or tree option is changed the
+value for NLAYPG will be recomputed.  In a grassland system the value for
+NLAYPG will be based on the CLAYPG value read for the current crop option from
+the CROP.100 file.  In a forest system the value for NLAYPG will be based on
+the TLAYPG value read for the current tree option from the TREE.100 file.  In
+a savanna system the value for NLAYPG will be weighted based on the crop/grass
+LAI, tree LAI, and the CLAYPG and TLAYPG values.
+
+The new NLAYPG value is also used for computing soil transpiration.  Soil
+transpiration will occur from the top NLAPYG layers in the soil profile rather
+than from the full soil profile.
+
+The NLAYPG value from the <site>.100 file is no longer being used.
+
+==============================================================================
+User specified temperatures for leaf out and leaf drop in deciduous trees:
+
+There have been two additional variables added to the TREE.100 file to allow
+the user to specify the temperature values for controlling leaf out, TMPLFS,
+and leaf drop, TMPLFF, for the specified tree.  These temperature values are
+in degrees C.
+
+==============================================================================
+Change in PET calculation:
+
+The PET calculation is now taking into account solar radition outside of the
+atmosphere and an approximated cloud cover based on temperature range.  As a
+result of this change the FWLOSS(4) parameter in the FIX.100 file needs to be
+rescaled.  A default value of 0.8 is now recommended for this parameter.
+
+==============================================================================
+Fractional volume of rock used to modify field capacity and wilting point:
+
+The ROCK parameter has been added to the <site>.100 file and will be used for
+modifying the AFIEL(*) and AWILT(*) values when SWFLAG is not equal to 0.  Set
+this parameter value to 0.0 to run a simulation with no rock effect on field
+capacity and wilting point values.
+
+==============================================================================
+Weekly scheduling:
+
+The scheduling of events is now being done using year and day of the year
+rather than year and month.  This means that events can be scheduled to occur
+in the simulation within the specific simulation week that the contains day of
+the year for the event.
+
+Fertilization addition is an exception to this rule, fertilizer will be
+applied on the day which the event is scheduled in the schedule file.
+
+The calendar used for scheduling the events is for a non-leap year.
+
+In the new weekly scheduling scheme the following events will have effects
+that will continue over a 1 month period:
+     CULT - the multipliers for increased decomposition will be used for one
+            month
+     EROD - enter the per week amount of erosion, this erosion loss will
+            continue over a one month period
+     GRAZ - grazing events will continue for a month and restrictions on
+            production due to grazing will be effect for one month
+     IRRI - the amount of specified irrigation will be applied weekly over a 1
+            month period, the amount of irrigation that will be applied during
+            a given week will depend on the fraction of the month that the
+            simulation week represents
+     SENM - no growth will occur in the one month period that follows the
+            scheduled senescence event
+If more than one of these events is scheduled within a one month period the
+original unexpired event will be replaced by the new event and the new event's
+effects will linger as described above.
+
+NOTE:  When DayCent reads the scheduling information from the schedule file it
+       is assuming non-leap years.  This can cause a problem when events are
+       scheduled for the first day of the month for months following February.
+       For example, events scheduled for days 182, 213, and 244, the first day
+       of July (month 7), August (month 8) and September (month 9)
+       respectively in a non-leap year, will occur in the last week of June
+       (month 6), July (month 7), and August (month 8) respectively in a leap
+       year.  However, since we are assuming non-leap years when creating the
+       schedule of events, day 182 is scheduled as occurring in July (month
+       7), day 213 is scheduled as occurring in August (month 8), and day 244
+       is scheduled as occurring in September (month 9) by the model when
+       reading the schedule file.  This causes a problem in the leap year
+       because the event scheduled for day 182 is scheduled for month 7 but in
+       the leap year day 182 occurs in month 6.  Since we never meet the
+       condition of day 182 occurring in month 6 in the leap year the event
+       scheduled for this day does not occur in the leap year.  To prevent
+       this type of problem from occurring schedule your events for the second
+       day of the month for months following February, 183, 214, or 245 in the
+       example above.  This day will occur in the first week of the month in
+       both a leap year and a non-leap year.
+
+       Although events can be scheduled weekly, when creating a schedule file
+       for use by the DayCent model please keep in mind that the schedule file
+       is still being read monthly.  This means that if you create a
+       scheduling with more than one option for a specific event type (CULT,
+       HARV, etc.) within a given month only one event of each type will be
+       used per month.  In a case where you have two, or more, events of the
+       same type scheduled to occur within the same month as the schedule file
+       is read any subsequent events for the month will overwrite any
+       preceding event of the same type for the month and only the last event
+       of that type will occur in the simulation.
+
+==============================================================================
+Soil warming experiments can now be simulated:
+
+The soil surface temperature warming option allows the user to simulate
+experiments where the soil surface temperature is warmed without an increase
+in the minimum and maximum air temperature values.  The soil surface warming
+option is implemented in the same manner the CO2 effect and the pH shift
+effect options.  If the value for stsys as read from the schedule file header
+is greater than 0 then the next line in the schedule file header contains the
+start year for the soil surface warming and the following line contains the
+amount to warm the soil surface temperature in degrees C.
+
+==============================================================================
+Implementation of a growing degree day submodel:
+
+If desired, plant growth can be set to occur using a growing degree day
+submodel.  When using the growing degree day submodel the start and end of
+plant growth will be triggered based on phenology (soil surface temperature,
+air temperature, and thermal units) rather than hard wired to occur at a
+specific time by the schedule file.
+
+The following parameters in the crop.100 file control the growing degree day
+submodel implementation:
+     FRTCINDX - plant growth type
+                     0 - use Great Plains equation to compute root to shoot
+                         ratio (fixed carbon allocation based on rainfall)
+                     1 - perennial plant (i.e., grass, dynamic carbon
+                         allocation)
+                     2 - annual plant (i.e., crop, dynamic carbon allocation)
+                     3 - perennial plant, growing degree day implementation,
+                         dynamic carbon allocation
+                     4 - non-grain filling annual plant, growing degree day
+                         implementation, dynamic carbon allocation
+                     5 - grain filling annual plant, growing degree day
+                         implementation, dynamic carbon allocation
+                     6 - grain filling annual plant that requires a
+                         vernalization period (i.e. winter wheat), growing
+                         degree day implementation, dynamic carbon allocation
+     TMPGERM  - germination temperature for the growing degree day submodel,
+                will cause a FRST event when FRTCINDX = 3 or a PLTM event when
+                FRTCINDX = 4, 5, or 6 (degrees C)
+     DDBASE   - number of degree days required to trigger a senescence (SENM)
+                event for a perennial (FRTCINDX = 3), maturity and harvest
+                (HARV) for a non-grain filling annual (FRTCINDX = 4), or to
+                reach anthesis (flowering) for a grain filling annual
+                (FRTCINDX = 5 or 6)
+     TMPKILL  - temperature at which growth will stop when using the growing
+                degree day submodel, will cause a SENM and LAST event when
+                FRTCINDX = 3 or a HARV and LAST event if FRTCINDX = 4, 5, or
+                6, if the required number of thermal units have not been
+                accumulated prior to trigger a SENM or a HARV event
+                (degrees C)
+     BASETEMP - base temperature for crop growth, growing degree days will
+                accumulate only on days when the average temperature is
+                greater than the base temperature for the crop (degrees C)
+     MNDDHRV  - minimum number of degree days from anthesis (flowering) to
+                harvest for grain filling annuals (FRTCINDX = 5 or 6)
+     MXDDHRV  - maximum number of degree days from anthesis (flowering) to
+                harvest for grain filling annuals (FRTCINDX = 5 or 6)
+
+If FRTCINDX is set to 0, 1, or 2 plant growth will be controlled by the FRST,
+HARV, LAST, and SENM events as defined in the schedule file.
+
+When simulating plant growth using the growing degree day submodel it will
+still be necessary to include FRST/PLTM, SENM/HARV events in your schedule
+file, however, the timing of these events will occur based on phenology.
+
+If FRTCINDX is set to 3 (perennial grass - growing degree day submodel) a FRST
+will occur if the surface temperature is greater than or equal to TMPGERM for
+the current crop option and a FRST event was scheduled prior to the end of
+the current simulation week.  A SENM event will occur in one of two cases:
+  1) if the number of thermal units that have accumulated since the FRST event
+     are greater than or equal to DDBASE for the current crop option and a
+     SENM event was scheduled prior to the end of the current simulation week
+or
+  2) if the minimum temperature for any day in the current simulation time
+     step is less than or equal to TMPKILL for the current crop option and a
+     SENM event was scheduled prior to the end of the current simulation week.
+If a FRST does not occur in a given simulation year then a SENM will not occur
+in that simulation year.
+
+If FRTCINDX is set to 4, 5, or 6 (annual crop - growing degree day submodel) a
+PLTM will occur if the surface temperature is greater than or equal to TMPGERM
+for the current crop option and a PLTM event was scheduled prior to the end of
+the current simulation week.  A HARV event will occur in one of two cases:
+  1) for crop type 4 if the number of thermal units that have accumulated
+     since the PLTM event are greater than or equal to DDBASE for the current
+     crop option and a HARV event was scheduled prior to the end of the
+     current simulation week, for crop types 5 or 6 if the number of thermal
+     units that have accumulated since the PLTM event are greater than or
+     equal DDBASE+MXDDHRV for the current crop option and a HARV event was
+     scheduled to occur prior to the end of the current simulation week or if
+     the crop has reached anthesis (DDBASE) and drought stress occurs and a
+     HARV event was scheduled to occur prior to the end of the current
+     simulation week
+or
+  2) if the minimum temperature for any day in the current simulation time
+     step is less than or equal to TMPKILL for the current crop option and a
+     HARV event was scheduled prior to the end of the current simulation week.
+If a PLTM does not occur in a given simulation year then a HARV will not occur
+in that simulation year.
+
+The triggering of a SENM/HARV event due to a killing frost (minimum
+temperature <= TMPKILL) will not occur until at least 1/2 of the thermal units
+for the current crop have been accumulated based on the DDBASE parameter
+value for the current crop.
+
+When simulating an annual crop that requires a vernalization period
+(FRTCINCX = 6) the degree day accumulator will not start accumulating until
+the simulation has passed through the vernalization period.  This will occur
+when the number of hours in the day is increasing (end of December in the
+northern hemisphere or end of June in the southern hemisphere).
+
+Note:  When using the growing degree day submodel a SENM or HARV event will
+automatically trigger a LAST event, therefore a LAST event should not be
+included when creating a schedule file for a plant that will be grown using
+the growing degree implementation.
+
+==============================================================================
+Added ability to simulate reduction factor on nitrification when fertilizing:
+
+A new parameter, NINHIB, added to the FERT.100 file represents a reduction
+factor on nitrification rates due to nitrification inhibitors added to the
+site with the fertilizer.  This parameter value is used as a multiplier in the
+calculation of the nitrification rate.  A value of 1.0 for this parameter will
+have no effect on the nitrification rate.  The reduction in nitrification rate
+will linger for one month after the fertilizer application.
+
+==============================================================================
+Added ability to simulate a lag in drainage of soil profile after a rain
+event for sites with poorly drained soils:
+
+A drainlag parameter was added to the sitepar.in file (see below) to allow the
+user to set number of days between a rainfall, snowmelt, or irrigation event
+and the drainage of soil profile.  Use a value of 0 for this parameter to
+allow drainage of the soil profile to occur on the day that the rainfall,
+snowmelt, or irrigation event occurs as in earlier versions of the DayCent
+model.  When entering a value of -1 for this parameter the number of days
+between the rainfall, snowmelt, or irrigation event will be computed based
+on the soil texture in the soils.in file.  The maximum number of days between
+water addition and drainage of the soil is constrained to <= 5 to prevent
+numerical instabilities in the water flux subroutine.
+
+==============================================================================
+Added ability to turn off the respiration restraint on denitrification:
+
+The start day of the year and end day of the year added to the sitepar.in file
+(see below) allow the user to turn off the respiration restraint on
+denitrification during the days off the year the fall between the given days.
+
+==============================================================================
+The VOLPL and VOLPLA output variables now include the N that is volatilized
+from excreted animal waste:
+
+In the grazing subroutine we are now calculating the amount of N that is
+volatilized from excreted faeces and urine.  This volatilized N is added to
+the VOLPL and VOLPLA output variables.
+
+==============================================================================
+Separate decomposition rates used for surface and soil pools:
+
+When using the relative water content option, IDEF = 1 in the FIX.100 file,
+the model will compute separate values for surface and soil decomposition
+rates.
+
+The water content in the top soil layer will be used for computing
+decomposition for the surface pools; METABC(1), STRUCC(1), SOM1C(1), WOOD1C,
+and WOOD2C.
+
+A weighted average of the water content in the 2nd, 3rd, and 4th soil layers
+will used for computing decomposition for the soil pools; METABC(2),
+STRUCC(2), SOM1C(2), SOM2C, SOM3C, and WOOD3C.  In addition this soil
+decomposition rate will be used in the growth and phosphorous weathering
+calculations.
+
+==============================================================================
+Added an option to allow the use of scalars on the N inputs:
+
+The optional multiplier on N inputs can be used to scale the amount of
+fertilizer added through FERT events, the amount of atmospheric N deposition,
+or both.  The optional N scalar option is implemented in the same manner as
+the CO2 effect, the pH shift effect, and the soil surface warming options.
+If the value for Nstart as read from the schedule file header is greater than
+0 then the next line in the schedule file header contains the start year for
+the use of the N input scalars.  Valid N input scalar options are as follows:
+     0 - No scalars used
+     1 - Use scalars on FERT options only
+     2 - Use scalars on atmospheric N deposition only
+     3 - Use scalars on both FERT options and atmospheric N deposition
+
+The nscale.dat file contains the N input scalars.  The file is organized in 13
+columns.  Column 1 is the year.  Columns 2 - 13 contain the N input scalars.
+A value of 1.0 used for a scalar will have no effect on the amount of N input.
+A value of less that 1.0 used for a scalar will reduce the N input amount.  A
+value of greater than 1.0 used for the scalar will increase the N input
+amount.  A value of less than 0.0 in the nscale.dat file is invalid and the
+model will use the value of 0.0 for the scalar in this case, in effect
+eliminating the N inputs.
+
+==============================================================================
+Added an option to allow the use of scalars on the OMAD inputs:
+
+The optional multiplier on OMAD inputs can be used to scale the amount of
+organic matter added through OMAD events.  The optional OMAD scalar option is
+implemented in the same manner as the CO2 effect, the pH shift effect, and the
+soil surface warming options.  If the value for OMADstart as read from the
+schedule file header is greater than 0 then the next line in the schedule file
+header contains the start year for the use of the OMAD scalars.  Valid OMAD
+input scalar options are as follows:
+     0 - No scalars used
+     1 - Use scalars on OMAD options
+
+The omadscale.dat file contains the OMAD scalars.  The file is organized in 13
+columns.  Column 1 is the year.  Columns 2 - 13 contain the OMAD scalars.  A
+value of 1.0 used for a scalar will have no effect on the amount of organic
+matter input.  A value of less that 1.0 used for a scalar will reduce the
+organic matter input amount.  A value of greater than 1.0 used for the scalar
+will increase the organic matter input amount.  A value of less than 0.0 in
+the omadscale.dat file is invalid and the model will use a value of 0.0 for
+the scalar in this case, in effect eliminating the OMAD inputs.
+
+==============================================================================
+Changes made to decomposition subroutine:
+
+When running simulations for the dry CPR site it was discovered that the soil
+and surface litter decay was occurring too fast.  To address this problem
+we changed the decomposition calculations to use relative water content as
+relative water content is texture independent and the same curve can work for
+multiple soil types.
+
+==============================================================================
+Fix for evaporation calculations:
+
+When calculating evaporation if the top soil layer was too dry to allow
+evaporation the water for the evaporation was being pulled from the bottom-
+most layers in the soil profile.  Changes were made so that evaporation will
+come from the second soil layer only when the top soil layer gets too dry.
+
+==============================================================================
+Add pulse multipliers to the computation for water effect on decomposition:
+
+These multipliers work in the same manner as the pulse multipliers that are
+used to increase of NO due to moisture and rain.  For the decomposition
+calculations the pulse multiplier is used to enhance soil decomposition
+following drying and re-wetting of the soil.
+
+==============================================================================
+Fraction of fertilzer that is NH4 and NO3 added to FERT.100 file:
+
+Each fertilizer option in the FERT.100 file now has the fraction of NH4 and
+NO3 in the fertilzer defined.  Two new parameters, FRAC_NH4 and FRAC_NH3,
+represent the fraction of NH4 (ammonium) and fraction of NH3 (nitrate) in the
+fertilzer respectively.  The fraction of N fertilizer that is ammonimum and
+the fraction of N fertilizer that is nitrate values should sum to 1.0.
+
+==============================================================================
+==============================================================================
+New output variables in the *.bin output file:
+
+AAGDEFAC     - average annual value of AGDEFAC, the decomposition factor which
+               combines the effects of temperature and moisture for the
+               surface decomposition (replaces ADEFAC)
+
+ABGDEFAC     - average annual value of BGDEFAC, the decomposition factor which
+               combines the effects of temperature and moisture for the
+               soil decomposition (replaces ADEFAC)
+
+AGCMTH(12)   - aboveground C production for the grass/crop for the current
+               month, 1-12 (gC/m2)
+
+AGCPRD       - aboveground C production for the grass/crop over the last
+               completed growing season (gC/m2/y)
+
+AGDEFAC      - decomposition factor based on temperature and moisture for
+               surface decomposition (replaces DEFAC)
+
+ANNET        - annual evapotranspiration (cm)
+
+BGCMTH(12)   - belowground C production for the grass/crop for the current
+               month, 1-12 (gC/m2)
+
+BGCPRD       - belowground C production for the grass/crop over the last
+               completed growing season (gC/m2/y)
+
+BGDEFAC      - decomposition factor based on temperature and moisture for
+               soil decomposition (replaces DEFAC)
+
+CMRSPFLUX(1) - monthly maintenance respiration flux from aboveground
+               grass/crop material that flows from the grass/crop maintenance
+               respiration storage pool (MRSPSTG(1,*)) to the C source/sink
+               pool (CSRSNK) (gC/m2)
+
+CMRSPFLUX(2) - monthly maintenance respiration flux from belowground
+               grass/crop material that flows from the grass/crop maintenance
+               respiration storage pool (MRSPSTG(1,*)) to the C source/sink
+               pool (CSRSNK) (gC/m2)
+
+CRTPRD       - coarse root component C production for the forest system over
+               the last completed growing season (gC/m2/y)
+
+EUPPRD(3)    - E uptake by grass, crop, or tree over the last completed
+               growing season (g/m2/y)
+                    (1) = N     (2) = P     (3) = S
+
+FBRPRD       - fine branch component C production for the forest system over
+               the last completed growing season (gC/m2/y)
+
+FCMTH(12)    - forest system C production for the grass/crop for the current
+               month, 1-12 (gC/m2)
+
+FCPRD        - forest system C production over the last completed growing
+               season (gC/m2/y)
+
+FERTAC(1)    - annual accumulator for N fertilizer (gN/m2)
+
+FERTAC(2)    - annual accumulator for P fertilizer (gP/m2)
+
+FERTAC(3)    - annual accumulator for S fertilizer (gS/m2)
+
+FMRSPFLUX(1) - monthly maintenance respiration flux from live leaf material
+               that flows from the tree maintenance respiration storage pool
+               (MRSPSTG(2,*)) to the C source/sink pool (CSRSNK) (gC/m2)
+
+FMRSPFLUX(2) - monthly maintenance respiration flux from live fine root
+               material that flows from the tree maintenance respiration
+               storage pool (MRSPSTG(2,*)) to the C source/sink pool (CSRSNK)
+               (gC/m2)
+
+FMRSPFLUX(3) - monthly maintenance respiration flux from live fine branch
+               material that flows from the tree maintenance respiration
+               storage pool (MRSPSTG(2,*)) to the C source/sink pool (CSRSNK)
+               (gC/m2)
+
+FMRSPFLUX(4) - monthly maintenance respiration flux from live large wood
+               material that flows from the tree maintenance respiration
+               storage pool (MRSPSTG(2,*)) to the C source/sink pool (CSRSNK)
+               (gC/m2)
+
+FMRSPFLUX(5) - monthly maintenance respiration flux from live coarse root
+               material that flows from the tree maintenance respiration
+               storage pool (MRSPSTG(2,*)) to the C source/sink pool (CSRSNK)
+               (gC/m2)
+
+FRTPRD       - fine root component C production for the forest system over
+               the last completed growing season (gC/m2/y)
+
+MRSPANN(1)   - total annual maintenance respiration for grass/crop system
+               (gC/m2/year)
+
+MRSPANN(2)   - total annual maintenance respiration for forest system
+               (gC/m2/year)
+
+MRSPFLOW(1)  - maintenance respiration flow to storage pool from grass/crop
+               system (gC/m2)
+
+MRSPFLOW(2)  - maintenance respiration flow to storage pool from forest system
+               (gC/m2)
+
+MRSPSTG(1,1) - unlabeled C in maintenance respiration storage for grass/crop
+               system (gC/m2)
+
+MRSPSTG(1,2) - labeled C in maintenance respiration storage for grass/crop
+               system (gC/m2)
+
+MRSPSTG(2,1) - unlabeled C in maintenance respiration storage for forest
+               system (gC/m2)
+
+MRSPSTG(2,2) - labeled C in maintenance respiration storage for forest system
+               (gC/m2)
+
+OMADAC       - annual accumulator of C added to system through organic matter
+               addition events (gC/m2)
+
+OMADAE(1)    - annual accumulator of N added to system through organic matter
+               addition events (gN/m2)
+
+OMADAE(1)    - annual accumulator of P added to system through organic matter
+               addition events (gP/m2)
+
+OMADAE(1)    - annual accumulator of S added to system through organic matter
+               addition events (gS/m2)
+
+RLVPRD       - leaf component C production for the forest system over the last
+               completed growing season (gC/m2/y)
+
+RLWPRD       - large wood component C production for the forest system over
+               the last completed growing season (gC/m2/y)
+
+RUNOFF       - monthly runoff (cm H2O/month)
+
+STRMAC(1)    - annual accumulator for cm H2O of stream flow (base flow + storm
+               flow)
+
+STRMAC(2)    - annual accumulator for N from mineral leaching of stream flow
+               (base flow + storm flow) (g/m2)
+
+STRMAC(3)    - annual accumulator for P from mineral leaching of stream flow
+               (base flow + storm flow) (g/m2)
+
+STRMAC(4)    - annual accumulator for S from mineral leaching of stream flow
+               (base flow + storm flow) (g/m2)
+
+STRMAC(5)    - annual accumulator for C from organic leaching of stream flow
+               (base flow + storm flow) (g/m2)
+
+STRMAC(6)    - annual accumulator for N from organic leaching of stream flow
+               (base flow + storm flow) (g/m2)
+
+STRMAC(7)    - annual accumulator for P from organic leaching of stream flow
+               (base flow + storm flow) (g/m2)
+
+STRMAC(8)    - annual accumulator for S from organic leaching of stream flow
+               (base flow + storm flow) (g/m2)
+
+TGZRTE(1)    - total N returned in faeces and urine from a grazing event
+               (g/m2)
+
+TGZRTE(2)    - total P returned in faeces and urine from a grazing event
+               (g/m2)
+
+TGZRTE(3)    - total S returned in faeces and urine from a grazing event
+               (g/m2)
+
+TOTSYSC      - total system C (AGLIVC + BGLIVC + STDEDC + STRUCC(1) +
+               STRUCC(2) + METABC(1) + METABC(2) + RLEAVC + FROOTC +
+               FBRCHC + RLWODC + CROOTC + WOOD1C + WOOD2C + WOOD3C +
+               SOM1C(1) + SOM1C(2) + SOM2C + SOM3C) (g/m2)
+
+TOTSYSE(1)   - total N in system (AGLIVE(1) + BGLIVE(1) + STDEDE(1) +
+               STRUCE(1,1) + STRUCE(2,1) + METABE(1,1) + METABE(2,1) +
+               RLEAVE(1) + FROOTE(1) + FBRCHE(1) + RLWODE(1) + CROOTE(1) +
+               WOOD1E(1) + WOOD2E(1) + WOOD3E(1) + SOM1E(1,1) + SOM1E(2,1) +
+               SOM2E(1) + SOM3E(1) (g/m2)
+
+TOTSYSE(2)   - total P in system (AGLIVE(2) + BGLIVE(2) + STDEDE(2) +
+               STRUCE(1,2) + STRUCE(2,2) + METABE(1,2) + METABE(2,2) +
+               RLEAVE(2) + FROOTE(2) + FBRCHE(2) + RLWODE(2) + CROOTE(2) +
+               WOOD1E(2) + WOOD2E(2) + WOOD3E(2) + SOM1E(1,2) + SOM1E(2,2) +
+               SOM2E(2) + SOM3E(2) (g/m2)
+
+TOTSYSE(3)   - total S in system (AGLIVE(3) + BGLIVE(3) + STDEDE(3) +
+               STRUCE(1,3) + STRUCE(2,3) + METABE(1,3) + METABE(2,3) +
+               RLEAVE(3) + FROOTE(3) + FBRCHE(3) + RLWODE(3) + CROOTE(3) +
+               WOOD1E(3) + WOOD2E(3) + WOOD3E(3) + SOM1E(1,3) + SOM1E(2,3) +
+               SOM2E(3) + SOM3E(3) (g/m2)
+
+VOLEAC       - annual accumulator for N volatilization as a function of N
+               remaining after uptake by grass, crop, or tree (g/m2)
+
+VOLGAC       - annual accumulator for N volatilized as a function of gross
+               mineralization (g/m2)
+
+VOLPAC       - annual accumulator for N volatilized from plant at harvest,
+               senescence, and/or from grazing removal for grass/crop (g/m2)
+
+WD1C2(2)     - dead fine branch respiration (g/m2/mo)
+                    (1) = unlabeled     (2) = labeled
+
+WD2C2(2)     - dead large wood respiration (g/m2/mo)
+                    (1) = unlabeled     (2) = labeled
+
+WD3C2(2)     - dead coarse roots respiration (g/m2/mo)
+                    (1) = unlabeled     (2) = labeled
+
+NOTE:  The growing season accumulator values for carbon production (ACRCIS(*),
+AFBCIS(*), AFRCIS(*), AGCACC, AGCISA(*), ALVCIS(*), ALWCIS(*), BGCACC,
+BGCISA(*), CRTACC, FBRACC, FCACC, FRTACC, PTAGC, PTBGC, RLVACC, RLWACC) and
+the growing season accumulator values for E uptake (EUPACC(*), EUPAGA(*),
+EUPBGA(*), and EUPPRT(*,*)) output for the simulation were being reset to 0.0
+at the start of the growing season, when a FRST, PLTM, or TFST event occurred.
+These production output variables would seem to indicate that production was
+still occurring because the output variables were not set back to zero at the
+end of a growing season and would retain a constant value until the next FRST,
+PLTM or TFST event occurred.  These accumulators are now being reset to 0.0 at
+the end of the simulation timestep in which a LAST or TLST event occurs, after
+the output for the timestep has been saved to the output file.
+Old way:
+     Accumulators initialized to 0.0 at start of run
+     Accumulators reset to 0.0 on FRST, PLTM, or TFST and begin accumulation
+New way:
+     Accumulators initialized to 0.0 at start of run
+     Accumulators begin accumulation on FRST, PLTM, or TFST
+     Accumulators reset to 0.0 on LAST or TLST after output written to file
+
+The new growing season production variables, AGCPRD, BGCPRD, CRTPRD,
+EUPPRD(*), FBRPRD, FCPRD, FRTPRD, RLVPRD, and RLWPRD, are set equal to the
+value of their associated accumulator value when a LAST or TLST occurs.  These
+values can be used when examining yearly output to see the amount of
+production that occurred over the previously completed growing season.  These
+growing season production variables will be set back to zero in January if no
+production has occurred over the previous 12 month period.
+
+==============================================================================
+==============================================================================
+Parameter file changes:
+
+Century version 4.0 CROP.100, FERT.100, FIRE.100, FIX.100, TREE.100, and
+<site>.100 parameter files must be modified to work DayCent 4.5.  Century
+version 4.0 schedule files must also be modified to work with DayCent 4.5.  A
+conversion utility, daycent_convert100.exe, has been provided to automate
+these file modifications using default values for the modified parameters.
+
+------------------------------------------------------------------------------
+CROP.100:
+
+The CROP.100 file used by DayCent version 4.5 has 18 additional parameters:
+     FRTCINDX    - plant growth type
+                     0 - use Great Plains equation to compute root to shoot
+                         ratio (fixed carbon allocation based on rainfall)
+                     1 - perennial plant (i.e., grass, dynamic carbon
+                         allocation)
+                     2 - annual plant (i.e., crop, dynamic carbon allocation)
+                     3 - perennial plant, growing degree day implementation,
+                         dynamic carbon allocation
+                     4 - non-grain filling annual plant, growing degree day
+                         implementation, dynamic carbon allocation
+                     5 - grain filling annual plant, growing degree day
+                         implementation, dynamic carbon allocation
+                     6 - grain filling annual plant that requires a
+                         vernalization period (i.e. winter wheat), growing
+                         degree day implementation, dynamic carbon allocation
+     FRTC(4)     - maximum increase in the fraction of C going to the roots
+                   due to water stress, used when FRTCINDX = 2, 4, 5, or 6
+     FRTC(5)     - maximum increase in the fraction of C going to the roots
+                   due to nutrient stress, used when FRTCINDX = 2, 4, 5, or 6
+     CFRTCN(1)   - maximum fraction of C allocated to roots under maximum
+                   nutrient stress, used when FRTCINDX = 1 or 3
+     CFRTCN(2)   - minimum fraction of C allocated to roots with no nutrient
+                   stress, used when FRTCINDX = 1 or 3
+     CFRTCW(1)   - maximum fraction of C allocated to roots under maximum
+                   water stress, used when FRTCINDX = 1 or 3
+     CFRTCW(2)   - minimum fraction of C allocated to roots with no water
+                   stress, used when FRTCINDX = 1 or 3
+     KMRSP(1)    - the fraction of net primary production that goes to the
+                   carbohydrate storage pool for crops
+     CKMRSPMX(1) - maximum fraction of aboveground live C that goes to
+                   maintenance respiration for crops
+     CKMRSPMX(2) - maximum fraction of belowground live C that goes to
+                   maintenance respiration for crops
+     NO3PREF(1)  - fraction of N update that is NO3 for crops, currently not
+                   being used
+     CLAYPG      - number of soil layers used to determine water and mineral
+                   N, P, and S that are available for grass/crop growth
+     TMPGERM     - germination temperature for the growing degree day
+                   submodel, will cause a FRST event when FRTCINDX = 3 or a
+                   PLTM event when FRTCINDX = 4 or 5 (degrees C)
+     DDBASE      - number of degree days required to trigger a senescence
+                   (SENM) event for a perennial (FRTCINDX = 3), maturity and
+                   harvest (HARV) for a non-grain filling annual
+                   (FRTCINDX = 4), or to reach anthesis (flowering) for a
+                   grain filling annual (FRTCINDX = 5 or 6)
+     TMPKILL     - temperature at which growth will stop when using the
+                   growing degree day submodel, will cause a SENM and LAST
+                   event when FRTCINDX = 3 or a HARV and LAST event if
+                   FRTCINDX = 4, 5, or 6, if the required number of thermal
+                   units have not been accumulated prior to trigger a SENM or
+                   a HARV event (degrees C)
+     BASETEMP    - base temperature for crop growth, growing degree days will
+                   accumulate only on days when the average temperature is
+                   greater than the base temperature for the crop (degrees C)
+     MNDDHRV     - minimum number of degree days from anthesis (flowering) to
+                   harvest for grain filling annuals (FRTCINDX = 5 or 6)
+     MXDDHRV     - maximum number of degree days from anthesis (flowering) to
+                   harvest for grain filling annuals (FRTCINDX = 5 or 6)
+
+For reference, here are the definitions for the other FRTC(*) parameters which
+are also used in the new dynamic carbon allocation routines:
+     FRTC(1) - fraction of C allocated to roots at planting, with no water or
+               nutrient stress, used when FRTCINDX = 2, 4, 5, or 6
+     FRTC(2) - fraction of C allocated to roots at time FRTC(3), with no
+               water or nutrient stress, used when FRTCINDX = 2, 4, 5, or 6
+     FRTC(3) - time after planting (months with soil temperature greater than
+               RTDTMP) at which the FRTC(2) value is reached, used when
+               FRTCINDX = 2, 4, 5, or 6
+
+The FRTCINDX, FRTC(*), CFRTCN(*), and CFRTCW(*) parameters are used in the new
+dynamic carbon allocation routines.  FRTCINDX is inserted into the crop
+parameterization preceding the FRTC(1) parameter.  The FRTC(4), FRTC(5),
+CFRTCN(1), CFRTCN(2), CFRTCW(1), and CFRTCW(2) parameters follow the FRTC(3)
+parameter.
+
+When converting from an existing Century/DayCent 4.0 CROP.100 file format to a
+DayCent 4.5 CROP.100 file format the following rules will be used to set
+default values for these parameters.
+1.  If FRTC(1) = 0.0 in the Century/DayCent 4.0 crop parameterization assume
+    this is a parameterization that should be set to use the Great Plains
+    equation.
+    Set FRTCINDX to 0.
+2.  If FRTC(1) != to 0.0 in the Century 4.0 crop parameterization then we
+    cannot make an assumption about what this parameterization represents.
+    The user will be prompted to enter a 1 for a perennial plant, a 2 for an
+    annual plant, a 3 for an annual grass using the growing degree day
+    submodel, or a 4 for an annual crop using the growing degree day submodel
+    to set the FRTCINDX value. 
+In all cases FRTC(1), FRTC(2) and FRTC(3) will retain their original Century
+4.0 values.  FRTC(4) will be set to 0.2, FRTC(5) will be set to 0.1, CFRTCN(1)
+will be set to 0.4, CFRTCN(2) will be set to 0.25, CFRTCW(1) will be set to
+the original Century 4.0 FRTC(1) value, and CFRTCW(2) will be set to the
+original Century 4.0 FRTC(2) value.
+
+The KMRSP(1), CKMRSPMX(1), and CKMRSPMX(2) parameters are used in the new
+maintenance respiration routines.  These parameters are give the following
+values:
+     KMRSP(1)    - 0.00000
+     CKMRSPMX(1) - 0.00000
+     CKMRSPMX(2) - 0.00000
+
+The NO3PREF(1) parameter is not being used by the model currently but is
+included in this conversion utility for compatability with anticipated future
+code changes.  The NO3PREF(1) parameter is given a default value of 0.25000.
+
+The KMRSP(1), CKMRSPMX(1), and CKMRSPMX(2), and NO3PREF(1) parameters follow
+the CO2IRS(1) parameter.
+
+The CLAYPG parameter is added to each crop option in the crop.100 file
+following the NO3PREF(1) parameter.  It is given a default value of 4.
+
+The TMPGERM, DDBASE, TMPKILL, BASETEMP, MNDDHRV, and MXDDHRV parameters are
+added to the end of each crop option in the crop.100 file following the CLAYPG
+parameter.  These parameters are given default values of 10.0, 1400.0, -2.0,
+10.0, 100.0, and 200.0 respectively.
+
+The definition for the PRDX(1) parameter has been changed and each crop option
+in the crop.100 file should have the value for PRDX(1) set to a default value
+of 0.5.  New DayCent 4.5 PRDX(1) definition:
+     PRDX(1) - coefficient for calculating potential aboveground monthly
+               production as a function of solar radiation outside the
+               atmosphere
+
+------------------------------------------------------------------------------
+FERT.100:
+
+The FERT.100 file used by DayCent version 4.5 has 3 additional parameters
+added to the end of each fertilizer option:
+     NINHIB   - reduction factor on nitrification rates due to nitrification
+                inhibitors added with the fertilizer
+     FRAC_NH4 - the fraction of N fertilizer that is NH4+ (ammonium)
+     FRAC_NO3 = the fraction of N fertilizer that is NO3- (nitrate)
+
+Using a value of 1.0 for NINHIB parameter will have no effect on the
+nitrification rate.  The reduction in nitrification rate will linger for 1 1/2
+months after the fertilizer application.
+
+The default value for these parameters:
+     NINHIB   - 1.00000
+     FRAC_NH4 - 0.75000
+	 FRAC_NH3 - 0.25000
+
+------------------------------------------------------------------------------
+FIRE.100:
+
+The FIRE.100 file used by DayCent version 4.5 has 11 additional parameters and
+3 parameters that have had their "names" changed:
+     FDFREM(3) - fraction of dead fine branches removed by a fire event
+     FDFREM(4) - fraction of dead large wood removed by a fire event
+     FRET(1,1) - fraction of C in the burned aboveground material (live
+                 shoots, standing dead, and litter) returned to the system
+                 following a fire event as charcoal in the passive SOM pool
+     FRET(1,2) - fraction of N in the burned aboveground material (live
+                 shoots, standing dead, and litter) returned to the system
+                 following a fire event (NOTE: replaces fret(1))
+     FRET(1,3) - fraction of P in the burned aboveground material live
+                 shoots, standing dead, and litter) returned to the system
+                 following a fire event (NOTE: replaces fret(2))
+     FRET(1,4) - fraction of S in the burned aboveground material (live
+                 shoots, standing dead, and litter) returned to the system
+                 following a fire event (NOTE: replaces fret(3))
+     FRET(2,1) - fraction of C in the burned dead fine branch material
+                 returned to the system following a fire event as charcoal in
+                 the passive SOM pool
+     FRET(2,2) - fraction of N in the burned dead fine branch material
+                 returned to the system following a fire event 
+     FRET(2,3) - fraction of P in the burned dead fine branch material
+                 returned to the system following a fire event
+     FRET(2,4) - fraction of S in the burned dead fine branch material
+                 returned to the system following a fire event
+     FRET(3,1) - fraction of C in the burned dead large wood material returned
+                 to the system following a fire event as charcoal in the
+                 passive SOM pool
+     FRET(3,2) - fraction of N in the burned dead large wood material returned
+                 to the system following a fire event
+     FRET(3,3) - fraction of P in the burned dead large wood material returned
+                 to the system following a fire event
+     FRET(3,4) - fraction of S in the burned dead large wood material returned
+                 to the system following a fire event
+
+The FDFREM(3), FDFREM(4), and FRET(1,1) parameters follow the FDFREM(2)
+parameter.  The FRET(1,2) parameter replaces the FRET(1) parameter.  The
+FRET(1,3) parameter replaces the FRET(2) parameter.  The FRET(1,4) parameter
+replaces the FRET(3) parameter.  The remainder of the new FRET(*,*) parameters
+follow the FRET(1,4) parameter.  The FRTSH and FNUE(*) parameters follow the
+FRET(3,4) parameter.
+
+The following default values are used for these parameters:
+     FDFREM(3) - 0.30000
+     FDFREM(4) - 0.20000
+     FRET(1,1) - 0.10000
+     FRET(1,2) - retains value of FRET(1) from original file
+     FRET(1,3) - retains value of FRET(2) from original file
+     FRET(1,4) - retains value of FRET(3) from original file
+     FRET(2,1) - 0.00300
+     FRET(2,2) - 0.20000
+     FRET(2,3) - 0.00000
+     FRET(2,4) - 0.00000
+     FRET(3,1) - 0.00300
+     FRET(3,2) - 0.20000
+     FRET(3,3) - 0.00000
+     FRET(3,4) - 0.00000
+
+------------------------------------------------------------------------------
+FIX.100:
+
+The FIX.100 file used by DayCent 4.5 has 2 additional parameters:
+     TEFF(4) - slope of line at inflection point
+     PSECOC2 - controls the back flow from occluded to secondary P
+
+The PSECOC parameter has been renamed PSECOC1 and retains its original
+definition:
+     PSECOC1 - controls the flow from secondary to occluded P
+
+The PSECOC2 parameter follows the PSECOC1 parameter.
+
+When running the conversion utility the PSECOC1 parameter retains the value
+for PSECOC and the following default value is used for PSECOC2:
+     PSECOC2 - 0.00000
+
+DayCent 4.5 uses 4 coefficients in the equation for computing the temperature
+effect on decomposition.  The TEFF(4) parameter is added to give us the
+additional coefficient required to paramerterize the temperature equation.
+The definitions for the TEFF(*) parameters are as follows:
+     TEFF(1) - "x" location of inflection point
+     TEFF(2) - "y" location of inflection point
+     TEFF(3) - step size (distance from the maximum point to the minimum
+               point)
+     TEFF(4) - slope of line at inflection point
+
+The TEFF(4) parameter is inserted in the FIX.100 file following the TEFF(3)
+parameter.
+
+When running the conversion utility the following default values are used for
+the TEFF(*) parameters:
+     TEFF(1) - 15.4000
+     TEFF(2) - 11.7500
+     TEFF(3) - 29.7000
+     TEFF(4) - 0.03100
+
+The PET calculation is now taking into account solar radiation outside of the
+atmosphere and an approximated cloud cover based on temperature range.  As a
+result of this change the FWLOSS(4) parameter in the FIX.100 file needs to be
+rescaled.  A default value of 0.8 is now recommended for this parameter.
+
+Due to the changes in the snow melting equation the following default values
+will be entered for the TMELT(*) parameters:
+     TMELT(1) - 0.00000
+     TMELT(2) - 0.00200
+TMELT(1) retains its original definition.  TMELT(2) has been redefined:
+     TMELT(2) - coefficient used for calculating snow melt as a function of
+                solar radiation outside the atmosphere
+
+When modifying a monthly fix.100 file for use with DayCent the following
+settings are recommended and will be used here when converting the file:
+     ADEP(1)   = 10.0
+     ADEP(2)   = 20.0
+     ADEP(3)   = 15.0
+     ADEP(4)   = 15.0
+     ADEP(5)   = 30.0
+     ADEP(6)   = 30.0
+     ADEP(7)   = 30.0
+     ADEP(8)   = 30.0
+     ADEP(9)   = 30.0
+     ADEP(10)  = 30.0
+     ANEREF(3) = 1.0
+     FWLOSS(1) = 1.0
+     FWLOSS(2) = 1.0
+     FWLOSS(3) = 1.0
+     FWLOSS(4) = 0.8
+     IDEF      = 1.0
+     MINLCH    = 2.5
+     OMLECH(3) = 1.9 (< 2.0)
+     VLOSSE    = 0.0
+     VLOSSG    = 0.0
+
+------------------------------------------------------------------------------
+TREE.100:
+
+The TREE.100 file used by DayCent version 4.5 has 15 additional parameters:
+     TFRTCN(1)   - maximum fraction of C allocated to fine roots under maximum
+                   nutrient stress
+     TFRTCN(2)   - minimum fraction of C allocated to fine roots with no
+                   nutrient stress
+     TFRTCW(1)   - maximum fraction of C allocated to fine roots under maximum
+                   water stress
+     TFRTCW(2)   - minimum fraction of C allocated to fine roots with no water
+                   stress
+     MAXNP       - maximum N/P ratio for leaves, used only when nelem >= 2
+     KMRSP(2)    - the fraction of net primary production that goes to the
+                   carbohydrate storage pool for trees
+     FKMRSPMX(1) - maximum fraction of live leaf C that goes to maintenance
+                   respiration for trees
+     FKMRSPMX(2) - maximum fraction of live fine root C that goes to
+                   maintenance respiration for trees
+     FKMRSPMX(3) - maximum fraction of live fine branch C that goes to
+                   maintenance respiration for trees
+     FKMRSPMX(4) - maximum fraction of live large wood C that goes to
+                   maintenance respiration for trees
+     FKMRSPMX(5) - maximum fraction of live coarse root C that goes to
+                   maintenance respiration for trees
+     NO3PREF(2)  - fraction of N update that is NO3 for trees, currently not
+                   being used
+     TLAYPG      - number of soil layers used to determine water and mineral
+                   N, P, and S that are available for tree growth
+     TMPLFF      - temperature at which leaf drop will occur in a deciduous
+                   tree type, degrees C
+     TMPLFS      - temperature at which leaf out will occur in a deciduous
+                   tree type, degrees C
+
+The TFRTCN(*) and TFRTCW(*) parameters are used in the new dynamic carbon
+allocation routines.  TFRTCN(1) is inserted into the tree parameterization
+following the FCFRAC(5,2) parameter followed by TFRTCN(2), TFRTCW(1), and
+TFRTCW(2).  The TFRTCW(2) parameter and precedes the LEAFDR(1) parameter.
+
+When running the conversion utility the TFRTCN(*) and TFRTCW(*) parameters are
+given the following default values:
+     TFRTCN(1) - 0.40000
+     TFRTCN(2) - 0.25000
+     TFRTCW(1) - 0.36000
+     TFRTCW(2) - 0.30000
+
+The MAXNP, KMRSP(2), FKMRSPMX(1), FKMRSPMX(2), FKMRSPMX(3), FKMRSPMX(4), and
+FKMRSPMX(5) parameters are used in the new maintenance respiration routines.
+These parameters are give the following values:
+     MAXNP       - 13.5000
+     KMRSP(2)    - 0.00000
+     FKMRSPMX(1) - 0.00000
+     FKMRSPMX(2) - 0.00000
+     FKMRSPMX(3) - 0.00000
+     FKMRSPMX(4) - 0.00000
+     FKMRSPMX(5) - 0.00000
+
+The NO3PREF(2) parameter is not being used by the model currently but is
+included in this conversion utility for compatability with anticipated future
+code changes.  The NO3PREF(2) parameter is given a default value of 0.50000.
+
+The MAXNP, KMRSP(2), FKMRSPMX(1), FKMRSPMX(2), FKMRSPMX(3), FKMRSPMX(4), and
+FKMRSPMX(5) parameters follow the SITPOT parameter.
+
+The SITPOT parameter is now dynamic and will be computed as a function of
+average annual precipitation.  The SITPOT parameter value read from the
+TREE.100 file is used as a multiplier for tuning this equation.  This
+conversion utility will set all of the SITPOT parameter values in a TREE.100
+file to 1.0 so there will be no multiplicative effect.
+
+The definition for the PRDX(2) parameter has been changed and each tree option
+in the tree.100 file should have the value for PRDX(2) set to a default value
+of 0.5.  New DayCent 4.5 PRDX(2) definition:
+     PRDX(2) - coefficient for calculating potential monthly forest
+               production as a function of solar radiation outside the
+               atmosphere
+
+The PRDX(3) parameter is no longer being used and has been removed from the
+tree.100 file.
+
+The equation for computing tree basal area has been changed therefore BASFCT
+is given a a default value of 1.0.
+
+The TLAYPG parameter is added to the end of each tree option in the tree.100
+file.  It is given a default value of 6.
+
+The TMPLFF and TMPLFS temperature values are added to the end of each tree
+option in the tree.100 file.  They are given default values of 7.0 and 10.0
+respecitively.
+
+------------------------------------------------------------------------------
+<SITE>.100:
+
+There have been three parameters added to this file.
+     ROCK   - fraction of rock in soil (0.0 - 1.0)
+     PRECRO - the amount of monthly rainfall required in order for runoff to
+              occur (cm) (used by monthly Century only)
+     FRACRO - the fraction of the monthly rainfall, over PRECRO, which is lost
+              via runoff (0.0 - 1.0) (used by monthly Century only)
+
+The ROCK parameter is added following the CLAY parameter and is used to modify
+AFIEL and AWILT values if SWFLAG is not equal to 0.  Set this parameter value
+to 0.0 to run a simulation with no rock effect on field capacity and wilting
+point values.
+
+The PRECRO and FRACRO parameters are added following the STORMF parameter and
+are used in place of hard coded values for computing the runoff amount in
+monthly Century.
+
+The following default values are assigned to these parameters by the
+conversion utility:
+     ROCK   - 0.00000 
+     PRECRO - 8.00000
+     FRACRO - 0.15000
+
+The equation for computing the non-symbiotic soil N fixation has been changed.
+This change requires a modification of the EPNFS(*) parameter values.  The
+following are the default values used for the EPNFS(*) parameters:
+     EPNFS(1) - 30.0000
+     EPNFS(2) - 0.01000
+
+When modifying a monthly <SITE>.100 file for use with DayCent the following
+settings are recommended and will be used here when converting the file:
+     STORMF = 0.0
+     SWFLAG = 0.0
+
+The WD?LIG parameters are obsolete and need to be removed from the <SITE>.100
+file if necessary.
+
+------------------------------------------------------------------------------
+*.SCH (schedule file) changes:
+
+The user now has the option of adding comment lines to the top of a schedule
+file.  All of the comment lines must start with a # character and must be
+stored at the top of the schedule file.  There is no blank line permitted
+between the last comment line and the schedule file header line containing the
+start year information.
+
+Example DayCent 4.5 schedule file with no comment lines:
+1             Starting year
+2002          Last year
+...
+
+Example DayCent 4.5 schedule file with comment lines:
+# comment line 1
+# comment line 2
+# comment line 3
+1             Starting year
+2002          Last year
+...
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The user also has the ability to simulate a shift in soil pH content if
+desired.  If the value for PHSYS as read from the schedule file is greater
+than 0 then the next line in the schedule file contains the start year for the
+pH shift to begin.  The optional multiplier on pH can be used to scale the
+amount of pH in the soil, for example to simulate liming experiments.  If the
+pH shift is not being modeled a value of 0 should be read in for the PHSYS
+variable.
+
+Valid values for the pH scalar option are:
+      0 - No scalar used
+      1 - Use pH scalars
+
+Example DayCent 4.5 schedule file header excerpt with no pH shift:
+-1             CO2 Systems
+0              pH shift
+
+Example DayCent 4.5 schedule file header excerpt with pH shift:
+-1             CO2 Systems
+1              pH shift
+1990
+
+The conversion utility will modify an existing Century/DayCent 4.0 schedule
+file to add the header line for no pH shift.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+We have also added an option to simulate soil surface temperature warming
+experiments where the soil surface temperature is warmed without an increase
+in the minimum and maximum air temperature values if desired.  The soil
+surface warming option is implemented in the same manner the CO2 effect and
+the pH shift effect options.  If the value for stsys as read from the schedule
+file header is greater than 0 then the next line in the schedule file header
+contains the start year for the soil surface warming and the following line
+contains the amount to warm the soil surface temperature in degrees C.
+
+Valid values for the pH scalar option are:
+      0 - No scalar used
+      1 - Use pH scalars
+
+Example DayCent 4.5 schedule file header excerpt with no temperature warming
+experiment:
+-1             CO2 Systems
+0              pH shift
+-1             Soil warming
+
+Example DayCent 4.5 schedule file header excerpt with temperature warming
+experiment:
+-1             CO2 Systems
+0              pH shift
+1              Soil warming
+1990
+0.5
+
+The conversion utility will modify an existing Century/DayCent 4.0 schedule
+file to add the header line for no soil warming experiment.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+We have added options to allow the user to use a multiplier on the N
+additions, FERT and/or atmospheric N deposition, and/or OMAD additions to the
+simulation to scale these additions up and/or down as desired.  The
+scalars are stored in the nscale.dat for FERT and/or atmospheric N deposition.
+The OMAD scalars are stored in the OMADin.dat file.  These two files are
+optional and if the scalars are not used you do not need to have these files
+in your working directory.
+
+Valid values for the N input scalar option are:
+     0 - No scalar used
+     1 - Use scalar on FERT options only
+     2 - Use scalar on atmospheric N deposition only
+     3 - Use scalar on both FERT options and atmospheric N deposition
+If the value read from the schedule file header for the N input scalar is
+greater than 0 then the next line in the schedule file header contains the
+year to start reading and using the N scalar values for the nscale.dat file.
+
+Valid values for the OMAD input scalar option are:
+     0 - No scalar used
+     1 - Use OMAD scalars
+
+Example DayCent 4.5 schedule file header excerpt with no N input or OMAD input
+scalars:
+-1             CO2 Systems
+0              pH shift
+-1             Soil warming
+0              N input scalar option
+0              OMAD input scalar option
+
+Example DayCent 4.5 schedule file header excerpt with N input and OMAD input
+scalars:
+-1             CO2 Systems
+0              pH shift
+-1             Soil warming
+0              N input scalar option
+1975
+0              OMAD input scalar option
+1975
+
+The conversion utility will modify an existing Century/DayCent 4.0 schedule
+file to add the header lines for no N input or OMAD input scalars.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+We have added options to allow the user to use scalars on the weather inputs
+to simulate climate change scenarios.  The scalars are stored in the 
+tmaxscale.dat, tminscale.dat, and precscale.dat for modifying minimum
+temperature, maximum temperature, and/or precipitation values respectively.
+The temperature scalars are addends while the precipitation scalars are
+multipliers.
+
+Valid values for the weather input scalar option are:
+     0 - No scalars used
+     1 - Use scalars for minimum temperature only
+     2 - Use scalars for maximum temperature only
+     3 - Use scalars for both minimum and maximum temperatures
+     4 - Use scalars for precipitation only
+     5 - Use scalars for minimum and maximum temperatures and precipitation
+
+Example DayCent 4.5 schedule file header excerpt with no climate scalars:
+-1             CO2 Systems
+0              pH shift
+-1             Soil warming
+0              N input scalar option
+0              OMAD input scalar option
+0              Climate scalar option
+
+Example DayCent 4.5 schedule file header excerpt with climate scalars:
+-1             CO2 Systems
+0              pH shift
+-1             Soil warming
+0              N input scalar option
+0              OMAD input scalar option
+5              Climate scalar option
+1990
+
+The conversion utility will modify an existing Century/DayCent 4.0 schedule
+file to add the header lines for no climate scalars.
+
+------------------------------------------------------------------------------
+SITEPAR.IN:
+
+The following parameters have been added to the SITEPAR.IN file for
+parameterizing a water table simulation:
+     drainlag       - number of days between rainfall event and drainage of
+                      soil (-1=computed)
+     watertable[12] - 0 = no water table, 1 = water table
+     hpotdeep       - hydraulic water potential of deep storage layer
+     ksatdeep       - saturated hydraulic conductivity of deep storage layer
+                      (cm/sec)
+These variables follow the hours_rain variable.
+
+The texture input value read from the sitepar.in file is no longer being used.
+The texture value used by the decomposition subroutine is computed based on
+the weighted average of sand in the top 3 soil layers.
+
+The texture input parameter has been replaced by the tbotmn and tbotmx
+paramters.  The line containing these parameter values follows the fraction of
+N fertilizer that is nitrate, frac_no3_fert, line.
+     tbotmn - minimum temperature for bottom soil layer for year (degrees C)
+     tbotmx - maximum temperature for bottom soil layer for year (degrees C)
+Both parameter values are entered on the same line, separated by a space.
+
+The dmp input parameter has been added to this file.  It follows the tbotmn
+and tbotmx parameters.  This parameter is a time step, or damping, correction
+factor that relates to how fast the heat gets into/out of the soil.
+     dmp - damping factor for calculating soil temperature by layer
+
+The timlag parameter has been added to this file.  This parameter represents
+the time lag, in days, from the beginning of the year to the occurrence of the
+coolest temperature at the bottom of the soil profile.  The timlag parameter
+follows the damping factor for calculating soil temperature by layer 
+parameter.
+     timlag - time lag, in days, from the beginning of the year to the
+              occurrence of the coolest temperature at the of the bottom soil
+              profile
+
+Add the Ncoeff parameter to this file.  This parameter represents the minimum
+water/temperature limitation coefficient for nitrification.  This parameter
+value is used to modify the value for the amount of NH4 that is converted to
+NO3 due to nitrification.  It follows the timlag parameter.
+     Ncoeff - minimum water/temperature limitation coefficient for
+              nitrification
+
+The start day and end day added to this file allow the user to turn off the
+respiration restraint on denitrification during the days of the year the fall
+between the given days.  These parameters follow the entries for the soil
+layers comprising the very deep depths.
+
+The fraction of N fertilizer that is ammonimum and the fraction of N
+fertilizer that is nitrate values have been removed from this file and added
+to the FERT.100 file.
+
+A new nitrification N2O adjustment factor parameter has been added to this
+file.  This factor is a used as a multiplier on the nitrification rates and
+should be given a value between 0.0 and 1.0.
+     N2Oadjust - nitrification N2O adjustment factor (0.0-1.0)

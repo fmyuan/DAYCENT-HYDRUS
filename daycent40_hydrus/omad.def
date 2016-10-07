@@ -1,0 +1,19 @@
+Organic matter additions file "omad.100" will contain these values:
+astgc           grams of C added with the addition of organic matter (g/m2)
+            Range: 0.0 to 9999.0
+
+astlbl          fraction of added C which is labeled, when C is added
+                as a result of the addition of organic matter
+            Range: 0.0 to 1.0
+
+astlig          lignin fraction content of organic matter
+            Range: 0.0 to 1.0
+
+astrec(1)       C/N ratio of added organic matter
+            Range: 1.0 to 500.0
+
+astrec(2)       C/P ratio of added organic matter
+            Range: 1.0 to 9999.0
+
+astrec(3)       C/S ratio of added organic matter
+            Range: 1.0 to 9999.0

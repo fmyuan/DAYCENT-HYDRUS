@@ -1,0 +1,768 @@
+Fixed parameters file "fix.100" will contain these values:
+adep(1)         depth of soil layer 1 (only nlayer+1 values used) (cm)
+            Range: ? to ?
+
+adep(2)         depth of soil layer 2 (only nlayer+1 values used) (cm)
+            Range: ? to ?
+
+adep(3)         depth of soil layer 3 (only nlayer+1 values used) (cm)
+            Range: ? to ?
+
+adep(4)         depth of soil layer 4 (only nlayer+1 values used) (cm)
+            Range: ? to ?
+
+adep(5)         depth of soil layer 5 (only nlayer+1 values used) (cm)
+            Range: ? to ?
+
+adep(6)         depth of soil layer 6 (only nlayer+1 values used) (cm)
+            Range: ? to ?
+
+adep(7)         depth of soil layer 7 (only nlayer+1 values used) (cm)
+            Range: ? to ?
+
+adep(8)         depth of soil layer 8 (only nlayer+1 values used) (cm)
+            Range: ? to ?
+
+adep(9)         depth of soil layer 9 (only nlayer+1 values used) (cm)
+            Range: ? to ?
+
+adep(10)        depth of soil layer 10 (only nlayer+1 values used) (cm)
+            Range: ? to ?
+
+agppa           intercept parameter in the equation estimating potential
+                aboveground biomass production for calculation of root/shoot
+                ratio (used only if frtc(1) = 0) (g/m2/y)
+            Range: ? to ?
+
+agppb           slope parameter in the equation estimating potential above
+                ground biomass production for calculation of root/shoot ratio
+                (used only if frtc(1) = 0) (g/m2/y/cm) NOTE - agppb is
+                multiplied by annual precipitation (cm)
+            Range: ? to ?
+
+aneref(1)       ratio of rain/potential evapotranspiration below which there
+                is no negative impact of soil anaerobic conditions on
+                decomposition
+            Range: ? to ?
+
+aneref(2)       ratio of rain/potential evapotranspiration above which there
+                is maximum negative impact of soil anaerobic conditions on
+                decomposition
+            Range: ? to ?
+
+aneref(3)       minimum value of the impact of soil anaerobic conditions on
+                decomposition; functions as a multiplier for the maximum
+                decomposition rate
+            Range: ? to ?
+
+animpt          slope term used to vary the impact of soil anaerobic
+                conditions on decomposition flows to the passive soil organic
+                matter pool
+            Range: ? to ?
+
+awtl(1)         weighting factor for transpiration loss for layer 1
+                (only nlayer+1 values used); indicates which fraction of the
+                available water can be extracted by the roots
+            Range: ? to ?
+
+awtl(2)         weighting factor for transpiration loss for layer 2
+                (only nlayer+1 values used); indicates which fraction of the
+                available water can be extracted by the roots
+            Range: ? to ?
+
+awtl(3)         weighting factor for transpiration loss for layer 3
+                (only nlayer+1 values used); indicates which fraction of the
+                available water can be extracted by the roots
+            Range: ? to ?
+
+awtl(4)         weighting factor for transpiration loss for layer 4
+                (only nlayer+1 values used); indicates which fraction of the
+                available water can be extracted by the roots
+            Range: ? to ?
+
+awtl(5)         weighting factor for transpiration loss for layer 5
+                (only nlayer+1 values used); indicates which fraction of the
+                available water can be extracted by the roots
+            Range: ? to ?
+
+awtl(6)         weighting factor for transpiration loss for layer 6
+                (only nlayer+1 values used); indicates which fraction of the
+                available water can be extracted by the roots
+            Range: ? to ?
+
+awtl(7)         weighting factor for transpiration loss for layer 7
+                (only nlayer+1 values used); indicates which fraction of the
+                available water can be extracted by the roots
+            Range: ? to ?
+
+awtl(8)         weighting factor for transpiration loss for layer 8
+                (only nlayer+1 values used); indicates which fraction of the
+                available water can be extracted by the roots
+            Range: ? to ?
+
+awtl(9)         weighting factor for transpiration loss for layer 9
+                (only nlayer+1 values used); indicates which fraction of the
+                available water can be extracted by the roots
+            Range: ? to ?
+
+awtl(10)        weighting factor for transpiration loss for layer 10
+                (only nlayer+1 values used); indicates which fraction of the
+                available water can be extracted by the roots
+            Range: ? to ?
+
+bgppa           intercept parameter in the equation estimating potential below
+                ground biomass production for calculation of root/shoot ratio
+                (used only if frtc(1) = 0) (g/m2/y)
+            Range: ? to ?
+
+bgppb           slope parameter in the equation estimating potential below
+                ground biomass production for calculation of root/shoot ratio
+                (used only if frtc(1) = 0) (g/m2/y) NOTE - bgppb is multiplied
+                by annual precipitation (cm)
+            Range: ? to ?
+
+co2ppm(1)       initial parts per million for CO2 effect
+            Range: 0 to ?
+
+co2ppm(2)       final parts per million for CO2 effect
+            Range: 0 to ?
+
+co2rmp          flag indicating whether CO2 effect should be:
+                  = 0 step function
+                  = 1 ramp function
+            Range: 0 or 1
+
+damr(1,1)       fraction of surface N absorbed by residue
+            Range: 0.0 to 1.0
+
+damr(1,2)       fraction of surface P absorbed by residue
+            Range: 0.0 to 1.0
+
+damr(1,3)       fraction of surface S absorbed by residue
+            Range: 0.0 to 1.0
+
+damr(2,1)       fraction of soil N absorbed by residue
+            Range: 0.0 to 1.0
+
+damr(2,2)       fraction of soil P absorbed by residue
+            Range: 0.0 to 1.0
+
+damr(2,3)       fraction of soil S absorbed by residue
+            Range: 0.0 to 1.0
+
+damrmn(1)       minimum C/N ratio allowed in residue after direct absorption
+            Range: ? to ?
+
+damrmn(2)       minimum C/P ratio allowed in residue after direct absorption
+            Range: ? to ?
+
+damrmn(3)       minimum C/S ratio allowed in residue after direct absorption
+            Range: ? to ?
+
+dec1(1)         maximum surface structural decomposition rate, the fraction of
+                the pool that turns over each year
+            Range: ? to ?
+
+dec1(2)         maximum soil structural decomposition rate, the fraction of
+                the pool that turns over each year
+            Range: ? to ?
+
+dec2(1)         maximum surface metabolic decomposition rate, the fraction of
+                the pool that turns over each year
+            Range: ? to ?
+
+dec2(2)         maximum soil metabolic decomposition rate, the fraction of
+                the pool that turns over each year
+            Range: ? to ?
+
+dec3(1)         maximum decomposition rate of surface organic matter with
+                active turnover, the fraction of the pool that turns over
+                each year
+            Range: ? to ?
+
+dec3(2)         maximum decomposition rate of soil organic matter with
+                active turnover, the fraction of the pool that turns over
+                each year
+            Range: ? to ?
+
+dec4            maximum decomposition rate of soil organic matter with
+                slow turnover, the fraction of the pool that turns over
+                each year
+            Range: ? to ?
+
+dec5            maximum decomposition rate of soil organic matter with
+                intermediate turnover, the fraction of the pool that turns
+                over each year
+            Range: ? to ?
+
+deck5           available soil water content at which shoot and root death
+                rates are half maximum (cm)
+            Range: ? to ?
+
+dligdf          difference in delta 13C for lignin compared to whole plant
+                delta 13C
+            Range: ? to ?
+
+dresp           discrimination factor for 13C during decomposition of organic
+                matter due to microbial respiration
+            Range: ? to ?
+
+edepth          depth of the single soil layer where C, N, P, and S dynamics
+                are calculated (only affects C, N, P, S loss by erosion)
+            Range: ? to ?
+
+elitst          effect of litter on soil temperature relative to live and
+                standing dead biomass
+            Range: ? to ?
+
+enrich          the enrichment factor for SOM losses
+            Range: ? to ?
+
+favail(1)       fraction of N available per month to plants
+            Range: 0.0 to 1.0
+
+favail(3)       fraction of S available per month to plants
+            Range: 0.0 to 1.0
+
+favail(4)       minimum fraction of P available per month to plants
+            Range: 0.0 to 1.0
+
+favail(5)       maximum fraction of P available per month to plants
+            Range: 0.0 to 1.0
+
+favail(6)       mineral N in surface layer corresponding to maximum fraction
+                of P available (g/m2)
+            Range: 0.0 to 1.0
+
+fleach(1)       intercept value for a normal month to compute the fraction of
+                minerl N, P, and S which will leach to the next layer when
+                there is a saturated water flow; normal leaching is a function
+                of sand content
+            Range: ? to ?
+
+fleach(2)       slope value for a normal month to compute the fraction of
+                minerl N, P, and S which will leach to the next layer when
+                there is a saturated water flow; normal leaching is a function
+                of sand content
+            Range: ? to ?
+
+fleach(3)       leaching fraction multiplier for N to compute the fraction of
+                mineral N which will leach to the next layer when there is a
+                saturated water flow; normal leaching is a function of sand
+                content
+            Range: 0.0 to 1.0
+
+fleach(4)       leaching fraction multiplier for P to compute the fraction of
+                mineral P which will leach to the next layer when there is a
+                saturated water flow; normal leaching is a function of sand
+                content
+            Range: 0.0 to 1.0
+
+fleach(5)       leaching fraction multiplier for S to compute the fraction of
+                mineral S which will leach to the next layer when there is a
+                saturated water flow; normal leaching is a function of sand
+                content
+            Range: 0.0 to 1.0
+
+fwloss(1)       scaling factor for interception and evaporation of
+                precipitation by live and standing dead biomass
+            Range: 0.0 to 1.0
+
+fwloss(2)       scaling factor for bare soil evaporation of precipitation
+                (h2olos)
+            Range: 0.0 to 1.0
+
+fwloss(3)       scaling factor for transpiration water loss (h2olos)
+            Range: ? to ?
+
+fwloss(4)       scaling factor for potential evapotranspiration (pevap)
+            Range: ? to ?
+
+fxmca           intercept for effect of biomass on non-symbiotic soil N
+                fixation; used only when nsnfix = 1
+            Range: ? to ?
+
+fxmcb           slope control for effect of biomass on non-symbiotic soil N
+                fixation; used only when nsnfix = 1
+            Range: ? to ?
+
+fxmxs           maximum monthly non-symbiotic soil N-fixation rate (reduced by
+                effect of N:P ratio, used when nsnfix = 1)
+            Range: ? to ?
+
+fxnpb           N/P control for N-fixation based on availability of top soil
+                layer (used when nsnfix = 1)
+            Range: ? to ?
+
+gremb           grazing effect multiplier for grzeff types 4, 5, 6
+            Range: ? to ?
+
+idef            flag for method of computing water effect on decomposition
+                  = 1 option using the relative water content of soil
+                    (0-15 cm)
+                  = 2 ratio option (rainfall/potential evaporation rate)
+            Range: 1 or 2
+
+lhzf(1)         lower horizon factor for active pool; = fraction of active
+                pool (SOM1CI(2,*)) used in computation of lower horizon pool
+                sizes for soil erosion routines
+            Range: ? to ?
+
+lhzf(2)         lower horizon factor for slow pool; = fraction of slow pool
+                (SOM2CI(*) used in computation of lower horizon pool sizes for
+                soil erosion routines
+            Range: ? to ?
+
+lhzf(3)         lower horizon factor for passive pool; = fraction of passive
+                pool (SOM3CI(*) used in computation of lower horizon pool
+                sizes for soil erosion routines
+            Range: ? to ?
+
+minlch          critical water flow for leaching of minerals (cm of H2O
+                leached below 30 cm soil depth)
+            Range: ? to ?
+
+nsnfix          equals 1 if non-symbiotic N fixation should be based on N:P
+                ratio in mineral pool, otherwise non-symbiotic N fixation is
+                based on annual precipitation
+            Range: 0 or 1
+
+ntspm           number of time steps per month for the decomposition submodel
+            Range: 4 to 4
+
+omlech(1)       intercept for the effect of sand on leaching of organic
+                compounds
+            Range: ? to ?
+
+omlech(2)       slope for the effect of sand on leaching of organic compounds
+            Range: ? to ?
+
+omlech(3)       the amount of water that needs to flow out of water layer 2
+                to leach organic C at the maximum rate (cm/month)
+            Range: ? to ?
+
+p1co2a(1)       intercept parameter which controls flow from surface organic
+                matter with fast turnover to CO2 (fraction of C lost to
+                CO2 when there is no sand in the soil)
+            Range: ? to ?
+
+p1co2a(2)       intercept parameter which controls flow from soil organic
+                matter with fast turnover to CO2 (fraction of C lost to CO2
+                when there is no sand in the soil)
+            Range: ? to ?
+
+p1co2b(1)       slope parameter which controls flow from surface organic
+                matter with fast turnover to CO2 (slope is multiplied by the
+                fraction sand content of the soil)
+            Range: ? to ?
+
+p1co2b(2)       slope parameter which controls flow from soil organic matter
+                with fast turnover to CO2 (slope is multiplied by the fraction
+                sand content of the soil)
+            Range: ? to ?
+
+p2co2           controls flow from soil organic matter with intermediate
+                turnover to CO2 (fraction of C lost as CO2 during
+                decomposition)
+            Range: ? to ?
+
+p3co2           controls flow from soil organic matter with slow turnover rate
+                to CO2 (fraction of C lost as CO2 during decomposition)
+            Range: ? to ?
+
+pabres          amount of residue which will give maximum direct absorption of
+                N (gC/m2)
+            Range: ? to ?
+
+pcemic(1,1)     maximum C/N ratio for surface microbial pool
+            Range: ? to ?
+
+pcemic(1,2)     maximum C/P ratio for surface microbial pool
+            Range: ? to ?
+
+pcemic(1,3)     maximum C/S ratio for surface microbial pool
+            Range: ? to ?
+
+pcemic(2,1)     minimum C/N ratio for surface microbial pool
+            Range: ? to ?
+
+pcemic(2,2)     minimum C/P ratio for surface microbial pool
+            Range: ? to ?
+
+pcemic(2,3)     minimum C/S ratio for surface microbial pool
+            Range: ? to ?
+
+pcemic(3,1)     mimimum N content of decomposing aboveground material, above
+                which the C/N ratio of the surface microbes equals pcemic(2,*)
+            Range: ? to ?
+
+pcemic(3,2)     mimimum P content of decomposing aboveground material, above
+                which the C/P ratio of the surface microbes equals pcemic(2,*)
+            Range: ? to ?
+
+pcemic(3,3)     mimimum S content of decomposing aboveground material, above
+                which the C/S ratio of the surface microbes equals pcemic(2,*)
+            Range: ? to ?
+
+peftxa          intercept parameter for regression equation to compute the
+                effect of soil texture on the microbe decomposition rate (the
+                effect of texture when there is no sand in the soil)
+            Range: ? to ?
+
+peftxb          slope parameter for the regression equation to compute the
+                effect of soil texture on the microbe decomposition rate; the
+                slope is multiplied by the sand content fraction
+            Range: ? to ?
+
+phesp(1)        minimum pH for determining the effect of pH on the solubility
+                of secondary P (flow of secondary P to mineral P)
+                (for texesp(2) = m * (pH input) + b, m and b calculated using
+                these phesp values)
+            Range: ? to ?
+
+phesp(2)        value of texesp(2), the solubility of secondary P,
+                corresponding to minimum pH (/yr)
+            Range: ? to ?
+
+phesp(3)        maximum pH for determining effect on solubility of secondary P
+                (flow of secondary P to mineral P)
+                (for texesp(2) = m * (pH input) + b, m and b
+                calculated using these phesp values)
+            Range: ? to ?
+
+phesp(4)        value of texesp(2), the solubility of secondary P,
+                corresponding to maximum pH (/yr)
+            Range: ? to ?
+
+pligst(1)       effect of lignin on surface structural or fine branch and
+                large wood decomposition
+            Range: ? to ?
+
+pligst(2)       effect of lignin on soil structural or coarse root
+                decomposition
+            Range: ? to ?
+
+pmco2(1)        surface; controls flow from surface metabolic to CO2 (fraction
+                of C lost as CO2 during decomposition)
+            Range: ? to ?
+
+pmco2(2)        soil; controls flow from soil metabolic to CO2 (fraction of C
+                lost as CO2 during decomposition)
+            Range: ? to ?
+
+pmnsec(1)       slope for N; controls the flow from mineral to secondary N
+                (/yr)
+            Range: ? to ?
+
+pmnsec(2)       slope for P; controls the flow from mineral to secondary P
+                (/yr)
+            Range: ? to ?
+
+pmnsec(3)       slope for S; controls the flow from mineral to secondary S
+                (/yr)
+            Range: ? to ?
+
+pmntmp          effect of biomass on minimum surface temperature
+            Range: ? to ?
+
+pmxbio          maximum dead biomass (standing dead + 10% litter) level for
+                soil temperature calculation and for calculation of the
+                potential negative effect on plant growth of physical
+                obstruction by standing dead and litter
+            Range: ? to ?
+
+pmxtmp          effect of biomass on maximum surface temperature
+            Range: ? to ?
+
+pparmn(1)       N; controls the flow from parent material to mineral
+                compartment (fraction of parent material that flows to mineral
+                N, P, and S)
+            Range: ? to ?
+
+pparmn(2)       P; controls the flow from parent material to mineral
+                compartment; used when texepp(1) is not = 1 (fraction of
+                parent material that flows to mineral N, P, and S)
+            Range: ? to ?
+
+pparmn(3)       S; controls the flow from parent material to mineral
+                compartment (fraction of parent material that flows to mineral
+                N, P, and S)
+            Range: ? to ?
+
+pprpts(1)       the minimum ratio of available water to PET which would
+                completely limit production assuming WC = 0
+            Range: 0.0 to 1.0
+
+pprpts(2)       the effect of WC on the intercept, allows the user to increase
+                the value of the intercept and thereby increase the slope of
+                the line
+            Range: ? to ?
+
+pprpts(3)       the lowest ratio of available water to PET at which there is
+                no restriction on production
+            Range: 0.0 to 1.0
+
+ps1co2(1)       surface; controls amount of CO2 loss when structural
+                decomposes to som1
+            Range: ? to ?
+
+ps1co2(2)       soil; controls amount of CO2 loss when structural decomposes
+                to som1
+            Range: ? to ?
+
+ps1s3(1)        intercept for the effect of clay on the control for the flow
+                from soil organic matter with fast turnover to som with slow
+                turnover (fraction of C from som1c to som3c)
+            Range: ? to ?
+
+ps1s3(2)        slope for the effect of clay on the control for the flow from
+                soil organic matter with fast turnover to som with slow
+                turnover (fraction of C from som1c to som3c)
+            Range: ? to ?
+
+ps2s3(1)        intercept value which controls flow from soil organic matter
+                with intermediate turnover to soil organic matter with slow
+                turnover (fraction of C from som2c to som3c)
+            Range: ? to ?
+
+ps2s3(2)        slope value which controls flow from soil organic matter
+                with intermediate turnover to soil organic matter with slow
+                turnover (fraction of C from som2c to som3c)
+            Range: ? to ?
+
+psecmn(1)       N; controls the flow from secondary to mineral N
+            Range: ? to ?
+
+psecmn(2)       P; controls the flow from secondary to mineral P
+            Range: ? to ?
+
+psecmn(3)       S; controls the flow from secondary to mineral S
+            Range: ? to ?
+
+psecoc1         controls the flow from secondary to occluded P
+            Range: ? to ?
+
+psecoc2         controls the back flow from occluded to secondary P
+            Range: ? to ?
+
+rad1p(1,1)      intercept used to calculate addition term for C/N ratio of
+                slow SOM formed from surface active pool
+            Range: ? to ?
+
+rad1p(2,1)      slope used to calculate addition term for C/N ratio of
+                slow SOM formed from surface active pool
+            Range: ? to ?
+
+rad1p(3,1)      minimum allowable C/N used to calculate addition term for C/N
+                ratio of slow SOM formed from surface active pool
+            Range: ? to ?
+
+rad1p(1,2)      intercept used to calculate addition term for C/P ratio of
+                slow SOM formed from surface active pool
+            Range: ? to ?
+
+rad1p(2,2)      slope used to calculate addition term for C/P ratio of
+                slow SOM formed from surface active pool
+            Range: ? to ?
+
+rad1p(3,2)      minimum allowable C/P used to calculate addition term for C/P
+                ratio of slow SOM formed from surface active pool
+            Range: ? to ?
+
+rad1p(1,3)      intercept used to calculate addition term for C/S ratio of
+                slow SOM formed from surface active pool
+            Range: ? to ?
+
+rad1p(2,3)      slope used to calculate addition term for C/S ratio of
+                slow SOM formed from surface active pool
+            Range: ? to ?
+
+rad1p(3,3)      minimum allowable C/S used to calculate addition term for C/S
+                ratio of slow SOM formed from surface active pool
+            Range: ? to ?
+
+rcestr(1)       C/N ratio for structural material (fixed parameter value)
+            Range: ? to ?
+
+rcestr(2)       C/P ratio for structural material (fixed parameter value)
+            Range: ? to ?
+
+rcestr(3)       C/S ratio for structural material (fixed parameter value)
+            Range: ? to ?
+
+rictrl          root impact control term used by rtimp; used for calculating
+                the impact of root biomass on nutrient availability
+            Range: ? to ?
+
+riint           root impact intercept used by rtimp; used for calculating
+                the impact of root biomass on nutrient availability
+            Range: ? to ?
+
+rsplig          fraction of lignin flow (in structural decomposition) lost as
+                CO2
+            Range: 0.0 to 1.0
+
+seed            random number generator seed value
+            Range: ? to ?
+
+spl(1)          intercept parameter for metabolic (vs. structural) split
+            Range: 0.0 to 1.0
+
+spl(2)          slope parameter for metabolic split (fraction metabolic is a
+                function of lignin to N ratio)
+            Range: 0.0 to 1.0
+
+strmax(1)       maximum amount of structural material in surface layer that
+                will decompose (gC/m2)
+            Range: ? to ?
+
+strmax(2)       maximum amount of structural material belowground that
+                will decompose (gC/m2)
+            Range: ? to ?
+
+texepp(1)       texture effect on parent P mineralization:
+                  = 0 use pparmn(2) in the weathering equation
+                  = 1 include the effect of texture using the remaining texepp
+                      values with the arctangent function
+            Range: 0 or 1
+
+texepp(2)       x location of inflection point used in determining texture
+                effect on parent P mineralization
+            Range: ? to ?
+
+texepp(3)       y location of inflection point used in determining texture
+                effect on parent P mineralization
+            Range: ? to ?
+
+texepp(4)       step size (distance from the maximum point to the minimum
+                point) used in determining texture effect on parent P
+                mineralization
+            Range: ? to ?
+
+texepp(5)       slope of the line at the inflection point used in determining
+                texture effect on parent P mineralization
+            Range: ? to ?
+
+texesp(1)       texture effect on secondary P flow to mineral P
+                  = 0 to use psecmn(2) in the weathering equation
+                  = 1 include the effect of pH and sand content using the
+                      equation specified by texesp(2) (a function of pH and
+                      phesp(1-4)) and texesp(3)
+            Range: 0 or 1
+
+texesp(3)       slope value used in determining effect of sand content on
+                secondary P flow to mineral P
+            Range: ? to ?
+
+teff(1)         "x" location of inflection point, for determining the
+                temperature component of DEFAC, the decomposition factor
+            Range: ? to ?
+
+teff(2)         "y" location of inflection point, for determining the
+                temperature component of DEFAC, the decomposition factor
+            Range: ? to ?
+
+teff(3)         step size (distance from the maximum point to the minimum
+                point), for determining the temperature component of DEFAC,
+                the decomposition factor
+            Range: ? to ?
+
+teff(4)         slope of line at inflection point, for determining the
+                temperature component of DEFAC, the decomposition factor
+            Range: ? to ?
+
+tmelt(1)        minimum temperature above which at least some snow will melt
+            Range: ? to ?
+
+tmelt(2)        ratio between degrees above the minimum and cm of snow that
+                will melt
+            Range: ? to ?
+
+varat1(1,1)     maximum C/N ratio for material entering som1
+            Range: ? to ?
+
+varat1(2,1)     minimum C/N ratio for material entering som1
+            Range: ? to ?
+
+varat1(3,1)     amount N present when minimum ratio applies
+            Range: ? to ?
+
+varat1(1,2)     maximum C/P ratio for material entering som1
+            Range: ? to ?
+
+varat1(2,2)     minimum C/P ratio for material entering som1
+            Range: ? to ?
+
+varat1(3,2)     amount P present when minimum ratio applies
+            Range: ? to ?
+
+varat1(1,3)     maximum C/S ratio for material entering som1
+            Range: ? to ?
+
+varat1(2,3)     minimum C/S ratio for material entering som1
+            Range: ? to ?
+
+varat1(3,3)     amount S present when minimum ratio applies
+            Range: ? to ?
+
+varat2(1,1)     maximum C/N ratio for material entering som2
+            Range: ? to ?
+
+varat2(2,1)     minimum C/N ratio for material entering som2
+            Range: ? to ?
+
+varat2(3,1)     amount N present when minimum ratio applies
+            Range: ? to ?
+
+varat2(1,2)     maximum C/P ratio for material entering som2
+            Range: ? to ?
+
+varat2(2,2)     minimum C/P ratio for material entering som2
+            Range: ? to ?
+
+varat2(3,2)     amount P present when minimum ratio applies
+            Range: ? to ?
+
+varat2(1,3)     maximum C/S ratio for material entering som2
+            Range: ? to ?
+
+varat2(2,3)     minimum C/S ratio for material entering som2
+            Range: ? to ?
+
+varat2(3,3)     amount S present when minimum ratio applies
+            Range: ? to ?
+
+varat3(1,1)     maximum C/N ratio for material entering som3
+            Range: ? to ?
+
+varat3(2,1)     minimum C/N ratio for material entering som3
+            Range: ? to ?
+
+varat3(3,1)     amount N present when minimum ratio applies
+            Range: ? to ?
+
+varat3(1,2)     maximum C/P ratio for material entering som3
+            Range: ? to ?
+
+varat3(2,2)     minimum C/P ratio for material entering som3
+            Range: ? to ?
+
+varat3(3,2)     amount P present when minimum ratio applies
+            Range: ? to ?
+
+varat3(1,3)     maximum C/S ratio for material entering som3
+            Range: ? to ?
+
+varat3(2,3)     minimum C/S ratio for material entering som3
+            Range: ? to ?
+
+varat3(3,3)     amount S present when minimum ratio applies
+            Range: ? to ?
+
+vlosse          fraction per year of excess N (i.e. N left in the soil after
+                nutrient uptake by the plant) which is volatilized
+            Range: 0.0 to 1.0
+
+vlossg          multiplier for equation to compute volatilization loss that
+                occurs as a function of gross mineralization
+            Range: ? to ?

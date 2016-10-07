@@ -1,0 +1,466 @@
+Tree file "tree.100" will contain these values:
+decid           type of forest
+                  = 0 if forest is continuous
+                  = 1 if forest is temperature-deciduous
+                  = 2 if forest is drought-deciduous
+            Range: 0 or 1 or 2
+
+prdx(2)         coefficient for calculating potential monthly forest
+                production as a function of solar radiation outside the
+                atmosphere
+            Range: ? to ?
+
+ppdf(1)         optimum temperature for production for parameterization
+                of a Poisson Density Function curve to simulate
+                temperature effect on growth
+            Range: 10.0 to 40.0
+
+ppdf(2)         maximum temperature for production for parameterization of a
+                Poisson Density Function curve to simulate temperature effect
+                on growth
+            Range: 20.0 to 50.0
+
+ppdf(3)         left curve shape for parameterization of a Poisson Density
+                Function curve to simulate temperature effect on growth
+            Range: 0.0 to 1.0
+
+ppdf(4)         right curve shape for parameterization of a Poisson Density
+                Function curve to simulate temperature effect on growth
+            Range: 0.0 to 10.0
+
+cerfor(1,1,1)   minimum C/N ratio for leaves
+            Range: 1.0 to 200.0
+
+cerfor(1,1,2)   minimum C/P ratio for leaves
+            Range: 1.0 to 9999.0
+
+cerfor(1,1,3)   minimum C/S ratio for leaves
+            Range: 1.0 to 9999.0
+
+cerfor(1,2,1)   minimum C/N ratio for fine roots
+            Range: 1.0 to 200.0
+
+cerfor(1,2,2)   minimum C/P ratio for fine roots
+            Range: 1.0 to 9999.0
+
+cerfor(1,2,3)   minimum C/S ratio for fine roots
+            Range: 1.0 to 9999.0
+
+cerfor(1,3,1)   minimum C/N ratio for fine branches
+            Range: 1.0 to 1000.0
+
+cerfor(1,3,2)   minimum C/P ratio for fine branches
+            Range: 1.0 to 9999.0
+
+cerfor(1,3,3)   minimum C/S ratio for fine branches
+            Range: 1.0 to 9999.0
+
+cerfor(1,4,1)   minimum C/N ratio for large wood
+            Range: 1.0 to 1500.0
+
+cerfor(1,4,2)   minimum C/P ratio for large wood
+            Range: 1.0 to 9999.0
+
+cerfor(1,4,3)   minimum C/S ratio for large wood
+            Range: 1.0 to 9999.0
+
+cerfor(1,5,1)   minimum C/N ratio for coarse roots
+            Range: 1.0 to 1500.0
+
+cerfor(1,5,2)   minimum C/P ratio for coarse roots
+            Range: 1.0 to 9999.0
+
+cerfor(1,5,3)   minimum C/S ratio for coarse roots
+            Range: 1.0 to 9999.0
+
+cerfor(2,1,1)   maximum C/N ratio for leaves
+            Range: 1.0 to 200.0
+
+cerfor(2,1,2)   maximum C/P ratio for leaves
+            Range: 1.0 to 9999.0
+
+cerfor(2,1,3)   maximum C/S ratio for leaves
+            Range: 1.0 to 9999.0
+
+cerfor(2,2,1)   maximum C/N ratio for fine roots
+            Range: 1.0 to 200.0
+
+cerfor(2,2,2)   maximum C/P ratio for fine roots
+            Range: 1.0 to 9999.0
+
+cerfor(2,2,3)   maximum C/S ratio for fine roots
+            Range: 1.0 to 9999.0
+
+cerfor(2,3,1)   maximum C/N ratio for fine branches
+            Range: 1.0 to 1000.0
+
+cerfor(2,3,2)   maximum C/P ratio for fine branches
+            Range: 1.0 to 9999.0
+
+cerfor(2,3,3)   maximum C/S ratio for fine branches
+            Range: 1.0 to 9999.0
+
+cerfor(2,4,1)   maximum C/N ratio for large wood
+            Range: 1.0 to 1500.0
+
+cerfor(2,4,2)   maximum C/P ratio for large wood
+            Range: 1.0 to 9999.0
+
+cerfor(2,4,3)   maximum C/S ratio for large wood
+            Range: 1.0 to 9999.0
+
+cerfor(2,5,1)   maximum C/N ratio for coarse roots
+            Range: 1.0 to 1500.0
+
+cerfor(2,5,2)   maximum C/P ratio for coarse roots
+            Range: 1.0 to 9999.0
+
+cerfor(2,5,3)   maximum C/S ratio for coarse roots
+            Range: 1.0 to 9999.0
+
+cerfor(3,1,1)   initial C/N ratio for leaves
+            Range: 1.0 to 200.0
+
+cerfor(3,1,2)   initial C/P ratio for leaves
+            Range: 1.0 to 9999.0
+
+cerfor(3,1,3)   initial C/S ratio for leaves
+            Range: 1.0 to 9999.0
+
+cerfor(3,2,1)   initial C/N ratio for fine roots
+            Range: 1.0 to 200.0
+
+cerfor(3,2,2)   initial C/P ratio for fine roots
+            Range: 1.0 to 9999.0
+
+cerfor(3,2,3)   initial C/S ratio for fine roots
+            Range: 1.0 to 9999.0
+
+cerfor(3,3,1)   initial C/N ratio for fine branches
+            Range: 1.0 to 1000.0
+
+cerfor(3,3,2)   initial C/P ratio for fine branches
+            Range: 1.0 to 9999.0
+
+cerfor(3,3,3)   initial C/S ratio for fine branches
+            Range: 1.0 to 9999.0
+
+cerfor(3,4,1)   initial C/N ratio for large wood
+            Range: 1.0 to 1500.0
+
+cerfor(3,4,2)   initial C/P ratio for large wood
+            Range: 1.0 to 9999.0
+
+cerfor(3,4,3)   initial C/S ratio for large wood
+            Range: 1.0 to 9999.0
+
+cerfor(3,5,1)   initial C/N ratio for coarse roots
+            Range: 1.0 to 1500.0
+
+cerfor(3,5,2)   initial C/P ratio for coarse roots
+            Range: 1.0 to 9999.0
+
+cerfor(3,5,3)   initial C/S ratio for coarse roots
+            Range: 1.0 to 9999.0
+
+decw1           maximum decomposition rate constant for wood1 (dead fine
+                branch) per year before temperature and moisture effects
+                applied
+            Range: 0.0 to 0.5
+
+decw2           maximum decomposition rate constant for wood2 (dead large
+                wood) per year before temperature and moisture effects
+                applied
+            Range: 0.0 to 0.5
+
+decw3           maximum decomposition rate constant for wood3 (dead coarse
+                root) per year before temperature and moisture effects
+                applied
+            Range: 0.0 to 0.5
+
+fcfrac(1,1)     C allocation fraction of new production of leaves for
+                juvenile forest (time < swold)
+            Range: 0.0 to 1.0
+
+fcfrac(2,1)     C allocation fraction of new production of fine roots for
+                juvenile forest (time < swold)
+            Range: 0.0 to 1.0
+
+fcfrac(3,1)     C allocation fraction of new production of fine branches for
+                juvenile forest (time < swold)
+            Range: 0.0 to 1.0
+
+fcfrac(4,1)     C allocation fraction of new production of large wood for
+                juvenile forest (time < swold)
+            Range: 0.0 to 1.0
+
+fcfrac(5,1)     C allocation fraction of new production of coarse roots for
+                juvenile forest (time < swold)
+            Range: 0.0 to 1.0
+
+fcfrac(1,2)     C allocation fraction of new production of leaves for
+                mature forest (time >= swold)
+            Range: 0.0 to 1.0
+
+fcfrac(2,2)     C allocation fraction of new production of fine roots for
+                mature forest (time >= swold)
+            Range: 0.0 to 1.0
+
+fcfrac(3,2)     C allocation fraction of new production of fine branches for
+                mature forest (time >= swold)
+            Range: 0.0 to 1.0
+
+fcfrac(4,2)     C allocation fraction of new production of large wood for
+                mature forest (time >= swold)
+            Range: 0.0 to 1.0
+
+fcfrac(5,2)     C allocation fraction of new production of coarse roots for
+                mature forest (time >= swold)
+            Range: 0.0 to 1.0
+
+frfrac(1)       minimum possible allocation fraction to fine roots
+            Range: 0.0 to 1.0
+
+frfrac(2)       maximum possible allocation fraction to fine roots
+            Range: 0.0 to 1.0
+
+leafdr(1)       monthly death rate fraction for leaves
+            Range: 0.0 to 1.0
+
+leafdr(2)       monthly death rate fraction for leaves
+            Range: 0.0 to 1.0
+
+leafdr(3)       monthly death rate fraction for leaves
+            Range: 0.0 to 1.0
+
+leafdr(4)       monthly death rate fraction for leaves
+            Range: 0.0 to 1.0
+
+leafdr(5)       monthly death rate fraction for leaves
+            Range: 0.0 to 1.0
+
+leafdr(6)       monthly death rate fraction for leaves
+            Range: 0.0 to 1.0
+
+leafdr(7)       monthly death rate fraction for leaves
+            Range: 0.0 to 1.0
+
+leafdr(8)       monthly death rate fraction for leaves
+            Range: 0.0 to 1.0
+
+leafdr(9)       monthly death rate fraction for leaves
+            Range: 0.0 to 1.0
+
+leafdr(10)      monthly death rate fraction for leaves
+            Range: 0.0 to 1.0
+
+leafdr(11)      monthly death rate fraction for leaves
+            Range: 0.0 to 1.0
+
+leafdr(12)      monthly death rate fraction for leaves
+            Range: 0.0 to 1.0
+
+btolai          biomass to leaf area index (LAI) conversion factor
+                for trees; some suggested values:
+                  arctic tundra - 0.008
+                  arid savanna/shrubland - 0.007
+                  boreal forest - 0.004
+                  coniferous/deciduous mix forest - 0.007
+                  grassland - 0.008
+                  maritime coniferous forest - 0.004
+                  temperate coniferous forest - 0.004
+                  temperate coniferous savanna - 0.004
+                  temperate deciduous savanna - 0.01
+                  temperate mixed savanna - 0.007
+                  tropical evergreen forest - 0.01
+                  tropical savanna - 0.006
+                  warm temperate deciduous forest - 0.01
+
+klai            large wood mass (g C/m2) at which half of the theoretical
+                maximum leaf area (maxlai) is achieved
+            Range: ? to ?
+
+laitop          parameter determining relationship between LAI and
+                forest production: LAI effect = 1 - exp(laitop * LAI)
+            Range: ? to ?
+
+maxlai          theoretical maximum leaf area index achieved in mature forest
+            Range: 0.0 to 50.0
+
+maxldr          multiplier for effect of N availability on leaf death rates
+                (continously growing forest systems only); a ratio between
+                death rate at unlimited vs. severly limited N status
+            Range: 0.0 to 1.0
+
+forrtf(1)       fraction of N retranslocated from green forest leaves at death
+            Range: 0.0 to 1.0
+
+forrtf(2)       fraction of P retranslocated from green forest leaves at death
+            Range: 0.0 to 1.0
+
+forrtf(3)       fraction of S retranslocated from green forest leaves at death
+            Range: 0.0 to 1.0
+
+sapk            parameter controlling ratio of sapwood to total stem wood,
+                expressed as gC/m2; it is equal to both the large wood
+                mass (rlwodc) at which half of large wood is sapwood, and
+                the theoretical maximum sapwood mass achieved in mature
+                forest
+            Range: ? to ?
+
+swold           year at which to switch from juvenile to mature forest
+                C allocation fractions for production
+            Range: 0.0 to 9999.0
+
+wdlig(1)        lignin fraction for forest system leaf component
+            Range: 0.0 to 1.0
+
+wdlig(2)        lignin fraction for forest system fine root component
+            Range: 0.0 to 1.0
+
+wdlig(3)        lignin fraction for forest system fine branch component
+            Range: 0.0 to 1.0
+
+wdlig(4)        lignin fraction for forest system large wood component
+            Range: 0.0 to 1.0
+
+wdlig(5)        lignin fraction for forest system coarse root component
+            Range: 0.0 to 1.0
+
+wooddr(1)       fraction of forest which is deciduous; the fraction of
+                leaves which fall during senescence month or at the end
+                of the growing season, used when decid = 1 or 2
+            Range: 0.0 to 1.0
+
+wooddr(2)       monthly death rate fraction for fine root component
+            Range: 0.0 to 1.0
+
+wooddr(3)       monthly death rate fraction for fine branch component
+            Range: 0.0 to 1.0
+
+wooddr(4)       monthly death rate fraction for large wood component
+            Range: 0.0 to 1.0
+
+wooddr(5)       monthly death rate fraction for coarse root component
+            Range: 0.0 to 1.0
+
+snfxmx(2)       symbiotic N fixation maximum for forest
+                (g N fixed/g C new growth)
+            Range: 0.0 to 1.0
+
+del13c          delta 13C value for stable isotope labeling
+            Range: ? to ?
+
+co2ipr(2)       in a forest system, the effect on plant production (ratio)
+                of doubling the atmospheric CO2 concentration from
+                350 ppm to 700 ppm
+            Range: 0.5 to 1.5
+
+co2itr(2)       in a forest system, the effect on transpiration rate (ratio)
+                of doubling the atmospheric CO2 concentration from
+                350 ppm to 700 ppm
+            Range: 0.5 to 1.5
+
+co2ice(2,1,1)   in a forest system, the effect on minimum C/N ratio
+                of doubling the atmospheric CO2 concentration from
+                350 ppm to 700 ppm
+            Range: 0.5 to 1.5
+
+co2ice(2,1,2)   in a forest system, the effect on minimum C/P ratio
+                of doubling the atmospheric CO2 concentration from
+                350 ppm to 700 ppm
+            Range: 0.5 to 1.5
+
+co2ice(2,1,3)   in a forest system, the effect on minimum C/S ratio
+                of doubling the atmospheric CO2 concentration from
+                350 ppm to 700 ppm
+            Range: 0.5 to 1.5
+
+co2ice(2,2,1)   in a forest system, the effect on maximum C/N ratio
+                of doubling the atmospheric CO2 concentration from
+                350 ppm to 700 ppm
+            Range: 0.5 to 1.5
+
+co2ice(2,2,2)   in a forest system, the effect on maximum C/P ratio
+                of doubling the atmospheric CO2 concentration from
+                350 ppm to 700 ppm
+            Range: 0.5 to 1.5
+
+co2ice(2,2,3)   in a forest system, the effect on maximum C/S ratio
+                of doubling the atmospheric CO2 concentration from
+                350 ppm to 700 ppm
+            Range: 0.5 to 1.5
+
+co2irs(2)       in a forest system, the effect on root-shoot ratio
+                of doubling the atmospheric CO2 concentration from
+                350 ppm to 700 ppm
+            Range: 0.5 to 1.5
+
+basfc2          (savanna only) relates tree basal area to grass N fraction;
+                higher value gives more N to trees; if not running savanna,
+                set to 1.0
+            Range: ? to ?
+
+basfct          (savanna only) ratio between basal area and wood biomass
+                (cm2/g); it is equal to (form factor * wood density * tree
+                height); if not running savanna, set to 1.0
+            Range: ? to ?
+
+sitpot          multiplier for equation to dynamically compute measure of the
+                aboveground herbaceous layer production in kg ha-1 yr-1 in
+                the absence of trees
+            Range: ? to ?
+
+maxnp           maximum N/P ratio for leaves, used only when nelem >= 2
+            Range: ? to ?
+
+kmrsp(2)        the fraction of net primary production that goes to the
+                maintenance respiration storage pool for trees
+            Range: 0.0 to 1.0
+
+fkmrspmx(1)     maximum fraction of live leaf C that goes to
+                maintenance respiration for trees
+            Range: 0.0 to 1.0
+
+fkmrspmx(2)     maximum fraction of live fine branch C that goes to
+                maintenance respiration for trees
+            Range: 0.0 to 1.0
+
+fkmrspmx(3)     maximum fraction of live large wood C that goes to
+                maintenance respiration for trees
+            Range: 0.0 to 1.0
+
+fkmrspmx(4)     maximum fraction of dead fine branch C that goes to
+                maintenance respiration for trees
+            Range: 0.0 to 1.0
+
+fkmrspmx(5)     maximum fraction of dead large wood C that goes to
+                maintenance respiration for trees
+            Range: 0.0 to 1.0
+
+no3pref(2)      fraction of N update that is NO3
+            Range: 0.0 to 1.0
+twigdr(1)       monthly death rate fraction for fine branch (twig if shrubs)
+            Range: 0.0 to 1.0
+twigdr(2)       monthly death rate fraction for fine branch (twig if shrubs)
+            Range: 0.0 to 1.0
+twigdr(3)       monthly death rate fraction for fine branch (twig if shrubs)
+            Range: 0.0 to 1.0
+twigdr(4)       monthly death rate fraction for fine branch (twig if shrubs)
+            Range: 0.0 to 1.0
+twigdr(5)       monthly death rate fraction for fine branch (twig if shrubs)
+            Range: 0.0 to 1.0
+twigdr(6)       monthly death rate fraction for fine branch (twig if shrubs)
+            Range: 0.0 to 1.0
+twigdr(7)       monthly death rate fraction for fine branch (twig if shrubs)
+            Range: 0.0 to 1.0
+twigdr(8)       monthly death rate fraction for fine branch (twig if shrubs)
+            Range: 0.0 to 1.0
+twigdr(9)       monthly death rate fraction for fine branch (twig if shrubs)
+            Range: 0.0 to 1.0
+twigdr(10)      monthly death rate fraction for fine branch (twig if shrubs)
+            Range: 0.0 to 1.0
+twigdr(11)      monthly death rate fraction for fine branch (twig if shrubs)
+            Range: 0.0 to 1.0
+twigdr(12)      monthly death rate fraction for fine branch (twig if shrubs)
+            Range: 0.0 to 1.0

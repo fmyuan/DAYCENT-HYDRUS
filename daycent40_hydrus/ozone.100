@@ -1,0 +1,36 @@
+A1960     OZONE exposure index W126 @Jan
+40.0             'O3PPB'
+100.0            'O3IDX'
+B1960     OZONE exposure index W126 @Feb
+40.0             'O3PPB'
+200.0            'O3IDX'
+C1960     OZONE exposure index W126 @Mar
+40.0             'O3PPB'
+300.0            'O3IDX'
+D1960     OZONE exposure index W126 @Apr
+40.0             'O3PPB'
+400.0            'O3IDX'
+E1960     OZONE exposure index W126 @May
+40.0             'O3PPB'
+500.0            'O3IDX'
+F1960     OZONE exposure index W126 @Jun
+40.0             'O3PPB'
+600.0            'O3IDX'
+G1960     OZONE exposure index W126 @Jul
+40.0             'O3PPB'
+700.0            'O3IDX'
+H1960     OZONE exposure index W126 @Aug
+40.0             'O3PPB'
+800.0            'O3IDX'
+I1960     OZONE exposure index W126 @Sep
+40.0             'O3PPB'
+900.0            'O3IDX'
+J1960     OZONE exposure index W126 @Oct
+40.0             'O3PPB'
+300.0            'O3IDX'
+K1960     OZONE exposure index W126 @Nov
+40.0             'O3PPB'
+330.0            'O3IDX'
+L1960     OZONE exposure index W126 @Dec
+40.0             'O3PPB'
+360.0            'O3IDX'

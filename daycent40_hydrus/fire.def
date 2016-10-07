@@ -1,0 +1,74 @@
+Fire option file "fire.100" will contain these values:
+flfrem          fraction of live shoots removed by a fire event
+            Range: 0.0 to 1.0
+
+fdfrem(1)       fraction of standing dead plant material removed by a fire
+                event
+            Range: 0.0 to 1.0
+
+fdfrem(2)       fraction of surface litter removed by a fire event
+            Range: 0.0 to 1.0
+
+fdfrem(3)       fraction of dead fine branches removed by a fire event
+            Range: 0.0 to 1.0
+
+fdfrem(4)       fraction of dead large wood removed by a fire event
+            Range: 0.0 to 1.0
+
+fret(1,1)       fraction of C in the burned aboveground material (live
+                shoots, standing dead, and litter) returned to the system
+                following a fire event
+            Range: 0.0 to 1.0
+
+fret(1,2)       fraction of N in the burned aboveground material returned to
+                the system following a fire event
+            Range: 0.0 to 1.0
+
+fret(1,3)       fraction of P in the burned aboveground material returned to
+                the system following a fire event
+            Range: 0.0 to 1.0
+
+fret(1,4)       fraction of S in the burned aboveground material returned to
+                the system following a fire event
+            Range: 0.0 to 1.0
+
+fret(2,1)       fraction of C in the burned dead fine branch material
+                returned to the system following a fire event
+            Range: 0.0 to 1.0
+
+fret(2,2)       fraction of N in the burned dead fine branch material
+                returned to the system following a fire event 
+            Range: 0.0 to 1.0
+
+fret(2,3)       fraction of P in the burned dead fine branch material
+                returned to the system following a fire event
+            Range: 0.0 to 1.0
+
+fret(2,4)       fraction of S in the burned dead fine branch material
+                returned to the system following a fire event
+            Range: 0.0 to 1.0
+
+fret(3,1)       fraction of C in the burned dead large wood material returned
+                to the system following a fire event
+            Range: 0.0 to 1.0
+
+fret(3,2)       fraction of N in the burned dead large wood material returned
+                to the system following a fire event
+            Range: 0.0 to 1.0
+
+fret(3,3)       fraction of P in the burned dead large wood material returned
+                to the system following a fire event
+            Range: 0.0 to 1.0
+
+fret(3,4)       fraction of S in the burned dead large wood material returned
+                to the system following a fire event
+            Range: 0.0 to 1.0
+
+frtsh           additive effect of burning on root/shoot ratio
+            Range: 0.0 to 1.0
+
+fnue(1)         effect of fire on increase in maximum C/N ratio of shoots
+            Range: 0.0 to 10.0
+
+fnue(2)         effect of fire on increase in maximum C/N ratio of roots
+            Range: 0.0 to 30.0

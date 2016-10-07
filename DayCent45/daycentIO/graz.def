@@ -1,0 +1,50 @@
+Grazing options file "graz.100" will contain these values:
+flgrem          fraction of live shoots removed by a grazing event
+            Range: 0.0 to 1.0
+
+fdgrem          fraction of standing dead removed by a grazing event
+            Range: 0.0 to 1.0
+
+gfcret          fraction of consumed C which is excreted in faeces and urine
+            Range: 0.0 to 1.0
+
+gret(1)         fraction of consumed N which is excreted in faeces and urine
+                (should take into account N losses due to leaching or
+                volatilization from the manure)
+            Range: 0.0 to 1.0
+
+gret(2)         fraction of consumed P which is excreted in faeces and urine
+                (should take into account P losses due to leaching or
+                volatilization from the manure)
+            Range: 0.0 to 1.0
+
+gret(3)         fraction of consumed S which is excreted in faeces and urine
+                (should take into account S losses due to leaching or
+                volatilization from the manure)
+            Range: 0.0 to 1.0
+
+grzeff          effect of grazing on production
+                  = 0  grazing has no direct effect on production
+                  = 1  linear impact on agp
+                  = 2  quadratic impact on agp and root/shoot ratio
+                  = 3  quadratic impact on root/shoot ratio
+                  = 4  linear impact on root/shoot ratio
+                  = 5  quadratic impact on agp and
+                       linear impact on root/shoot ratio
+                  = 6  linear impact on agb and root/shoot ratio
+            Range: 0 or 1 or 2 or 3 or 4 or 5 or 6
+
+fecf(1)         fraction of excreted N which goes into faeces (rest goes into
+                urine)
+            Range: 0.0 to 1.0
+
+fecf(2)         fraction of excreted P which goes into faeces (rest goes into
+                urine)
+            Range: 0.0 to 1.0
+
+fecf(3)         fraction of excreted S which goes into faeces (rest goes into
+                urine)
+            Range: 0.0 to 1.0
+
+feclig          lignin content of faeces
+            Range: 0.0 to 1.0

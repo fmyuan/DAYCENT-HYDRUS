@@ -1,0 +1,74 @@
+Tree removal options file "trem.100" will contain these values:
+evntyp          event type flag
+                  = 0 for cutting event
+                  = 1 for fire event
+            Range: 0 or 1
+
+remf(1)         fraction of leaf live component removed
+            Range: 0.0 to 1.0
+
+remf(2)         fraction of fine branch live component removed
+            Range: 0.0 to 1.0
+
+remf(3)         fraction of large wood live component removed
+            Range: 0.0 to 1.0
+
+remf(4)         fraction of fine branch dead component removed
+            Range: 0.0 to 1.0
+
+remf(5)         fraction of large wood dead component removed
+            Range: 0.0 to 1.0
+
+fd(1)           fraction of fine root component that dies
+            Range: 0.0 to 1.0
+
+fd(2)           fraction of coarse root component that dies
+            Range: 0.0 to 1.0
+
+retf(1,1)       fraction of C in killed live leaves that is returned to the
+                system (ash or litter)
+            Range: 0.0 to 1.0
+
+retf(1,2)       fraction of N in killed live leaves that is returned to the
+                system (ash or litter)
+            Range: 0.0 to 1.0
+
+retf(1,3)       fraction of P in killed live leaves that is returned to the
+                system (ash or litter)
+            Range: 0.0 to 1.0
+
+retf(1,4)       fraction of S in killed live leaves that is returned to the
+                system (ash or litter)
+            Range: 0.0 to 1.0
+
+retf(2,1)       fraction of C in killed fine branches that is returned to the
+                system (ash or dead fine branches)
+            Range: 0.0 to 1.0
+
+retf(2,2)       fraction of N in killed fine branches that is returned to the
+                system (ash or dead fine branches)
+            Range: 0.0 to 1.0
+
+retf(2,3)       fraction of P in killed fine branches that is returned to the
+                system (ash or dead fine branches)
+            Range: 0.0 to 1.0
+
+retf(2,4)       fraction of S in killed fine branches that is returned to the
+                system (ash or dead fine branches)
+            Range: 0.0 to 1.0
+
+retf(3,1)       fraction of C in killed large wood that is returned to the
+                system (ash or dead large wood)
+            Range: 0.0 to 1.0
+
+retf(3,2)       fraction of N in killed large wood that is returned to the
+                system (ash or dead large wood)
+            Range: 0.0 to 1.0
+
+retf(3,3)       fraction of P in killed large wood that is returned to the
+                system (ash or dead large wood)
+            Range: 0.0 to 1.0
+
+retf(3,4)       fraction of S in killed large wood that is returned to the
+                system (ash or dead large wood)
+            Range: 0.0 to 1.0

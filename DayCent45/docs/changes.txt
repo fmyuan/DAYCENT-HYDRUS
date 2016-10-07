@@ -1,0 +1,65 @@
+==============================================================================
+Changes to the parameter files:
+
+CROP.100:
+     new    --> CMIX (follows CLAYPG)
+     DDHARV --> DDBASE
+     new    --> BASETEMP (follows TMPKILL)
+     new    --> MNDDHRV (follows BASETEMP)
+     new    --> MXDDHRV (follows MNDDHARV)
+CMIX - rate of mixing of surface SOM2C and soil SOM2C for grass/crop system, this value will also be used when running a savanna 
+DDBASE - number of degree days required to trigger a senescence event for a perennial (FRTCINDX = 3), maturity for a non-grain filling annual (FRTCINDX = 4), or to anthesis for a grain filling annual(FRTCINDX = 5 or 6)
+BASETEMP - base temperature for crop growth, growing degree days will accumulate only on days when the average temperature is greater than the base temperature for the crop (degrees C) 
+MNDDHRV  - minimum number of degree days from anthesis to harvest for grain filling annuals (FRTCINDX = 5 or 6) 
+MXDDHRV  - maximum number of degree days from anthesis to harvest for grain filling annuals (FRTCINDX = 5 or 6)
+
+FIX.100:
+     DEC5        --> DEC5(1) and DEC5(2)
+     P2CO2       --> P2CO2(1) and P2CO2(2)
+     PCEMIC(3,3) --> PCEMIC1(3,3)
+     new         --> PCEMIC2
+     VARAT2(3,3) --> VARAT21(3,3)
+     new         --> VARAT22(3,3)
+DEC5(1)      - maximum decomposition rate of surface organic matter with intermediate turnover
+DEC5(2)      - maximum decomposition rate of soil organic matter with intermediate turnover
+P2CO2(1)     - controls flow from surface organic matter with intermediate turnover to CO2 (fraction of C lost as CO2 during decomposition)
+P2CO2(2)     - controls flow from soil organic matter with intermediate turnover to CO2 (fraction of C lost as CO2 during
+               decomposition)
+PCEMIC1(1,3) - maximum C/E ratio for surface microbial pool
+PCEMIC1(2,3) - minimum C/E ratio for surface microbial pool
+PCEMIC1(3,3) - minimum E content of decomposing aboveground material above which the C/E ratio of the surface microbes equals PCEMIC(2,*)
+PCEMIC2(1,3) - maximum C/E ration for surface intermediate pool
+PCEMIC2(2,3) - minimum C/E ratio for surface intermediate pool
+PCEMIC2(3,3) - minimum E content of decomposing aboveground material above which the C/E ratio of the surface intermediate pool equals PCEMIC(2,*)
+VARAT21(1,3) - maximum C/E ratio for material entering surface som2
+VARAT21(2,3) - minimum C/E ratio for material entering surface som2
+VARAT21(2,3) - amount of E present when minimum ratio applies
+VARAT22(1,3) - maximum C/E ratio for material entering soil som2
+VARAT22(2,3) - minimum C/E ratio for material entering soil som2
+VARAT22(2,3) - amount of E present when minimum ratio applies
+
+TREE.100:
+     new --> TMIX (follows TLAYPG)
+TMIX - rate of mixing of surface SOM2C and soil SOM2C for forest system
+
+<SITE>.100:
+     SOM2CI(2) --> SOM2CI(2,2)
+     RCES2(3)  --> RCES2(2,3)
+SOM2CI(1,1) - initial value for unlabeled C in surface organic matter with intermediate turnover
+SOM2CI(1,2) - initial value for labeled C in surface organic matter with intermediate turnover
+SOM2CI(2,1) - initial value for unlabeled C in soil organic matter with intermediate turnover
+SOM2CI(2,2) - initial value for labeled C in soil organic matter with intermediate turnover
+RCES2(1,3)  - initial C/E ratio in surface organic matter with intermediate turnover
+RCES2(2,3)  - initial C/E ratio in soil organic matter with intermediate turnover
+
+==============================================================================
+New output variables:
+SOM2C(2)    - C in slow pool surface organic matter (g/m^2)
+SOM2CI(2,2) - C in slow pool soil organic matter (g/m^2)
+SOM2E(2,2)  - E in slow pool soil organic matter (g/m^2)
+TLITTR(2,2) - residue (CLITTR) plus surface som1c and surface som2c
+DSOM2C(1)   - delta 13C value for som2c(1) for stable isotope labeling
+DSOM2C(2)   - delta 13C value for som2c(2) for stable isotope labeling
+S2MNR(2,3)  - net mineralization for E for slow pool som2e(E)
+
+##############################################################################

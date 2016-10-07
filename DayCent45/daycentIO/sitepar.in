@@ -1,0 +1,45 @@
+2        / timstep: 1=monthly production, 2=weekly production
+0        / 1 = Use extra weather drivers (solrad, rhumid, windsp), 0 = don't use (for PET)
+1        / sublimscale
+0.18     / reflec, vegetation albedo (frac)
+0.20     / albedo (frac) hardwoods = 0.20 spruce = 0.10
+0.60     / fswcinit - initial swc, fraction of field capacity
+0.000008 / dmpflux - in h2oflux routine (0.000001 = original value)
+4        / hours_rain - duration of each rain event
+0        / # of days between rainfall event and drainage of soil (-1=computed)
+1  0     / watertable[month] - 0 = no water table, 1 = water table
+2  0
+3  0
+4  0
+5  0
+6  0
+7  0
+8  0
+9  0
+10 0
+11 0
+12 0
+-200     / hpotdeep - hydraulic water potential of deep storage layer (units?)
+0.0002   / ksatdeep - saturated hydraulic conductivity of deep storage layer (cm/sec)
+1  18    / cldcov[month] - cloud cover (%)
+2  28
+3  28
+4  24
+5  13
+6   8
+7   6
+8   8
+9   7
+10 18
+11 18
+12 28
+0.0 12.4 / min and max temperature for bottom soil layer (degrees C)
+0.003    / damping factor for calculating soil temperature by layer
+30.0     / timlag, days from Jan 1 to coolest temp at bottom of soil (days)
+0.03     / min water/temperature limitation coefficient for nitrify
+0 1      / layers composing shallow depths (region 0)
+2 3      / layers composing intermediate depths (region 1)
+4 5      / layers composing deep depths (region 2)
+6 6      / layers composing very deep (region 3)
+0 0      / turn off respiration restraint on denit between these Julian dates
+0.6      / nitrification N2O adjustment factor (0.0-1.0)

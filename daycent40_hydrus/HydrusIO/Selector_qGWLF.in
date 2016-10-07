@@ -1,0 +1,42 @@
+*** BLOCK A: BASIC INFORMATION *****************************************
+Heading
+Camp Paivika, CA
+LUnit  TUnit  MUnit  (indicated units are obligatory for all input data)
+cm
+days
+-
+lWat   lSink lShort lScreen lVariabBC
+ t     t     f      t       t         
+NMat    NLay  CosAlpha
+  4       3       1
+*** BLOCK B: WATER FLOW INFORMATION ************************************
+MaxIt   TolTh   TolH       (maximum number of iterations and tolerances)
+  50   0.0005   0.05
+TopInf WLayer KodTop InitCond
+ t     t      -1       t
+BotInf qGWLF FreeD KodBot
+ f     t      f    -1    
+     GWL0L         Aqh          Bqh
+       200      -0.1687     -0.02674
+     hTab1   hTabN
+    1e-006   10000
+    Model   
+    0
+   thr     ths    Alfa      n         Ks       l
+ 0.0641  0.4237  0.0372  1.3067      54.77     0.5 
+ 0.0625  0.4132  0.0390  1.3192      55.01     0.5 
+ 0.0589  0.3896  0.0429  1.3528      60.08     0.5 
+ 0.0561  0.3773  0.0428  1.3574      57.41     0.5 
+*** BLOCK C: TIME INFORMATION ******************************************
+        dt       dtMin       dtMax     DMul    DMul2  ItMin ItMax  MPL
+        0.1      0.0001       0.5      1.3     0.3     3     7     1
+      tInit        tMax
+          1         365
+TPrint(1),TPrint(2),...,TPrint(MPL)
+         1         
+*** BLOCK G: ROOT WATER UPTAKE INFORMATION *****************************
+       P0       P2H       P2L       P3          r2H        r2L
+      -10      -200      -300     -15000        0.5        0.1
+POptm(1),POptm(2),...,POptm(NMat)
+     -25      -25     -25
+*** END OF INPUT FILE 'SELECTOR.IN' ************************************

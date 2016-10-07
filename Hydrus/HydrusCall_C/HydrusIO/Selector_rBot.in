@@ -1,0 +1,40 @@
+*** BLOCK A: BASIC INFORMATION *****************************************
+Heading
+Example 2 - test for codes
+LUnit  TUnit  MUnit  (indicated units are obligatory for all input data)
+cm
+days
+-
+lWat   lSink lShort lScreen lVariabBC
+ t     t     f      t       t         
+NMat    NLay  CosAlpha
+  2       2       1
+*** BLOCK B: WATER FLOW INFORMATION ************************************
+MaxIt   TolTh   TolH       (maximum number of iterations and tolerances)
+  20   0.0005   0.05
+TopInf WLayer KodTop InitCond
+ t     t      -1       f
+BotInf FreeD KodBot
+ f     f      -1    
+        rBot    rTop    rRoot
+	0	0	0
+    hTab1   hTabN
+    1e-006   10000
+    Model   
+    0
+   thr     ths    Alfa      n         Ks       l
+ 0.0001   0.399  0.0174  1.3757      29.75     0.5 
+ 0.0001   0.339  0.0139  1.6024      45.34     0.5 
+*** BLOCK C: TIME INFORMATION ******************************************
+        dt       dtMin       dtMax     DMul    DMul2  ItMin ItMax  MPL
+        0.1      0.0001         0.5     1.3     0.3     3     7     1
+      tInit        tMax
+         91         92
+TPrint(1),TPrint(2),...,TPrint(MPL)
+         92         
+*** BLOCK G: ROOT WATER UPTAKE INFORMATION *****************************
+       P0       P2H       P2L       P3          r2H        r2L
+      -10      -200      -800     -8000         0.5         0.1
+POptm(1),POptm(2),...,POptm(NMat)
+     -25      -25 
+*** END OF INPUT FILE 'SELECTOR.IN' ************************************

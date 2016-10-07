@@ -1,0 +1,17 @@
+Irrigation options file "irri.100" will contain these values:
+auirri          controls application of automatic irrigation
+                  = 0 automatic irrigation is off
+                  = 1 irrigate to field capacity
+                  = 2 irrigate with a specified amount of water applied
+                  = 3 irrigate to field capacity plus PET
+            Range: 0 or 1 or 2 or 3
+
+fawhc           fraction of available water holding capacity below which
+                automatic irrigation will be used when auirri = 1 or 2
+            Range: 0.0 to 1.0
+
+irraut          amount of water to apply automatically when auirri = 2 (cm)
+            Range: 0.0 to 9999.0
+
+irramt          amount of water to apply regardless of soil water status (cm)
+            Range: 0.0 to 9999.0

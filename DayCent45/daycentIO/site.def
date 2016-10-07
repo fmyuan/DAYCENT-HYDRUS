@@ -1,0 +1,865 @@
+Site file "site.100" will contain these values:
+*** Climate parameters
+precip(1)       precipitation for January (cm/month)
+            Range: 0.0 to 9999.0
+
+precip(2)       precipitation for February (cm/month)
+            Range: 0.0 to 9999.0
+
+precip(3)       precipitation for March (cm/month)
+            Range: 0.0 to 9999.0
+
+precip(4)       precipitation for April (cm/month)
+            Range: 0.0 to 9999.0
+
+precip(5)       precipitation for May (cm/month)
+            Range: 0.0 to 9999.0
+
+precip(6)       precipitation for June (cm/month)
+            Range: 0.0 to 9999.0
+
+precip(7)       precipitation for July (cm/month)
+            Range: 0.0 to 9999.0
+
+precip(8)       precipitation for August (cm/month)
+            Range: 0.0 to 9999.0
+
+precip(9)       precipitation for September (cm/month)
+            Range: 0.0 to 9999.0
+
+precip(10)      precipitation for October (cm/month)
+            Range: 0.0 to 9999.0
+
+precip(11)      precipitation for November (cm/month)
+            Range: 0.0 to 9999.0
+
+precip(12)      precipitation for December (cm/month)
+            Range: 0.0 to 9999.0
+
+prcstd(1)       standard deviations for January precipitation value
+                (cm/month)
+            Range: 0.0 to 9999.0
+
+prcstd(2)       standard deviations for February precipitation value
+                (cm/month)
+            Range: 0.0 to 9999.0
+
+prcstd(3)       standard deviations for March precipitation value
+                (cm/month)
+            Range: 0.0 to 9999.0
+
+prcstd(4)       standard deviations for April precipitation value
+                (cm/month)
+            Range: 0.0 to 9999.0
+
+prcstd(5)       standard deviations for May precipitation value
+                (cm/month)
+            Range: 0.0 to 9999.0
+
+prcstd(6)       standard deviations for June precipitation value
+                (cm/month)
+            Range: 0.0 to 9999.0
+
+prcstd(7)       standard deviations for July precipitation value
+                (cm/month)
+            Range: 0.0 to 9999.0
+
+prcstd(8)       standard deviations for August precipitation value
+                (cm/month)
+            Range: 0.0 to 9999.0
+
+prcstd(9)       standard deviations for September precipitation value
+                (cm/month)
+            Range: 0.0 to 9999.0
+
+prcstd(10)      standard deviations for October precipitation value
+                (cm/month)
+            Range: 0.0 to 9999.0
+
+prcstd(11)      standard deviations for November precipitation value
+                (cm/month)
+            Range: 0.0 to 9999.0
+
+prcstd(12)      standard deviations for December precipitation value
+                (cm/month)
+            Range: 0.0 to 9999.0
+
+prcskw(1)       skewness value for January precipitation
+            Range: 0.0 to 9999.0
+
+prcskw(2)       skewness value for February precipitation
+            Range: 0.0 to 9999.0
+
+prcskw(3)       skewness value for March precipitation
+            Range: 0.0 to 9999.0
+
+prcskw(4)       skewness value for April precipitation
+            Range: 0.0 to 9999.0
+
+prcskw(5)       skewness value for May precipitation
+            Range: 0.0 to 9999.0
+
+prcskw(6)       skewness value for June precipitation
+            Range: 0.0 to 9999.0
+
+prcskw(7)       skewness value for July precipitation
+            Range: 0.0 to 9999.0
+
+prcskw(8)       skewness value for August precipitation
+            Range: 0.0 to 9999.0
+
+prcskw(9)       skewness value for September precipitation
+            Range: 0.0 to 9999.0
+
+prcskw(10)      skewness value for October precipitation
+            Range: 0.0 to 9999.0
+
+prcskw(11)      skewness value for November precipitation
+            Range: 0.0 to 9999.0
+
+prcskw(12)      skewness value for December precipitation
+            Range: 0.0 to 9999.0
+
+tmn2m(1)        January minimum temperature at 2 meters (deg C)
+            Range: ? to ?
+
+tmn2m(2)        February minimum temperature at 2 meters (deg C)
+            Range: ? to ?
+
+tmn2m(3)        March minimum temperature at 2 meters (deg C)
+            Range: ? to ?
+
+tmn2m(4)        April minimum temperature at 2 meters (deg C)
+            Range: ? to ?
+
+tmn2m(5)        May minimum temperature at 2 meters (deg C)
+            Range: ? to ?
+
+tmn2m(6)        June minimum temperature at 2 meters (deg C)
+            Range: ? to ?
+
+tmn2m(7)        July minimum temperature at 2 meters (deg C)
+            Range: ? to ?
+
+tmn2m(8)        August minimum temperature at 2 meters (deg C)
+            Range: ? to ?
+
+tmn2m(9)        September minimum temperature at 2 meters (deg C)
+            Range: ? to ?
+
+tmn2m(10)       October minimum temperature at 2 meters (deg C)
+            Range: ? to ?
+
+tmn2m(11)       November minimum temperature at 2 meters (deg C)
+            Range: ? to ?
+
+tmn2m(12)       December minimum temperature at 2 meters (deg C)
+            Range: ? to ?
+
+tmx2m(1)        January maximum temperature at 2 meters (deg C)
+            Range: ? to ?
+
+tmx2m(2)        February maximum temperature at 2 meters (deg C)
+            Range: ? to ?
+
+tmx2m(3)        March maximum temperature at 2 meters (deg C)
+            Range: ? to ?
+
+tmx2m(4)        April maximum temperature at 2 meters (deg C)
+            Range: ? to ?
+
+tmx2m(5)        May maximum temperature at 2 meters (deg C)
+            Range: ? to ?
+
+tmx2m(6)        June maximum temperature at 2 meters (deg C)
+            Range: ? to ?
+
+tmx2m(7)        July maximum temperature at 2 meters (deg C)
+            Range: ? to ?
+
+tmx2m(8)        August maximum temperature at 2 meters (deg C)
+            Range: ? to ?
+
+tmx2m(9)        September maximum temperature at 2 meters (deg C)
+            Range: ? to ?
+
+tmx2m(10)       October maximum temperature at 2 meters (deg C)
+            Range: ? to ?
+
+tmx2m(11)       November maximum temperature at 2 meters (deg C)
+            Range: ? to ?
+
+tmx2m(12)       December maximum temperature at 2 meters (deg C)
+            Range: ? to ?
+
+*** Site and control parameters
+ivauto          use Burke's equations to initialize soil C pools
+                  = 0 the user has supplied the initial values
+                  = 1 initialize using the grassland soil parameters
+                  = 2 initialize using the crop soil parameters
+            Range: 0 or 1 or 2
+
+nelem           number of elements (besides C) to be simulated
+                  = 1 simulate N
+                  = 2 simulate N and P
+                  = 3 simulate N, P and S
+            Range: 1 or 2 or 3
+
+sitlat          latitude of model site (deg)
+            Range: -90.0 to 90.0
+
+sitlng          longitude of model site (deg) (for reference only)
+            Range: -180.0 to 180.0
+
+sand            fraction of sand in soil
+            Range: 0.0 to 1.0
+
+silt            fraction of silt in soil
+            Range: 0.0 to 1.0
+
+clay            fraction of clay in soil
+            Range: 0.0 to 1.0
+
+rock            fraction of rock in soil
+            Range: 0.0 to 1.0
+
+bulkd           bulk density of soil used to compute soil loss by erosion,
+                wilting point, and field capacity (kg/liter)
+            Range: 0.0 to 2.0
+
+nlayer          number of soil layers in water model (maximum of 9); used only
+                to calculate the amount of water available for survival of
+                the plant
+            Range: 1 to 9
+
+nlaypg          number of soil layers in the top level of the water model;
+                determines avh2o(1), used for growth and root death
+            Range: 1 to 10
+
+drain           the fraction of excess water lost by drainage; indicates
+                whether a soil is sensitive for anaerobiosis (drain = 0)
+                or not (drain = 1)
+            Range: 0.0 to 1.0
+
+basef           the fraction of the soil water content of layer NLAYER+1
+                which is lost via base flow
+            Range: 0.0 to 1.0
+
+stormf          the fraction of flow from NLAYER to NLAYER+1 which goes
+                into storm flow
+            Range: 0.0 to 1.0
+
+precro          the amount of monthly rainfall required in order for runoff
+                to occur
+            Range: ? to ?
+
+fracro          the fraction of the monthly rainfall, over PRECRO, which is
+                lost via runoff
+            Range: 0.0 to 1.0
+
+swflag          flag indicating the source of the values for awilt and afiel,
+                either from actual data from the <site>.100 file or from
+                equations from Gupta and Larson (1979) or Rawls et al. (1982)
+                  swflag = 0  use actual data from the <site>.100 file
+                  swflag = 1  use G & L for both awilt (-15 bar)
+                              and afiel (-0.33 bar) [old way, version 3]
+                  swflag = 2  use G & L for both awilt (-15 bar)
+                              and afiel (-0.10 bar)
+                  swflag = 3  use Rawls for both awilt (-15 bar)
+                              and afiel (-0.33 bar)
+                  swflag = 4  use Rawls for both awilt (-15 bar)
+                              and afiel (-0.10 bar)
+                  swflag = 5  use Rawls for afiel (-0.33 bar) with
+                              actual data for awilt
+                  swflag = 6  use Rawls for afiel (-0.10 bar) with
+                              actual data for awilt
+            Range: 0 or 1 or 2 or 3 or 4 or 5 or 6
+
+awilt(1)        the wilting point of soil layer 1 (fraction); used only if
+                swflag = 0, 5, or 6
+            Range: 0.0 to 1.0
+
+awilt(2)        the wilting point of soil layer 2 (fraction); used only if
+                swflag = 0, 5, or 6
+            Range: 0.0 to 1.0
+
+awilt(3)        the wilting point of soil layer 3 (fraction); used only if
+                swflag = 0, 5, or 6
+            Range: 0.0 to 1.0
+
+awilt(4)        the wilting point of soil layer 4 (fraction); used only if
+                swflag = 0, 5, or 6
+            Range: 0.0 to 1.0
+
+awilt(5)        the wilting point of soil layer 5 (fraction); used only if
+                swflag = 0, 5, or 6
+            Range: 0.0 to 1.0
+
+awilt(6)        the wilting point of soil layer 6 (fraction); used only if
+                swflag = 0, 5, or 6
+            Range: 0.0 to 1.0
+
+awilt(7)        the wilting point of soil layer 7 (fraction); used only if
+                swflag = 0, 5, or 6
+            Range: 0.0 to 1.0
+
+awilt(8)        the wilting point of soil layer 8 (fraction); used only if
+                swflag = 0, 5, or 6
+            Range: 0.0 to 1.0
+
+awilt(9)        the wilting point of soil layer 9 (fraction); used only if
+                swflag = 0, 5, or 6
+            Range: 0.0 to 1.0
+
+awilt(10)       the wilting point of soil layer 10 (fraction); used only if
+                swflag = 0, 5, or 6
+            Range: 0.0 to 1.0
+
+afiel(1)        the field capacity of soil layer 1 (fraction); used only if
+                swflag = 0
+            Range: 0.0 to 1.0
+
+afiel(2)        the field capacity of soil layer 2 (fraction); used only if
+                swflag = 0
+            Range: 0.0 to 1.0
+
+afiel(3)        the field capacity of soil layer 3 (fraction); used only if
+                swflag = 0
+            Range: 0.0 to 1.0
+
+afiel(4)        the field capacity of soil layer 4 (fraction); used only if
+                swflag = 0
+            Range: 0.0 to 1.0
+
+afiel(5)        the field capacity of soil layer 5 (fraction); used only if
+                swflag = 0
+            Range: 0.0 to 1.0
+
+afiel(6)        the field capacity of soil layer 6 (fraction); used only if
+                swflag = 0
+            Range: 0.0 to 1.0
+
+afiel(7)        the field capacity of soil layer 7 (fraction); used only if
+                swflag = 0
+            Range: 0.0 to 1.0
+
+afiel(8)        the field capacity of soil layer 8 (fraction); used only if
+                swflag = 0
+            Range: 0.0 to 1.0
+
+afiel(9)        the field capacity of soil layer 9 (fraction); used only if
+                swflag = 0
+            Range: 0.0 to 1.0
+
+afiel(10)       the field capacity of soil layer 10 (fraction); used only if
+                swflag = 0
+            Range: 0.0 to 1.0
+
+ph              soil pH used to calculate the solubility of secondary
+                P within the boundaries specified by phesp(1) and phesp(3)
+            Range: 0.0 to 15.0
+
+pslsrb          slope term which controls the fraction of mineral P
+                that is labile
+            Range: 1.0 to 1.0
+
+sorpmx          maximum P sorption potential for a soil
+            Range: 100.0 to 100.0
+
+*** External nutrient input parameters
+epnfa(1)        intercept value for determining the effect of annual
+                precipitation on atmospheric N fixation (wet and dry
+                deposition) (g/m2/y/cm precip)
+            Range: 0.0 to 9999.0
+
+epnfa(2)        slope value for determining the effect of annual precipitation
+                on atmospheric N fixation (wet and dry deposition)
+                (g/m2/yr/cm precip)
+            Range: 0.0 to 1.0
+
+epnfs(1)        minimum AET value used for determining the effect of annual
+                evapotranspiration on non-symbiotic soil N fixation; not used
+                if nsnfix = 1 (cm)
+            Range: 0.0 to 9999.0
+
+epnfs(2)        intercept value for determining the effect of annual
+                evapotranspiration non-symbiotic soil N fixation; not used
+                if nsnfix = 1 (g/m2/yr/cm aet)
+            Range: 0.0 to 9999.0
+
+satmos(1)       intercept for atmospheric S inputs as a linear function of
+                annual precipitation (g S /m2/yr/cm precip)
+            Range: 0.0 to 9999.0
+
+satmos(2)       slope for atmospheric S inputs as a linear function of
+                annual precipitation (g S /m2/yr/cm precip)
+            Range: 0.0 to 1.0
+
+sirri           S concentration in irrigation water (mg S/l)
+            Range: 0.0 to 1000.0
+
+*** Organic matter initial parameters
+som1ci(1,1)     initial value for unlabeled C in surface organic matter
+                with fast turnover; used only if ivauto = 0 (gC/m2)
+            Range: 1.0 to 9999.0
+
+som1ci(1,2)     initial value for labeled C in surface organic matter
+                with fast turnover; used only if ivauto = 0 (gC/m2)
+            Range: 1.0 to 9999.0
+
+som1ci(2,1)     initial value for unlabeled C in soil organic matter
+                with fast turnover; used only if ivauto = 0 (gC/m2)
+            Range: 1.0 to 9999.0
+
+som1ci(2,2)     initial value for labeled C in soil organic matter
+                with fast turnover; used only if ivauto = 0 (gC/m2)
+            Range: 1.0 to 9999.0
+
+som2ci(1,1)     initial value for unlabeled C in surface organic matter
+                with intermediate turnover; used only if ivauto = 0 (gC/m2)
+            Range: 1.0 to 9999.0
+
+som2ci(1,2)     initial value for labeled C in surface organic matter
+                with intermediate turnover; used only if ivauto = 0 (gC/m2)
+            Range: 1.0 to 9999.0
+
+som2ci(2,1)     initial value for unlabeled C in soil organic matter
+                with intermediate turnover; used only if ivauto = 0 (gC/m2)
+            Range: 1.0 to 9999.0
+
+som2ci(2,2)     initial value for labeled C in soil organic matter
+                with intermediate turnover; used only if ivauto = 0 (gC/m2)
+            Range: 1.0 to 9999.0
+
+som3ci(1)       initial value for unlabeled C in soil organic matter
+                with slow turnover; used only if ivauto = 0 (gC/m2)
+            Range: 1.0 to 9999.0
+
+som3ci(2)       initial value for labeled C in soil organic matter
+                with slow turnover; used only if ivauto = 0 (gC/m2)
+            Range: 1.0 to 9999.0
+
+rces1(1,1)      initial C/N ratio in surface organic matter with fast turnover
+                (active som)
+            Range: 1.0 to 9999.0
+
+rces1(1,2)      initial C/P ratio in surface organic matter with fast turnover
+                (active som)
+            Range: 1.0 to 9999.0
+
+rces1(1,3)      initial C/S ratio in surface organic matter with fast turnover
+                (active som)
+            Range: 1.0 to 9999.0
+
+rces1(2,1)      initial C/N ratio in soil organic matter with fast turnover
+                (active som)
+            Range: 1.0 to 9999.0
+
+rces1(2,2)      initial C/P ratio in soil organic matter with fast turnover
+                (active som)
+            Range: 1.0 to 9999.0
+
+rces1(2,3)      initial C/S ratio in soil organic matter with fast turnover
+                (active som)
+            Range: 1.0 to 9999.0
+
+rces2(1,1)      initial C/N ratio in surface organic matter with intermediate
+                turnover (slow SOM)
+            Range: 1.0 to 9999.0
+
+rces2(1,2)      initial C/P ratio in surface organic matter with intermediate
+                turnover (slow SOM)
+            Range: 1.0 to 9999.0
+
+rces2(1,3)      initial C/S ratio in surface organic matter with intermediate
+                turnover (slow SOM)
+            Range: 1.0 to 9999.0
+
+rces2(2,1)      initial C/N ratio in soil organic matter with intermediate
+                turnover (slow SOM)
+            Range: 1.0 to 9999.0
+
+rces2(2,2)      initial C/P ratio in soil organic matter with intermediate
+                turnover (slow SOM)
+            Range: 1.0 to 9999.0
+
+rces2(2,3)      initial C/S ratio in soil organic matter with intermediate
+                turnover (slow SOM)
+            Range: 1.0 to 9999.0
+
+rces3(1)        initial C/N ratio in soil organic matter with slow turnover
+                (passive SOM)
+            Range: 1.0 to 9999.0
+
+rces3(2)        initial C/P ratio in soil organic matter with slow turnover
+                (passive SOM)
+            Range: 1.0 to 9999.0
+
+rces3(3)        initial C/S ratio in soil organic matter with slow turnover
+                (passive SOM)
+            Range: 1.0 to 9999.0
+
+clittr(1,1)     initial value for surface unlabeled plant residue; used only
+                if ivauto = 0 (g/m2)
+            Range: 1.0 to 9999.0
+
+clittr(1,2)     initial value for surface labeled plant residue; used only
+                if ivauto = 0 (g/m2)
+            Range: 1.0 to 9999.0
+
+clittr(2,1)     initial value for soil unlabeled plant residue; used only
+                if ivauto = 0 (g/m2)
+            Range: 1.0 to 9999.0
+
+clittr(2,2)     initial value for soil labeled plant residue; used only
+                if ivauto = 0 (g/m2)
+            Range: 1.0 to 9999.0
+
+rcelit(1,1)     initial C/N ratio for surface litter
+            Range: 1.0 to 9999.0
+
+rcelit(1,2)     initial C/P ratio for surface litter
+            Range: 1.0 to 9999.0
+
+rcelit(1,3)     initial C/S ratio for surface litter
+            Range: 1.0 to 9999.0
+
+rcelit(2,1)     initial C/N ratio for soil litter
+            Range: 1.0 to 9999.0
+
+rcelit(2,2)     initial C/P ratio for soil litter
+            Range: 1.0 to 9999.0
+
+rcelit(2,3)     initial C/S ratio for soil litter
+            Range: 1.0 to 9999.0
+
+aglcis(1)       initial value for aboveground live unlabeled C isotope
+                (gC/m2)
+            Range: 1.0 to 9999.0
+
+aglcis(2)       initial value for aboveground live labeled C isotope
+                (gC/m2)
+            Range: 1.0 to 9999.0
+
+aglive(1)       initial value for aboveground live N; used only if
+                ivauto = 0 or 2 (gN/m2)
+            Range: 1.0 to 9999.0
+
+aglive(2)       initial value for aboveground live P; used only if
+                ivauto = 0 or 2(gP/m2)
+            Range: 1.0 to 9999.0
+
+aglive(3)       initial value for aboveground live S; used only if
+                ivauto = 0 or 2(gS/m2)
+            Range: 1.0 to 9999.0
+
+bglcis(1)       initial value for belowground live unlabeled C; used only
+                if ivauto = 0 or 2 (gC/m2)
+            Range: 1.0 to 9999.0
+
+bglcis(2)       initial value for belowground live labeled C; used only
+                if ivauto = 0 or 2 (gC/m2)
+            Range: 1.0 to 9999.0
+
+bglive(1)       initial value for belowground live N; used only if
+                ivauto = 0 or 2 (gN/m2)
+            Range: 1.0 to 9999.0
+
+bglive(2)       initial value for belowground live P; used only if
+                ivauto = 0 or 2 (gP/m2)
+            Range: 1.0 to 9999.0
+
+bglive(3)       initial value for belowground live S; used only if
+                ivauto = 0 or 2 (gS/m2)
+            Range: 1.0 to 9999.0
+
+stdcis(1)       initial value for standing dead unlabeled C; used only if
+                ivauto = 0 (gC/m2)
+            Range: 1.0 to 9999.0
+
+stdcis(2)       initial value for standing dead labeled C; used only if
+                ivauto = 0 (gC/m2)
+            Range: 1.0 to 9999.0
+
+stdede(1)       initial value for N in standing dead; used only if ivauto = 0
+                (gN/m2)
+            Range: 1.0 to 9999.0
+
+stdede(2)       initial value for P in standing dead; used only if ivauto = 0
+                (gP/m2)
+            Range: 1.0 to 9999.0
+
+stdede(3)       initial value for S in standing dead; used only if ivauto = 0
+                (gS/m2)
+            Range: 1.0 to 9999.0
+
+*** Forest organic matter initial parameters
+rlvcis(1)       initial value for unlabeled C in forest system leaf
+                component (gC/m2)
+            Range: 1.0 to 9999.0
+
+rlvcis(2)       initial value for labeled C in forest system leaf component
+                (gC/m2)
+            Range: 1.0 to 9999.0
+
+rleave(1)       initial value for N in a forest system leaf component (gN/m2)
+            Range: 1.0 to 9999.0
+
+rleave(2)       initial value for P in a forest system leaf component (gP/m2)
+            Range: 1.0 to 9999.0
+
+rleave(3)       initial value for S in a forest system leaf component (gS/m2)
+            Range: 1.0 to 9999.0
+
+fbrcis(1)       initial value for unlabeled C in forest system fine branch
+                component (gC/m2)
+            Range: 1.0 to 9999.0
+
+fbrcis(2)       initial value for labeled C in forest system fine branch
+                component (gC/m2)
+            Range: 1.0 to 9999.0
+
+fbrche(1)       initial value for N in a forest system fine branch component
+                (gN/m2)
+            Range: 1.0 to 9999.0
+
+fbrche(2)       initial value for P in a forest system fine branch component
+                (gP/m2)
+            Range: 1.0 to 9999.0
+
+fbrche(3)       initial value for S in a forest system fine branch component
+                (gS/m2)
+            Range: 1.0 to 9999.0
+
+rlwcis(1)       initial value for unlabeled C in forest system large wood
+                component (gC/m2)
+            Range: 1.0 to 9999.0
+
+rlwcis(2)       initial value for labeled C in forest system large wood
+                component (gC/m2)
+            Range: 1.0 to 9999.0
+
+rlwode(1)       initial value for N in a forest system large wood component
+                (gN/m2)
+            Range: 1.0 to 9999.0
+
+rlwode(2)       initial value for P in a forest system large wood component
+                (gP/m2)
+            Range: 1.0 to 9999.0
+
+rlwode(3)       initial value for S in a forest system large wood component
+                (gS/m2)
+            Range: 1.0 to 9999.0
+
+frtcis(1)       initial value for unlabeled C in forest system fine root
+                component (gC/m2)
+            Range: 1.0 to 9999.0
+
+frtcis(2)       initial value for labeled C in forest system fine root
+                component (gC/m2)
+            Range: 1.0 to 9999.0
+
+froote(1)       initial value for N in a forest system fine root component
+                (gN/m2)
+            Range: 1.0 to 9999.0
+
+froote(2)       initial value for P in a forest system fine root component
+                (gP/m2)
+            Range: 1.0 to 9999.0
+
+froote(3)       initial value for S in a forest system fine root component
+                (gS/m2)
+            Range: 1.0 to 9999.0
+
+crtcis(1)       initial value for unlabeled C in forest system coarse root
+                component (gC/m2)
+            Range: 1.0 to 9999.0
+
+crtcis(2)       initial value for labeled C in forest system coarse root
+                component (gC/m2)
+            Range: 1.0 to 9999.0
+
+croote(1)       initial value for N in a forest system coarse root component
+                (gN/m2)
+            Range: 1.0 to 9999.0
+
+croote(2)       initial value for P in a forest system coarse root component
+                (gP/m2)
+            Range: 1.0 to 9999.0
+
+croote(3)       initial value for S in a forest system coarse root component
+                (gS/m2)
+            Range: 1.0 to 9999.0
+
+wd1cis(1)       initial unlabeled C values for forest system dead fine
+                branch material (wood1) (g/m2)
+            Range: 1.0 to 9999.0
+
+wd1cis(2)       initial labeled C values for forest system dead fine
+                branch material (wood1) (g/m2)
+            Range: 1.0 to 9999.0
+
+wd2cis(1)       initial unlabeled C values for forest system dead large
+                wood material (wood2) (g/m2)
+            Range: 1.0 to 9999.0
+
+wd2cis(2)       initial labeled C values for forest system dead large
+                wood material (wood2) (g/m2)
+            Range: 1.0 to 9999.0
+
+wd3cis(1)       initial unlabeled C values for forest system dead coarse
+                root material (wood3) (g/m2)
+            Range: 1.0 to 9999.0
+
+wd3cis(2)       initial labeled C values for forest system dead coarse
+                root material (wood3) (g/m2)
+            Range: 1.0 to 9999.0
+
+*** Mineral initial parameters
+minerl(1,1)     initial value for mineral N for layer 1 (gN/m2)
+            Range: 0.0 to 9999.0
+
+minerl(2,1)     initial value for mineral N for layer 2 (gN/m2)
+            Range: 0.0 to 9999.0
+
+minerl(3,1)     initial value for mineral N for layer 3 (gN/m2)
+            Range: 0.0 to 9999.0
+
+minerl(4,1)     initial value for mineral N for layer 4 (gN/m2)
+            Range: 0.0 to 9999.0
+
+minerl(5,1)     initial value for mineral N for layer 5 (gN/m2)
+            Range: 0.0 to 9999.0
+
+minerl(6,1)     initial value for mineral N for layer 6 (gN/m2)
+            Range: 0.0 to 9999.0
+
+minerl(7,1)     initial value for mineral N for layer 7 (gN/m2)
+            Range: 0.0 to 9999.0
+
+minerl(8,1)     initial value for mineral N for layer 8 (gN/m2)
+            Range: 0.0 to 9999.0
+
+minerl(9,1)     initial value for mineral N for layer 9 (gN/m2)
+            Range: 0.0 to 9999.0
+
+minerl(10,1)    initial value for mineral N for layer 10 (gN/m2)
+            Range: 0.0 to 9999.0
+
+minerl(1,2)     initial value for mineral P for layer 1 (gP/m2)
+            Range: 0.0 to 9999.0
+
+minerl(2,2)     initial value for mineral P for layer 2 (gP/m2)
+            Range: 0.0 to 9999.0
+
+minerl(3,2)     initial value for mineral P for layer 3 (gP/m2)
+            Range: 0.0 to 9999.0
+
+minerl(4,2)     initial value for mineral P for layer 4 (gP/m2)
+            Range: 0.0 to 9999.0
+
+minerl(5,2)     initial value for mineral P for layer 5 (gP/m2)
+            Range: 0.0 to 9999.0
+
+minerl(6,2)     initial value for mineral P for layer 6 (gP/m2)
+            Range: 0.0 to 9999.0
+
+minerl(7,2)     initial value for mineral P for layer 7 (gP/m2)
+            Range: 0.0 to 9999.0
+
+minerl(8,2)     initial value for mineral P for layer 8 (gP/m2)
+            Range: 0.0 to 9999.0
+
+minerl(9,2)     initial value for mineral P for layer 9 (gP/m2)
+            Range: 0.0 to 9999.0
+
+minerl(10,2)    initial value for mineral P for layer 10 (gP/m2)
+            Range: 0.0 to 9999.0
+
+minerl(1,3)     initial value for mineral S for layer 1 (gS/m2)
+            Range: 0.0 to 9999.0
+
+minerl(2,3)     initial value for mineral S for layer 2 (gS/m2)
+            Range: 0.0 to 9999.0
+
+minerl(3,3)     initial value for mineral S for layer 3 (gS/m2)
+            Range: 0.0 to 9999.0
+
+minerl(4,3)     initial value for mineral S for layer 4 (gS/m2)
+            Range: 0.0 to 9999.0
+
+minerl(5,3)     initial value for mineral S for layer 5 (gS/m2)
+            Range: 0.0 to 9999.0
+
+minerl(6,3)     initial value for mineral S for layer 6 (gS/m2)
+            Range: 0.0 to 9999.0
+
+minerl(7,3)     initial value for mineral S for layer 7 (gS/m2)
+            Range: 0.0 to 9999.0
+
+minerl(8,3)     initial value for mineral S for layer 8 (gS/m2)
+            Range: 0.0 to 9999.0
+
+minerl(9,3)     initial value for mineral S for layer 9 (gS/m2)
+            Range: 0.0 to 9999.0
+
+minerl(10,3)    initial value for mineral S for layer 10 (gS/m2)
+            Range: 0.0 to 9999.0
+
+parent(1)       initial N value for parent material (gN/m2)
+            Range: 0.0 to 9999.0
+
+parent(2)       initial P value for parent material (gP/m2)
+            Range: 0.0 to 9999.0
+
+parent(3)       initial S value for parent material (gS/m2)
+            Range: 0.0 to 9999.0
+
+secndy(1)       initial N value for secondary N (gN/m2)
+            Range: 0.0 to 9999.0
+
+secndy(2)       initial P value for secondary P (gP/m2)
+            Range: 0.0 to 9999.0
+
+secndy(3)       initial S value for secondary S (gS/m2)
+            Range: 0.0 to 9999.0
+
+occlud          initial value for occluded P (gP/m2)
+            Range: 0.0 to 9999.0
+
+*** Water initial parameters
+rwcf(1)         initial relative water content for layer 1
+            Range: 0.0 to 9999.0
+
+rwcf(2)         initial relative water content for layer 2
+            Range: 0.0 to 9999.0
+
+rwcf(3)         initial relative water content for layer 3
+            Range: 0.0 to 9999.0
+
+rwcf(4)         initial relative water content for layer 4
+            Range: 0.0 to 9999.0
+
+rwcf(5)         initial relative water content for layer 5
+            Range: 0.0 to 9999.0
+
+rwcf(6)         initial relative water content for layer 6
+            Range: 0.0 to 9999.0
+
+rwcf(7)         initial relative water content for layer 7
+            Range: 0.0 to 9999.0
+
+rwcf(8)         initial relative water content for layer 8
+            Range: 0.0 to 9999.0
+
+rwcf(9)         initial relative water content for layer 9
+            Range: 0.0 to 9999.0
+
+rwcf(10)        initial relative water content for layer 10
+            Range: 0.0 to 9999.0
+
+snlq            liquid water in the snow pack (cm of H2O)
+            Range: 0.0 to 9999.0
+
+snow            snow pack water content (cm of H2O)
+            Range: 0.0 to 9999.0

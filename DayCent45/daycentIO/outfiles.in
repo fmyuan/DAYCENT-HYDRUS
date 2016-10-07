@@ -1,0 +1,19 @@
+Output (0/1)    file_name       description
+1               biowk.out       # weekly above and below ground live carbon
+1               soiln.out       # daily soil ammonium and nitrate by layer
+1               soiltavg.out    # daily average soil temperature by layer
+0               soiltmax.out    # daily maximum soil temperature by layer
+0               soiltmin.out    # daily minimum soil temperature by layer
+0               stemp_dx.out    # daily soil temperature every few cm (HUGE)!
+1               vswc.out        # daily volumetric soilwater content by layer
+1               watrbal.out     # daily water balance
+0               wfps.out        # daily water filled pore space by layer
+0               co2.out         # daily CO2 concentrations by layer
+0               wflux.out       # daily water flux through the bottom of soil layers
+1               mresp.out       # weekly maintenance respiration
+0               year_sum.out    # yearly gas fluxes
+1               livecwk.out     # weekly live C
+1               deadcwk.out     # weekly dead C
+1               soilcwk.out     # weekly soil C
+0               syscwk.out      # weekly system C
+0               tgmonth.out     # monthly trace gas fluxes

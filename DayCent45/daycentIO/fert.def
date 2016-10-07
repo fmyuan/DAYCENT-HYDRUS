@@ -1,0 +1,33 @@
+Fertilizer options file "fert.100" will contain these values:
+feramt(1)       amount of N to be added (gN/m2) in scheduled month
+            Range: 0.0 to 9999.0
+
+feramt(2)       amount of P to be added (gP/m2) in scheduled month
+            Range: 0.0 to 9999.0
+
+feramt(3)       amount of S to be added (gS/m2) in scheduled month
+            Range: 0.0 to 9999.0
+
+aufert          key for automatic fertilization
+                aufert = 0.0:   no automatic fertilization
+                aufert < 1.0:   automatic fertilizer may be applied to remove
+                                some nutrient stress without increasing
+                                nutrient concentration above the minimum 
+                                level; the value of aufert is the fraction of
+                                potential C production (temperature and
+                                moisture limited) which will be maintained
+                aufert > 1.0:   automatic fertilizer may be applied to remove
+                                nutrient stress and increase nutrient
+                                concentrations above the minimum level; a
+                                value of aufert between 1.0 and 2.0 determines
+                                the extent to which nutrient concentration is
+                                maintained between the minimum and maximum
+                                levels
+                aufert = 2.0:   automatic fertilizer may be applied to remove
+                                nutrient stress and increase nutrient
+                                concentrations to the maximum level
+            Range: 0 to 2
+
+ninhib          reduction factor on nitrification rates due to nitrification
+                inhibitors added with fertilizer, 1.0 = no reduction
+            Range: 0.0 to 1.0

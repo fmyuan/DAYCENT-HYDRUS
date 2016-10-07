@@ -1,0 +1,22 @@
+Harvest options file "harv.100" will contain these values:
+aglrem          fraction of aboveground live which will not be affected by
+                harvest operations
+            Range: 0.0 to 1.0
+
+bglrem          fraction of belowground live which will not be affected by
+                harvest operations
+            Range: 0.0 to 1.0
+
+flghrv          flag indicating if grain is to be harvested
+                  = 0 if the grain is not to be harvested
+                  = 1 if the grain is to be harvested
+            Range: 0 or 1
+
+rmvstr          fraction of the aboveground residue that will be removed
+            Range: 0.0 to 1.0
+
+remwsd          fraction of the remaining residue that will be left standing
+            Range: 0.0 to 1.0
+
+hibg            fraction of roots that will be harvested
+            Range: 0.0 to 1.0

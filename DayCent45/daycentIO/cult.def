@@ -1,0 +1,41 @@
+Cultivation options file "cult.100" will contain these values:
+cultra(1)       fraction of aboveground live transferred to standing dead
+            Range: 0.0 to 1.0
+
+cultra(2)       fraction of aboveground live transferred to surface litter
+            Range: 0.0 to 1.0
+
+cultra(3)       fraction of aboveground live transferred to the top soil layer
+            Range: 0.0 to 1.0
+
+cultra(4)       fraction of standing dead transferred to surface litter
+            Range: 0.0 to 1.0
+
+cultra(5)       fraction of standing dead transferred to top soil layer
+            Range: 0.0 to 1.0
+
+cultra(6)       fraction of surface litter transferred to top soil layer
+            Range: 0.0 to 1.0
+
+cultra(7)       fraction of roots transferred to top soil layer
+            Range: 0.0 to 1.0
+
+clteff(1)       cultivation factor for som1 decomposition; functions as a
+                multiplier for increased decomposition in the month of the
+                cultivation
+            Range: 1.0 to 2.0
+
+clteff(2)       cultivation factor for som2 decomposition; functions as a
+                multiplier for increased decomposition in the month of the
+                cultivation
+            Range: 1.0 to 2.0
+
+clteff(3)       cultivation factor for som3 decomposition; functions as a
+                multiplier for increased decomposition in the month of the
+                cultivation
+            Range: 1.0 to 2.0
+
+clteff(4)       cultivation factor for soil structural material decomposition;
+                functions as a multiplier for increased decomposition in the
+                month of the cultivation
+            Range: 1.0 to 2.0
